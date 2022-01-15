@@ -1,0 +1,24 @@
+use_frameworks!
+platform :ios, "13.0"
+
+target "Halley_Example" do
+  pod "Halley", :path => "../"
+  pod "Alamofire"
+
+  target "Halley_Tests" do
+    inherit! :search_paths
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      # Fix for Xcode 12 warnings
+      if config.build_settings["IPHONEOS_DEPLOYMENT_TARGET"] == "8.0"
+        config.build_settings["IPHONEOS_DEPLOYMENT_TARGET"] = "9.0"
+      end
+      config.build_settings["ARCHS"] = "$(ARCHS_STANDARD_64_BIT)"
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
+end
