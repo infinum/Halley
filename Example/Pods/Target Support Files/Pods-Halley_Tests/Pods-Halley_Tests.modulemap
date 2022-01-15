@@ -1,0 +1,6 @@
+framework module Pods_Halley_Tests {
+  umbrella header "Pods-Halley_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
