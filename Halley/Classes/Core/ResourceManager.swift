@@ -17,11 +17,23 @@ public extension ResourceManager {
 
     func resource(
         from url: URL,
-        includes: [String] = []
+        includes: [String] = [],
+        options: HalleyKit.Options = .default
     ) -> AnyPublisher<Result<Parameters, Error>, Never> {
         return traverser
             .resource(from: url, includes: includes)
             .map(\.asDictionary)
+            .eraseToAnyPublisher()
+    }
+
+    func resourceCollection(
+        from url: URL,
+        includes: [String] = [],
+        options: HalleyKit.Options = .default
+    ) -> AnyPublisher<Result<[Parameters], Error>, Never> {
+        return traverser
+            .resourceCollection(from: url, includes: includes)
+            .map(\.asArrayOfDictionaries)
             .eraseToAnyPublisher()
     }
 }
