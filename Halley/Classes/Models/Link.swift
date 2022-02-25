@@ -8,8 +8,4 @@ public struct Link: Codable {
         case href
         case templated
     }
-
-    func resolvedUrl() throws -> URL {
-        return try URL(string: href) ?? throwHalleyError(.cantResolveURLFromLink(link: self))
-    }
 }

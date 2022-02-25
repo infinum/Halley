@@ -20,7 +20,7 @@ class HALAlamofireRequester: RequesterInterface {
         print("[REQUEST]: \(url.absoluteString)")
         let headers = HTTPHeaders(
             [
-                "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjYjMzZjZkYi0xOTMyLTRlYTgtODU3ZC1jMmFhM2I0ZmMzMmUiLCJpc3MiOiJkZXYuYmFja2VuZC5rYS5waGlsaXBzLmNvbSIsInVzZXJuYW1lIjoiY2IzM2Y2ZGItMTkzMi00ZWE4LTg1N2QtYzJhYTNiNGZjMzJlIiwiZXhwIjoxNjQ2MDY2ODg5LCJ0eXBlIjoiY29uc3VtZXIiLCJhdWQiOm51bGwsInN1YiI6ImNiMzNmNmRiLTE5MzItNGVhOC04NTdkLWMyYWEzYjRmYzMyZSJ9.egzI66hEZki15_IAT17_FAtaUTgTSFP1iH01Nu6_rvurhA7ONn2UGqgJRdVjJTnRqn7vQRJSUXUQU5HOSZlnCQNRjKdD6sctBqbS4dbViU0FwvtXPiKOD0iGWBpHM8fF3jw-y2maOt5rmP-7JNYb5m0s5Isu1H8RL_t8V864TkxCB7zIU1cW2nfnLlKgNgnGyE1zS3SKHrbsmI00NP6dT7SZsn3WPszyG2xEgEpdnr7xOy7-3-Wv5S8P3th4is8Q8kXxlcXwRi2hgKZh5ZL5IWEsFXFmLDcZp4myIhs8duLC1YXxA5L-g_u_XR6_D9KLjvPvzBLrem_NTsmLIaJsUw",
+                "Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjN2Y1NTI1MC1lY2NlLTRkNTItODBkNS0zMDI5ZjYzOTc2YTMiLCJpc3MiOiJkZXYuYmFja2VuZC5rYS5waGlsaXBzLmNvbSIsInVzZXJuYW1lIjoiYzdmNTUyNTAtZWNjZS00ZDUyLTgwZDUtMzAyOWY2Mzk3NmEzIiwiZXhwIjoxNjQ2NDEyOTE5LCJ0eXBlIjoiY29uc3VtZXIiLCJhdWQiOm51bGwsInN1YiI6ImM3ZjU1MjUwLWVjY2UtNGQ1Mi04MGQ1LTMwMjlmNjM5NzZhMyJ9.WYAeSxO3xBBtj_H3oRaVFYoBj1ykTh6yIUR9NoccBo00Q2t2ybsayVcJnou940vk7x5yGbaiCJ1Cbs3sr9GZmLgCOlI-BS1YFycNbQopeqZWoDSDWkyNs5hSFpT0MX1kRsWkFQAHqJWG4-7PBSdcyBq2egW2TFJoOTP13-YGxPoKGkxpTurLth4AcGkaA0HS5wdv06FRAIh17uAnV6LLUtIcgH0hP3RViqZjEjEhAxEuEk0QYaC-ACN3EYTtly4XtlvlPTCMvfxBXfxgNdu-3Ysl89L0JSjN75mlAZdUnKxR98UizbcKOSeXktrYANcm90jbqf2uJk32OQpcUpPB5Q",
                 "Accept-Language": "de-DE",
                 "accept": "application/vnd.oneka.v2.0+json"
             ]

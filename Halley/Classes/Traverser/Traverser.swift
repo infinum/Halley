@@ -20,7 +20,8 @@ extension Traverser {
     func resource(
         from url: URL,
         includes: [String] = [],
-        options: HalleyKit.Options = .default
+        options: HalleyKit.Options = .default,
+        linkResolver: LinkResolver
     ) -> AnyPublisher<JSONResult, Never> {
         return requesterQueue
             .jsonResponse(at: url, requester: requester)
@@ -31,7 +32,7 @@ extension Traverser {
                 do {
                     let response = try result.asDictionary.get()
                     let container = ResourceContainer(response)
-                    return try self.fetchSingleResourceLinkedResources(for: container, includes: includes, options: options)
+                    return try self.fetchSingleResourceLinkedResources(for: container, includes: includes, options: options, linkResolver: linkResolver)
                 } catch let error {
                     return .failure(error)
                 }
@@ -42,7 +43,8 @@ extension Traverser {
     func resourceCollection(
         from url: URL,
         includes: [String] = [],
-        options: HalleyKit.Options = .default
+        options: HalleyKit.Options = .default,
+        linkResolver: LinkResolver
     ) -> AnyPublisher<JSONResult, Never> {
         return requesterQueue
             .jsonResponse(at: url, requester: requester)
@@ -53,7 +55,7 @@ extension Traverser {
                 do {
                     let response = try result.asDictionary.get()
                     let container = ResourceContainer(response)
-                    return try self.parseCollectionLinkedResources(for: container, includes: includes, options: options)
+                    return try self.parseCollectionLinkedResources(for: container, includes: includes, options: options, linkResolver: linkResolver)
                 } catch let error {
                     return .failure(error)
                 }
@@ -69,25 +71,26 @@ private extension Traverser {
     func fetchSingleResourceLinkedResources(
         for resource: ResourceContainer,
         includes: [String],
-        options: HalleyKit.Options
+        options: HalleyKit.Options,
+        linkResolver: LinkResolver
     ) throws -> AnyPublisher<JSONResult, Never> {
         let linksToFetch = singleResourceLinksToFetch(for: resource, includes: includes, options: options)
         let requests: [AnyPublisher<LinkResponse, Never>] = try linksToFetch.map { link in
 
             guard link.isEmbedded == false else {
                 // Resource is embedded so we only need to handle their included links
-                return try handleLinksOfEmbeddedResource(for: resource, linkElement: link, options: options)
+                return try handleLinksOfEmbeddedResource(for: resource, linkElement: link, options: options, linkResolver: linkResolver)
             }
 
             // Makes request to the included link
-            let url = try link.resolvedUrl()
+            let url = try linkResolver.resolveLink(link.link)
             switch link.linkType {
             case .toOne:
-                return self.resource(from: url, includes: link.includes)
+                return self.resource(from: url, includes: link.includes, linkResolver: linkResolver)
                     .map { LinkResponse(relationship: link.relationship, result: $0) }
                     .eraseToAnyPublisher()
             case .toMany:
-                return self.resourceCollection(from: url, includes: link.includes)
+                return self.resourceCollection(from: url, includes: link.includes, linkResolver: linkResolver)
                     .map { LinkResponse(relationship: link.relationship, result: $0) }
                     .eraseToAnyPublisher()
             }
@@ -112,7 +115,8 @@ private extension Traverser {
     func handleLinksOfEmbeddedResource(
         for resource: ResourceContainer,
         linkElement: LinkIncludesElement,
-        options: HalleyKit.Options
+        options: HalleyKit.Options,
+        linkResolver: LinkResolver
     ) throws -> AnyPublisher<LinkResponse, Never> {
         let embeddedResource = resource.parameters[linkElement.relationship]
             .flatMap({ $0 as? Parameters })
@@ -122,7 +126,7 @@ private extension Traverser {
             throw HalleyKit.Error.relationshipNotFound(data: resource)
         }
 
-        return try fetchSingleResourceLinkedResources(for: _embeddedResource, includes: linkElement.includes, options: options)
+        return try fetchSingleResourceLinkedResources(for: _embeddedResource, includes: linkElement.includes, options: options, linkResolver: linkResolver)
             .map { LinkResponse(relationship: linkElement.relationship, result: $0) }
             .eraseToAnyPublisher()
     }
@@ -172,7 +176,8 @@ private extension Traverser {
     func parseCollectionLinkedResources(
         for resource: ResourceContainer,
         includes: [String],
-        options: HalleyKit.Options
+        options: HalleyKit.Options,
+        linkResolver: LinkResolver
     ) throws -> AnyPublisher<JSONResult, Never> {
 
         let embeddedResources = resource
@@ -182,7 +187,7 @@ private extension Traverser {
             .flatMap({ $0.map(ResourceContainer.init) })
 
         if let embeddedResources = embeddedResources {
-            return try fetchLinksForEmbeddedResources(embeddedResources: embeddedResources, includes: includes, options: options)
+            return try fetchLinksForEmbeddedResources(embeddedResources: embeddedResources, includes: includes, options: options, linkResolver: linkResolver)
         }
 
         let embeddedLinks = resource
@@ -191,7 +196,7 @@ private extension Traverser {
             .flatMap { $0[options.arrayKey] as? [Parameters] }
 
         if embeddedLinks != nil, let parsedArrayLinks = resource._links?.relationships[options.arrayKey] {
-            return try fetchCollectionResources(at: parsedArrayLinks, includes: includes, options: options)
+            return try fetchCollectionResources(at: parsedArrayLinks, includes: includes, options: options, linkResolver: linkResolver)
         }
 
         return .success([])
@@ -200,10 +205,11 @@ private extension Traverser {
     func fetchLinksForEmbeddedResources(
         embeddedResources: [ResourceContainer],
         includes: [String],
-        options: HalleyKit.Options
+        options: HalleyKit.Options,
+        linkResolver: LinkResolver
     ) throws -> AnyPublisher<JSONResult, Never> {
         let requests = try embeddedResources.map({ (resource) in
-            return try fetchSingleResourceLinkedResources(for: resource, includes: includes, options: options)
+            return try fetchSingleResourceLinkedResources(for: resource, includes: includes, options: options, linkResolver: linkResolver)
         })
         return requests
             .zip()
@@ -214,10 +220,11 @@ private extension Traverser {
     func fetchCollectionResources(
         at links: [Link],
         includes: [String],
-        options: HalleyKit.Options
+        options: HalleyKit.Options,
+        linkResolver: LinkResolver
     ) throws -> AnyPublisher<JSONResult, Never> {
         let requests: [AnyPublisher<JSONResult, Never>] = try links
-            .map { resource(from: try $0.resolvedUrl(), includes: includes) }
+            .map { resource(from: try linkResolver.resolveLink($0), includes: includes, linkResolver: linkResolver) }
             .map { $0.eraseToAnyPublisher() }
 
         guard requests.isEmpty == false else {
@@ -294,10 +301,6 @@ struct LinkIncludesElement {
     let includes: [String]
     let linkType: LinkType
     let isEmbedded: Bool
-
-    func resolvedUrl() throws -> URL {
-        return try link.resolvedUrl()
-    }
 }
 
 class ResourceContainer {
@@ -318,8 +321,4 @@ class ResourceContainer {
     func hasEmbeddedRelationship(_ relationship: String) -> Bool {
         return _embedded?[relationship] != nil
     }
-}
-
-protocol LinkResolver {
-    func resolveLink(_ link: String) throws -> URL
 }
