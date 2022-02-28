@@ -16,6 +16,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		ABB0A03EF8ACEE4E7502370B /* Pods_Halley_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD480B7BE15C525D7D5E417 /* Pods_Halley_Example.framework */; };
+		FED9310E27C946330067C73D /* TemplateLinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED9310D27C946330067C73D /* TemplateLinkResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BC284524D77EF4CD85285B13 /* Pods-Halley_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Example.release.xcconfig"; path = "Target Support Files/Pods-Halley_Example/Pods-Halley_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DAEB17959B3F5470F471AFA0 /* Pods-Halley_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Halley_Tests/Pods-Halley_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		F044EA8FEEE3936E3B28EE2C /* Pods-Halley_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Example.debug.xcconfig"; path = "Target Support Files/Pods-Halley_Example/Pods-Halley_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		FED9310D27C946330067C73D /* TemplateLinkResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateLinkResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				FED9310D27C946330067C73D /* TemplateLinkResolver.swift */,
 				0AB3F5892792C53F009FDC80 /* HalleyAlamofireRequester.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				FED9310E27C946330067C73D /* TemplateLinkResolver.swift in Sources */,
 				0AB3F58A2792C53F009FDC80 /* HalleyAlamofireRequester.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
