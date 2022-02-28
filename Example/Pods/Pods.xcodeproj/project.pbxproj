@@ -116,6 +116,7 @@
 		F8D4EB78F687FBF62A9F34CCBB61F1A4 /* URITemplate-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1FB4C4203FC22FCE55504DECDF948E /* URITemplate-dummy.m */; };
 		FD1A29FDAF44D29DAA1CC7A805332F1F /* ZipMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6487E5029C118A78F961C6DB5F64E7 /* ZipMany.swift */; };
 		FD2C8265CC8D72ADA8D062E5D64D7BB8 /* Halley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48949524AA2DB57343543435E3487D /* Halley.swift */; };
+		FED9311027C9470A0067C73D /* LinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED9310F27C9470A0067C73D /* LinkResolver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -210,7 +211,7 @@
 		36E7892216E1D6213F18D0FF6B2425EB /* MergeMany.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MergeMany.swift; path = Sources/Operators/MergeMany.swift; sourceTree = "<group>"; };
 		3A48949524AA2DB57343543435E3487D /* Halley.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Halley.swift; path = Halley/Classes/Halley.swift; sourceTree = "<group>"; };
 		3AF4E2534D6B4AC8EA348DF8A042C100 /* Pods-Halley_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Halley_Tests"; path = Pods_Halley_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4093012D24212FABF65992FC8B393494 /* Halley.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Halley.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4093012D24212FABF65992FC8B393494 /* Halley.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Halley.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		427D40A5045EC760881842C798274E51 /* Materialize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Materialize.swift; path = Sources/Operators/Materialize.swift; sourceTree = "<group>"; };
 		4384B97D260568603E21BCD9F1C45372 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4574168B9E339539176F7B325188D0F6 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
@@ -268,10 +269,10 @@
 		905A0C85874EBA21F3001794D16C82BC /* Pods-Halley_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Halley_Example.release.xcconfig"; sourceTree = "<group>"; };
 		90E9306E740617EE972FA3E515D2E6A0 /* Pods-Halley_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Halley_Example-umbrella.h"; sourceTree = "<group>"; };
 		90F10BE419935A0CECB3D351B47B0157 /* Dictionary+Decoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dictionary+Decoding.swift"; sourceTree = "<group>"; };
-		9661D61E75CD71C9B498C1235442027C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		9661D61E75CD71C9B498C1235442027C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		99C4E50032C3EA013FE45C59DA853770 /* Pods-Halley_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Halley_Example-Info.plist"; sourceTree = "<group>"; };
 		9C826F1A31F3EE529D8CB06EA88E80F7 /* CombineExt */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CombineExt; path = CombineExt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9ECF4F0095571DCB8E80A5A99BEE62DF /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
 		9F468293E4B9CCA6283668760B3C7AC6 /* Halley-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Halley-dummy.m"; sourceTree = "<group>"; };
 		9FD291CB48E4D790CB8CC8E8237AB2F0 /* Pods-Halley_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-Halley_Example"; path = Pods_Halley_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,7 +292,7 @@
 		BC7430D31D3E6AB6366EF8111F33269C /* ConcurrentOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
 		BDAE0E9FCCF002F2EB4BB8F67DCFEA36 /* ReplaySubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaySubject.swift; path = Sources/Subjects/ReplaySubject.swift; sourceTree = "<group>"; };
 		C03C48FB1198B5323EC6A1334F698654 /* Pods-Halley_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Halley_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		C4F6D7C4C4E91E18F7B96D6CE48283F2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C4F6D7C4C4E91E18F7B96D6CE48283F2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C9E325688809C07512E8C1F196165948 /* Pods-Halley_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Halley_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA48AFBF98E1283A6887208887DACE02 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		CABCE69388B5B117F6B94B39EC7FF7A6 /* WithLatestFrom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WithLatestFrom.swift; path = Sources/Operators/WithLatestFrom.swift; sourceTree = "<group>"; };
@@ -317,6 +318,7 @@
 		FA491675B056F5ECBDBF0BEC371E61B7 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Source/Protected.swift; sourceTree = "<group>"; };
 		FE0D4BB6189A3C46D6E146FE3B203E82 /* CombineExt-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CombineExt-dummy.m"; sourceTree = "<group>"; };
 		FECA69821CC4FC16D48E079D12EC5B45 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
+		FED9310F27C9470A0067C73D /* LinkResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,7 +424,6 @@
 				ED6487E5029C118A78F961C6DB5F64E7 /* ZipMany.swift */,
 				8367AD7D155D30FB81CC418E72ADC654 /* Support Files */,
 			);
-			name = CombineExt;
 			path = CombineExt;
 			sourceTree = "<group>";
 		};
@@ -538,7 +539,6 @@
 				AA9499BB3F43C65D6D2800384852FC98 /* Validation.swift */,
 				83982AED8C963E9C295A80FCC61AA4B7 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -557,7 +557,6 @@
 				B74D3A3C6F208FDCBA3E2E9E851C8E58 /* URITemplate.swift */,
 				22A106BE2A0660D5F7ADE2889374C6CF /* Support Files */,
 			);
-			name = URITemplate;
 			path = URITemplate;
 			sourceTree = "<group>";
 		};
@@ -648,6 +647,7 @@
 			isa = PBXGroup;
 			children = (
 				7F0ED4922D078DC0B7ADB2E2CC0A1347 /* Traverser.swift */,
+				FED9310F27C9470A0067C73D /* LinkResolver.swift */,
 			);
 			name = Traverser;
 			path = Halley/Classes/Traverser;
@@ -1028,6 +1028,7 @@
 				CE19FE23CA44DE92F13F6EA26401F7BF /* HalleyError.swift in Sources */,
 				91BB0533889E44E9860081717B3569BF /* Link.swift in Sources */,
 				B17D4CA776E24CF7EF3D1F542433C706 /* Links.swift in Sources */,
+				FED9311027C9470A0067C73D /* LinkResolver.swift in Sources */,
 				C84E7261A23673F8D0E273C2B16543A9 /* PageMetadata.swift in Sources */,
 				CB0CE1455F1EA068FF98C0D51096B487 /* RequesterInterface.swift in Sources */,
 				79875CB5D5F1977D251F3E298660B7C0 /* RequesterQueue.swift in Sources */,
@@ -1574,8 +1575,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

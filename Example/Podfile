@@ -4,6 +4,7 @@ platform :ios, "13.0"
 target "Halley_Example" do
   pod "Halley", :path => "../"
   pod "Alamofire"
+  pod 'URITemplate'
 
   target "Halley_Tests" do
     inherit! :search_paths
