@@ -13,11 +13,22 @@ import URITemplate
 // MARK: - Link Resolver Example -
 
 class TemplateLinkResolver: LinkResolver {
+    let includeParameters: [String: [String: String]]
     let templateManager = URITemplateHandler.shared
 
-    func resolveLink(_ link: Link) throws -> URL {
+    init(parameters: [String: [String: String]]) {
+        includeParameters = parameters
+    }
+
+    func resolveLink(_ link: Link, relationshipPath: String?) throws -> URL {
         let resolvedString = templateManager.url(for: link)
-        return try URL(string: resolvedString) ?? throwError(HalleyKit.Error.cantResolveURLFromLink(link: link))
+
+        var urlComponent = try URLComponents(string: resolvedString) ?? throwError(HalleyKit.Error.cantResolveURLFromLink(link: link))
+        guard let parent = relationshipPath else { return try urlComponent.asURL() }
+        let parameters = includeParameters[parent] ?? [:]
+        let queries = parameters.map(URLQueryItem.init)
+        urlComponent.queryItems = (urlComponent.queryItems ?? []) + queries
+        return try urlComponent.asURL()
     }
 }
 
