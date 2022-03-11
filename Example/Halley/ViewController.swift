@@ -18,8 +18,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        templateManager.setupTemplates()
-//        exampleSingleResource()
+//        templateManager.setupTemplates()
+        exampleSingleResource()
 //        exampleResourceCollection()
         exampleWithTemplatedLink()
 
@@ -60,8 +60,8 @@ class ViewController: UIViewController {
     }
 
     func exampleWithTemplatedLink() {
-        var parameters: [String: [String: String]] = [
-            "[recipes].categories": ["status": "TEST"]
+        var parameters: [String: [URLQueryItem]] = [
+            "[recipes].categories": [URLQueryItem(name: "status", value: "TEST")]
         ]
         hal
             .resource(
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
             .store(in: &bag)
 
         parameters = [
-            "[steps].[translations]": ["status": "TESTS"]
+            "[steps].[translations]": [URLQueryItem(name: "status", value: "TEST")]
         ]
         hal
             .resource(

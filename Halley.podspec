@@ -7,18 +7,25 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Filip Gulan/Halley'
+  s.homepage         = 'https://github.com/Infinum/Halley'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Filip Gulan' => 'gulan.filip@gmail.com' }
+  s.author           = { 'Infinum' => 'ios@infinum.hr', 'Filip Gulan' => 'filip.gulan@infinum.com', 'Zoran Turk' => 'zoran.turk@infinum.com' }
   s.source           = { :git => 'https://github.com/Filip Gulan/Halley.git', :tag => s.version.to_s }
 
   s.platform = :ios
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.0'
+  s.default_subspec = 'Core'
 
-  s.source_files = 'Halley/Classes/**/*'
+    s.subspec 'Core' do |sp|
+      sp.source_files = 'Halley/Classes/Core/**/*'
+      sp.frameworks = 'Foundation', 'Combine'
+      sp.dependency 'CombineExt'
+    end
 
-  s.frameworks = 'Foundation', 'Combine'
-  s.dependency 'URITemplate'
-  s.dependency 'CombineExt'
+    s.subspec 'URITemplate' do |sp|
+      sp.source_files = 'Halley/Classes/URITemplate/**/*'
+      sp.dependency 'Halley/Core'
+      sp.dependency 'URITemplate'
+    end
 end
