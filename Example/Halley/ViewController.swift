@@ -18,9 +18,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        templateManager.setupTemplates()
+//        templateManager.setupTemplates()
         exampleSingleResource()
-        exampleResourceCollection()
+//        exampleResourceCollection()
         exampleWithTemplatedLink()
 
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
@@ -60,11 +60,32 @@ class ViewController: UIViewController {
     }
 
     func exampleWithTemplatedLink() {
+        var parameters: [String: [URLQueryItem]] = [
+            "[recipes].categories": [URLQueryItem(name: "status", value: "TEST")]
+        ]
         hal
             .resource(
                 from: URL(string: "https://dev.backend.ka.philips.com/api/Article/21666e8f-c9cb-4fad-9490-91a35fcb7106")!,
-                includes: ["[recipes]"],
-                linkResolver: TemplateLinkResolver()
+                includes: ["[recipes].categories"],
+                linkResolver: TemplateLinkResolver(parameters: parameters)
+            )
+            .map { try! $0.get() }
+            .sink { result in
+                let data = try! JSONSerialization.data(withJSONObject: result, options: .prettyPrinted)
+                let string = String(data: data, encoding: .utf8)!
+                print(string)
+            }
+            .store(in: &bag)
+
+        parameters = [
+            "[steps].[translations]": [URLQueryItem(name: "status", value: "TEST")]
+        ]
+        hal
+            .resource(
+                from: URL(string: "https://dev.backend.ka.philips.com/api/Article/21666e8f-c9cb-4fad-9490-91a35fcb7106")!, // multi step
+                //                from: URL(string: "https://dev.backend.ka.philips.com/api/Article/017345cd-cbb7-47d2-90f5-6e70b25daa83")!, // single step
+                includes: ["[steps].[translations]", "[steps].image.collection"], //,// "steps.image.collection"]
+                linkResolver: TemplateLinkResolver(parameters: parameters)
             )
             .map { try! $0.get() }
             .sink { result in

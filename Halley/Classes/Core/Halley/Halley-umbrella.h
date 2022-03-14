@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "Halley-umbrella.h"
 
 FOUNDATION_EXPORT double HalleyVersionNumber;
 FOUNDATION_EXPORT const unsigned char HalleyVersionString[];

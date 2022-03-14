@@ -21,7 +21,8 @@ pod 'Halley'
 
 ## Author
 
-Filip Gulan, gulan.filip@gmail.com
+Filip Gulan, filip.gulan@infinum.com
+Zoran Turk, zoran.turk@infinum.com
 
 ## License
 

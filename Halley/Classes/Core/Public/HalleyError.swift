@@ -22,5 +22,7 @@ public extension HalleyKit {
         case unableToConvertDataToJson(data: Any)
         /// Thrown when it is not possible to resolve URL for given link
         case cantResolveURLFromLink(link: Link)
+        /// Thrown when it is not possible to resolve URL for given string
+        case cantResolveURLFromString(string: String?)
     }
 }
