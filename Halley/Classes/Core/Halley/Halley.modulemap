@@ -1,0 +1,6 @@
+framework module Halley {
+  umbrella header "Halley-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -23,6 +23,41 @@ extension Traverser {
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver
     ) -> AnyPublisher<JSONResult, Never> {
+        let rootIncludes = rootIncludes(from: includes)
+        return resource(
+            from: url,
+            includes: Includes(values: rootIncludes, relationshipPath: nil),
+            options: options,
+            linkResolver: linkResolver
+        )
+    }
+
+    func resourceCollection(
+        from url: URL,
+        includes: [String] = [],
+        options: HalleyKit.Options = .default,
+        linkResolver: LinkResolver
+    ) -> AnyPublisher<JSONResult, Never> {
+        let rootIncludes = rootIncludes(from: includes)
+        return resourceCollection(
+            from: url,
+            includes: Includes(values: rootIncludes, relationshipPath: nil),
+            options: options,
+            linkResolver: linkResolver
+        )
+    }
+}
+
+// MARK: - To one resource
+
+private extension Traverser {
+
+    func resource(
+        from url: URL,
+        includes: Includes,
+        options: HalleyKit.Options = .default,
+        linkResolver: LinkResolver
+    ) -> AnyPublisher<JSONResult, Never> {
         return requesterQueue
             .jsonResponse(at: url, requester: requester)
             .subscribe(on: serializationQueue)
@@ -42,7 +77,7 @@ extension Traverser {
 
     func resourceCollection(
         from url: URL,
-        includes: [String] = [],
+        includes: Includes,
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver
     ) -> AnyPublisher<JSONResult, Never> {
@@ -62,15 +97,11 @@ extension Traverser {
             }
             .eraseToAnyPublisher()
     }
-}
 
-// MARK: - To one resource
-
-private extension Traverser {
 
     func fetchSingleResourceLinkedResources(
         for resource: ResourceContainer,
-        includes: [String],
+        includes: Includes,
         options: HalleyKit.Options,
         linkResolver: LinkResolver
     ) throws -> AnyPublisher<JSONResult, Never> {
@@ -83,7 +114,7 @@ private extension Traverser {
             }
 
             // Makes request to the included link
-            let url = try linkResolver.resolveLink(link.link)
+            let url = try linkResolver.resolveLink(link.link, relationshipPath: link.includes.relationshipPath)
             switch link.linkType {
             case .toOne:
                 return self.resource(from: url, includes: link.includes, linkResolver: linkResolver)
@@ -130,43 +161,6 @@ private extension Traverser {
             .map { LinkResponse(relationship: linkElement.relationship, result: $0) }
             .eraseToAnyPublisher()
     }
-
-    // Marks resource relationships that are already present in resource (_embedded) and covers the
-    // case where includes and _links don't match
-    func singleResourceLinksToFetch(
-        for resource: ResourceContainer,
-        includes: [String],
-        options: HalleyKit.Options
-    ) -> [LinkIncludesElement] {
-        guard
-            let _links = resource._links?.relationships,
-            _links.isEmpty == false, includes.isEmpty == false
-        else { return [] }
-
-        let rootIncludes = rootIncludes(from: includes)
-        // Fetch rels available only in both includes and links
-        let relevantRels: [Include] = rootIncludes.filter({ _links.keys.contains($0.key) })
-        var embeddedRels: Set<String> = []
-        if options.preferEmbeddedOverLinkTraversing {
-            embeddedRels = Set(relevantRels.filter { resource.hasEmbeddedRelationship($0.key) == true }.map(\.key))
-        }
-
-        // Since we are parsing single resource, and it is checked before, only one link will be here
-        // as per specification
-        return zip(relevantRels, relevantRels.map { _links[$0.key]?.first })
-            .compactMap { rel, link in
-                link.flatMap {
-                    LinkIncludesElement(
-                        relationship: rel.key,
-                        link: $0,
-                        includes: rel.value ?? [],
-                        linkType: rel.type,
-                        isEmbedded: embeddedRels.contains(rel.key)
-                    )
-                }
-            }
-    }
-
 }
 
 // MARK: - To many resource
@@ -175,7 +169,7 @@ private extension Traverser {
 
     func parseCollectionLinkedResources(
         for resource: ResourceContainer,
-        includes: [String],
+        includes: Includes,
         options: HalleyKit.Options,
         linkResolver: LinkResolver
     ) throws -> AnyPublisher<JSONResult, Never> {
@@ -204,7 +198,7 @@ private extension Traverser {
 
     func fetchLinksForEmbeddedResources(
         embeddedResources: [ResourceContainer],
-        includes: [String],
+        includes: Includes,
         options: HalleyKit.Options,
         linkResolver: LinkResolver
     ) throws -> AnyPublisher<JSONResult, Never> {
@@ -219,12 +213,13 @@ private extension Traverser {
 
     func fetchCollectionResources(
         at links: [Link],
-        includes: [String],
+        includes: Includes,
         options: HalleyKit.Options,
         linkResolver: LinkResolver
     ) throws -> AnyPublisher<JSONResult, Never> {
+        let parent = includes.relationshipPath
         let requests: [AnyPublisher<JSONResult, Never>] = try links
-            .map { resource(from: try linkResolver.resolveLink($0), includes: includes, linkResolver: linkResolver) }
+            .map { resource(from: try linkResolver.resolveLink($0, relationshipPath: parent), includes: includes, linkResolver: linkResolver) }
             .map { $0.eraseToAnyPublisher() }
 
         guard requests.isEmpty == false else {
@@ -241,8 +236,6 @@ private extension Traverser {
 
 private extension Traverser {
 
-    // Returns first level of includes, for example ["author.car.media", "media"] will
-    // return ["author", "media"]
     func rootIncludes(from includes: [String]) -> [Include] {
         return includes
             .reduce(into: [String: [String]]()) { results, include in
@@ -257,68 +250,41 @@ private extension Traverser {
             }
             .map({ Include(key: $0.key, values: $0.value) })
     }
-}
 
-// MARK: - Helpers
+    // Marks resource relationships that are already present in resource (_embedded) and covers the
+    // case where includes and _links don't match
+    func singleResourceLinksToFetch(
+        for resource: ResourceContainer,
+        includes: Includes,
+        options: HalleyKit.Options
+    ) -> [LinkIncludesElement] {
+        guard
+            let _links = resource._links?.relationships,
+            _links.isEmpty == false, includes.values.isEmpty == false
+        else { return [] }
 
-enum ToManyCollectionType {
-    case embedded(resources: [Parameters])
-    case linked(links: [Link])
-}
+        let includeValues = includes.values
+        // Fetch rels available only in both includes and links
+        let relevantRels: [Include] = includeValues.filter({ _links.keys.contains($0.key) })
+        var embeddedRels: Set<String> = []
+        if options.preferEmbeddedOverLinkTraversing {
+            embeddedRels = Set(relevantRels.filter { resource.hasEmbeddedRelationship($0.key) == true }.map(\.key))
+        }
 
-/// Model for handling includes
-/// To specify if a include is `toMany`, the key must be inside `[]` (eg. `[images]`)
-struct Include {
-    let type: LinkType
-    let value: [String]?
-    let key: String
-
-    init(key: String, values: [String]?) {
-        let isArray = key.hasPrefix("[") && key.hasSuffix("]")
-        type = isArray ? .toMany : .toOne
-        value = values
-        self.key = key.trimmingCharacters(in: .init(charactersIn: "[]"))
-    }
-}
-
-enum LinkType {
-    case toOne
-    case toMany
-}
-
-struct LinkResponse {
-    let relationship: String
-    let result: JSONResult
-
-    var response: Any? {
-        try? result.get()
-    }
-}
-
-struct LinkIncludesElement {
-    let relationship: String
-    let link: Link
-    let includes: [String]
-    let linkType: LinkType
-    let isEmbedded: Bool
-}
-
-class ResourceContainer {
-
-    let parameters: Parameters
-    let _links: Links?
-    let _embedded: [String: Parameters]?
-
-    init(_ parameters: Parameters) {
-        var _parameters = parameters
-        _links = try? parameters.decode(Links.self, at: HalleyConsts.links)
-        _embedded = parameters[HalleyConsts.embedded] as? [String: Parameters]
-        // Adds embedded resources to the result dictionary
-        _embedded?.forEach({ _parameters[$0.key] = $0.value })
-        self.parameters = _parameters
-    }
-
-    func hasEmbeddedRelationship(_ relationship: String) -> Bool {
-        return _embedded?[relationship] != nil
+        // Since we are parsing single resource, and it is checked before, only one link will be here
+        // as per specification
+        return zip(relevantRels, relevantRels.map { _links[$0.key]?.first })
+            .compactMap { rel, link in
+                guard let link = link else { return nil }
+                let relIncludes = rootIncludes(from: rel.value ?? [])
+                let relationshipPath = includes.path(for: rel.rawKey)
+                return LinkIncludesElement(
+                    relationship: rel.key,
+                    link: link,
+                    includes: Includes(values: relIncludes, relationshipPath: relationshipPath),
+                    linkType: rel.type,
+                    isEmbedded: embeddedRels.contains(rel.key)
+                )
+            }
     }
 }
