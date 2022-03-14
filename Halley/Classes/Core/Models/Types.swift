@@ -26,7 +26,7 @@ class ResourceContainer {
 
 struct Includes {
     let values: [Include]
-    /// Path of the relationship for given includes. This is `nil` for the initial include list/
+    /// Path of the relationship for given includes. This is `nil` for the initial include list
     let relationshipPath: String?
 
     func path(for relationship: String) -> String {
