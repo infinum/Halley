@@ -175,10 +175,9 @@ private extension Traverser {
     ) throws -> AnyPublisher<JSONResult, Never> {
 
         let embeddedResources = resource
-            .parameters[HalleyConsts.embedded]
-            .flatMap { $0 as? Parameters }
-            .flatMap { $0[options.arrayKey] as? [Parameters] }
-            .flatMap({ $0.map(ResourceContainer.init) })
+            .parameters[options.arrayKey]
+            .flatMap { $0 as? [Parameters] }
+            .flatMap { $0.map(ResourceContainer.init) }
 
         if let embeddedResources = embeddedResources {
             return try fetchLinksForEmbeddedResources(embeddedResources: embeddedResources, includes: includes, options: options, linkResolver: linkResolver)
