@@ -8,4 +8,9 @@ public struct Link: Codable {
         case href
         case templated
     }
+
+    public init(href: String, templated: Bool?) {
+        self.href = href
+        self.templated = templated
+    }
 }
