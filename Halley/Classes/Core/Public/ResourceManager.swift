@@ -38,4 +38,16 @@ public extension ResourceManager {
             .map(\.asArrayOfDictionaries)
             .eraseToAnyPublisher()
     }
+
+    func resourceCollectionWithMetadata(
+        from url: URL,
+        includes: [String] = [],
+        options: HalleyKit.Options = .default,
+        linkResolver: LinkResolver = URLLinkResolver()
+    ) -> AnyPublisher<Result<Parameters, Error>, Never> {
+        return traverser
+            .resourceCollectionWithMetadata(from: url, includes: includes, linkResolver: linkResolver)
+            .map(\.asDictionary)
+            .eraseToAnyPublisher()
+    }
 }

@@ -46,6 +46,21 @@ extension Traverser {
             linkResolver: linkResolver
         )
     }
+
+    func resourceCollectionWithMetadata(
+        from url: URL,
+        includes: [String] = [],
+        options: HalleyKit.Options = .default,
+        linkResolver: LinkResolver
+    ) -> AnyPublisher<JSONResult, Never> {
+        let rootIncludes = rootIncludes(from: includes)
+        return resourceCollectionWithMetadata(
+            from: url,
+            includes: Includes(values: rootIncludes, relationshipPath: nil),
+            options: options,
+            linkResolver: linkResolver
+        )
+    }
 }
 
 // MARK: - To one resource
@@ -74,30 +89,6 @@ private extension Traverser {
             }
             .eraseToAnyPublisher()
     }
-
-    func resourceCollection(
-        from url: URL,
-        includes: Includes,
-        options: HalleyKit.Options = .default,
-        linkResolver: LinkResolver
-    ) -> AnyPublisher<JSONResult, Never> {
-        return requesterQueue
-            .jsonResponse(at: url, requester: requester)
-            .subscribe(on: serializationQueue)
-            .receive(on: serializationQueue)
-            .flatMap { [weak self] result -> AnyPublisher<JSONResult, Never> in
-                guard let self = self else { return .failure(HalleyKit.Error.deinited) }
-                do {
-                    let response = try result.asDictionary.get()
-                    let container = ResourceContainer(response)
-                    return try self.parseCollectionLinkedResources(for: container, includes: includes, options: options, linkResolver: linkResolver)
-                } catch let error {
-                    return .failure(error)
-                }
-            }
-            .eraseToAnyPublisher()
-    }
-
 
     func fetchSingleResourceLinkedResources(
         for resource: ResourceContainer,
@@ -167,6 +158,29 @@ private extension Traverser {
 
 private extension Traverser {
 
+    func resourceCollection(
+        from url: URL,
+        includes: Includes,
+        options: HalleyKit.Options = .default,
+        linkResolver: LinkResolver
+    ) -> AnyPublisher<JSONResult, Never> {
+        return requesterQueue
+            .jsonResponse(at: url, requester: requester)
+            .subscribe(on: serializationQueue)
+            .receive(on: serializationQueue)
+            .flatMap { [weak self] result -> AnyPublisher<JSONResult, Never> in
+                guard let self = self else { return .failure(HalleyKit.Error.deinited) }
+                do {
+                    let response = try result.asDictionary.get()
+                    let container = ResourceContainer(response)
+                    return try self.parseCollectionLinkedResources(for: container, includes: includes, options: options, linkResolver: linkResolver)
+                } catch let error {
+                    return .failure(error)
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+
     func parseCollectionLinkedResources(
         for resource: ResourceContainer,
         includes: Includes,
@@ -227,6 +241,49 @@ private extension Traverser {
         return requests
             .zip()
             .map { $0.collect() }
+            .eraseToAnyPublisher()
+    }
+}
+
+// MARK: - To many resource w/ metadata
+
+
+private extension Traverser {
+
+    func resourceCollectionWithMetadata(
+        from url: URL,
+        includes: Includes,
+        options: HalleyKit.Options = .default,
+        linkResolver: LinkResolver
+    ) -> AnyPublisher<JSONResult, Never> {
+        return requesterQueue
+            .jsonResponse(at: url, requester: requester)
+            .subscribe(on: serializationQueue)
+            .receive(on: serializationQueue)
+            .flatMap { [weak self] result -> AnyPublisher<JSONResult, Never> in
+                guard let self = self else { return .failure(HalleyKit.Error.deinited) }
+                do {
+                    let response = try result.asDictionary.get()
+                    let container = ResourceContainer(response)
+                    return try self
+                        .parseCollectionLinkedResources(
+                            for: container,
+                            includes: includes,
+                            options: options,
+                            linkResolver: linkResolver
+                        )
+                        .map { (result: JSONResult) -> JSONResult in
+                            return result.asArrayOfDictionaries.map { items in
+                                var newParameters = container.parameters
+                                newParameters[options.arrayKey] = items
+                                return newParameters as Any
+                            }
+                        }
+                        .eraseToAnyPublisher()
+                } catch let error {
+                    return .failure(error)
+                }
+            }
             .eraseToAnyPublisher()
     }
 }
