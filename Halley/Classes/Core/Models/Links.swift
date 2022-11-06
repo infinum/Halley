@@ -24,8 +24,19 @@ public struct Links: Codable {
             }
     }
 
-    init(relationships: EmbeddedLinks) {
+    public init(relationships: EmbeddedLinks) {
         self.relationships = relationships
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CustomCodingKeys.self)
+        try relationships.forEach { (key, links) in
+            if links.count == 1, let link = links.first {
+                try container.encode(link, forKey: .init(stringValue: key))
+            } else if !links.isEmpty {
+                try container.encode(links, forKey: .init(stringValue: key))
+            }
+        }
     }
 
     // MARK: - Helper
@@ -34,7 +45,7 @@ public struct Links: Codable {
         let stringValue: String
         let intValue: Int?
 
-        init?(stringValue: String) {
+        init(stringValue: String) {
             self.stringValue = stringValue
             self.intValue = nil
         }
