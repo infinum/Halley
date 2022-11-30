@@ -140,17 +140,25 @@ private extension Traverser {
         options: HalleyKit.Options,
         linkResolver: LinkResolver
     ) throws -> AnyPublisher<LinkResponse, Never> {
-        let embeddedResource = resource.parameters[linkElement.relationship]
-            .flatMap({ $0 as? Parameters })
+        let embeddedResource = resource
+            .parameters[linkElement.relationship]
+            .flatMap { $0 as? Parameters }
             .flatMap(ResourceContainer.init)
 
         guard let _embeddedResource = embeddedResource else {
             throw HalleyKit.Error.relationshipNotFound(data: resource)
         }
 
-        return try fetchSingleResourceLinkedResources(for: _embeddedResource, includes: linkElement.includes, options: options, linkResolver: linkResolver)
-            .map { LinkResponse(relationship: linkElement.relationship, result: $0) }
-            .eraseToAnyPublisher()
+        switch linkElement.linkType {
+        case .toOne:
+            return try fetchSingleResourceLinkedResources(for: _embeddedResource, includes: linkElement.includes, options: options, linkResolver: linkResolver)
+                .map { LinkResponse(relationship: linkElement.relationship, result: $0) }
+                .eraseToAnyPublisher()
+        case .toMany:
+            return try parseCollectionLinkedResources(for: _embeddedResource, includes: linkElement.includes, options: options, linkResolver: linkResolver)
+                .map { LinkResponse(relationship: linkElement.relationship, result: $0) }
+                .eraseToAnyPublisher()
+        }
     }
 }
 
@@ -344,3 +352,4 @@ private extension Traverser {
             }
     }
 }
+
