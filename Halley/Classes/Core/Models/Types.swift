@@ -1,10 +1,5 @@
 import Foundation
 
-enum ToManyCollectionType {
-    case embedded(resources: [Parameters])
-    case linked(links: [Link])
-}
-
 class ResourceContainer {
     let parameters: Parameters
     let _links: Links?
