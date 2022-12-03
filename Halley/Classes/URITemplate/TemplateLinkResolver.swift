@@ -1,12 +1,4 @@
-//
-//  TemplateLinkResolver.swift
-//  Halley_Example
-//
-//  Created by Zoran Turk on 25.02.2022..
-//  Copyright © 2022 CocoaPods. All rights reserved.
-//
-
-import UIKit
+import Foundation
 import URITemplate
 
 public protocol TemplateHandler {
@@ -38,37 +30,6 @@ public class TemplateLinkResolver: LinkResolver {
             urlComponent.queryItems = (urlComponent.queryItems ?? []) + parameters
         }
         return try urlComponent.asURL()
-    }
-}
-
-public class DefaultTemplateHandler: TemplateHandler {
-
-    public static let shared = DefaultTemplateHandler()
-
-    private var templateValues: [String: () -> String?] = [:]
-
-    private init() { /* Singleton pattern */ }
-
-    public func resolveTemplate(for link: Link) -> String {
-        guard link.templated == true else { return link.href }
-
-        var expandValues = [String: String]()
-        for item in templateValues {
-            if let value = item.value() {
-                expandValues.updateValue(value, forKey: item.key)
-            }
-        }
-
-        let template = URITemplate(template: link.href)
-        return template.expand(expandValues)
-    }
-
-    public func updateTamplate(for key: String, value: @escaping () -> String?) {
-        templateValues.updateValue(value, forKey: key)
-    }
-
-    public func removeTemplate(for key: String) {
-        templateValues.removeValue(forKey: key)
     }
 }
 

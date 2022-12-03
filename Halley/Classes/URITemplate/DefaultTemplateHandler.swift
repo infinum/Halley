@@ -1,0 +1,38 @@
+import Foundation
+import URITemplate
+
+public class DefaultTemplateHandler: TemplateHandler {
+
+    // MARK: - Singleton
+
+    public static let shared = DefaultTemplateHandler()
+
+    // MARK: - Properties
+
+    public private(set) var templateValues: [String: () -> String?] = [:]
+    public var expandedValues: [String: String] {
+        templateValues.compactMapValues { $0() }
+    }
+
+    private init() {
+        // Singleton pattern
+    }
+
+    // MARK: - TemplateHandler
+
+    public func resolveTemplate(for link: Link) -> String {
+        guard link.templated == true else { return link.href }
+        let template = URITemplate(template: link.href)
+        return template.expand(expandedValues)
+    }
+
+    // MARK: - Interface
+
+    public func updateTamplate(for key: String, value: @escaping () -> String?) {
+        templateValues.updateValue(value, forKey: key)
+    }
+
+    public func removeTemplate(for key: String) {
+        templateValues.removeValue(forKey: key)
+    }
+}
