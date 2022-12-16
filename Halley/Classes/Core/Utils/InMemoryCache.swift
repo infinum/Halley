@@ -1,7 +1,5 @@
 import Foundation
 
-typealias JSONCache = Cache<URL, Any>
-
 final class Cache<Key: Hashable, Value> {
 
     private let wrapped = NSCache<WrappedKey, Entry>()

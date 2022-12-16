@@ -47,20 +47,14 @@ class RequesterQueue {
         requester: RequesterInterface,
         cache: JSONCache?
     ) -> AnyPublisher<JSONResponse, Never> {
-        if let json = cache?[url] {
-            let response = JSONResponse.success(json)
-            return Just(response).eraseToAnyPublisher()
+        if let chain = cache?[url] {
+            return chain
         }
         let response = response(at: url, requester: requester)
             .map { $0.tryMap { try JSONSerialization.jsonObject(with: $0, options: .fragmentsAllowed) } }
+            .share(replay: 1) // Replay last value when subscribed on cache event
             .eraseToAnyPublisher()
-        if let cache = cache {
-            // Cache is thread-safe by design so no need for any kind of locks/queues
-            return response
-                .handleEvents(receiveOutput: { cache[url] = try? $0.get() })
-                .eraseToAnyPublisher()
-        } else {
-            return response
-        }
+        cache?[url] = response
+        return response
     }
 }
