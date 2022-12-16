@@ -38,16 +38,29 @@ class RequesterQueue {
                 subscriber.send(completion: .finished)
             }
             lock.safe { queue.addOperation(operation) }
-
-            return AnyCancellable {
-                operation.cancel()
-            }
+            return AnyCancellable { operation.cancel() }
         }
     }
 
-    func jsonResponse(at url: URL, requester: RequesterInterface) -> AnyPublisher<JSONResponse, Never> {
-        return response(at: url, requester: requester)
+    func jsonResponse(
+        at url: URL,
+        requester: RequesterInterface,
+        cache: JSONCache?
+    ) -> AnyPublisher<JSONResponse, Never> {
+        if let json = cache?[url] {
+            let response = JSONResponse.success(json)
+            return Just(response).eraseToAnyPublisher()
+        }
+        let response = response(at: url, requester: requester)
             .map { $0.tryMap { try JSONSerialization.jsonObject(with: $0, options: .fragmentsAllowed) } }
             .eraseToAnyPublisher()
+        if let cache = cache {
+            // Cache is thread-safe by design so no need for any kind of locks/queues
+            return response
+                .handleEvents(receiveOutput: { cache[url] = try? $0.get() })
+                .eraseToAnyPublisher()
+        } else {
+            return response
+        }
     }
 }

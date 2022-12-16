@@ -22,7 +22,13 @@ public extension ResourceManager {
         linkResolver: LinkResolver = URLLinkResolver()
     ) -> AnyPublisher<Result<Parameters, Error>, Never> {
         return traverser
-            .resource(from: url, includes: includes, linkResolver: linkResolver)
+            .resource(
+                from: url,
+                includes: includes,
+                options: options,
+                cache: options.responseFromCache ? .init() : nil,
+                linkResolver: linkResolver
+            )
             .map(\.asDictionary)
             .eraseToAnyPublisher()
     }
@@ -34,7 +40,13 @@ public extension ResourceManager {
         linkResolver: LinkResolver = URLLinkResolver()
     ) -> AnyPublisher<Result<[Parameters], Error>, Never> {
         return traverser
-            .resourceCollection(from: url, includes: includes, linkResolver: linkResolver)
+            .resourceCollection(
+                from: url,
+                includes: includes,
+                options: options,
+                cache: options.responseFromCache ? .init() : nil,
+                linkResolver: linkResolver
+            )
             .map(\.asArrayOfDictionaries)
             .eraseToAnyPublisher()
     }
@@ -46,7 +58,13 @@ public extension ResourceManager {
         linkResolver: LinkResolver = URLLinkResolver()
     ) -> AnyPublisher<Result<Parameters, Error>, Never> {
         return traverser
-            .resourceCollectionWithMetadata(from: url, includes: includes, linkResolver: linkResolver)
+            .resourceCollectionWithMetadata(
+                from: url,
+                includes: includes,
+                options: options,
+                cache: options.responseFromCache ? .init() : nil,
+                linkResolver: linkResolver
+            )
             .map(\.asDictionary)
             .eraseToAnyPublisher()
     }
