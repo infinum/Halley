@@ -17,6 +17,10 @@ final class Cache<Key: Hashable, Value> {
     func removeValue(forKey key: Key) {
         wrapped.removeObject(forKey: WrappedKey(key))
     }
+
+    func clear() {
+        wrapped.removeAllObjects()
+    }
 }
 
 extension Cache {

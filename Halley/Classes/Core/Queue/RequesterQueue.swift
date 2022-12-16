@@ -2,7 +2,10 @@ import Foundation
 import Combine
 import CombineExt
 
+typealias JSONCache = Cache<URL, AnyPublisher<JSONResponse, Never>>
+
 // Shared Queue for all network request
+
 class RequesterQueue {
 
     // MARK: - Singleton
