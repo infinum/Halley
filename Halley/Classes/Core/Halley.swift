@@ -15,6 +15,9 @@ public extension HalleyKit {
         /// If `false` Halley will ignore embedded response and fetch the resource from available link (if added as included parameter)
         public var preferEmbeddedOverLinkTraversing = true
 
+        /// In case if a same link will be fetched during single traversal - it will reuse the same response
+        public var responseFromCache = true
+
         /// Keyword used for embedding collections or links to collection elements
         public var arrayKey = "item"
 
