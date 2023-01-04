@@ -20,10 +20,8 @@ public class DefaultTemplateHandler: TemplateHandler {
 
     // MARK: - TemplateHandler
 
-    public func resolveTemplate(for link: Link) -> String {
-        guard link.templated == true else { return link.href }
-        let template = URITemplate(template: link.href)
-        return template.expand(expandedValues)
+    public func resolveTemplate(for link: Link) throws -> URL {
+        return try link.asUrl(with: expandedValues)
     }
 
     // MARK: - Interface

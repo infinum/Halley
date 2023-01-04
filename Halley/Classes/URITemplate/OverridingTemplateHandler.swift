@@ -10,12 +10,10 @@ public class OverridingTemplateHandler: TemplateHandler {
         self.queryItems = Dictionary(grouping: queryItems) { $0.name }.compactMapValues(\.first)
     }
 
-    public func resolveTemplate(for link: Link) -> String {
-        guard link.templated == true else { return link.href }
+    public func resolveTemplate(for link: Link) throws -> URL {
         let defaultValues = `default`.expandedValues
         let overrideValues = queryItems.compactMapValues(\.value)
         let newValues = defaultValues.merging(overrideValues) { (_, new) in new }
-        let template = URITemplate(template: link.href)
-        return template.expand(newValues)
+        return try link.asUrl(with: newValues)
     }
 }

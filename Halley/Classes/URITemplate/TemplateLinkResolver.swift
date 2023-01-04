@@ -2,7 +2,7 @@ import Foundation
 import URITemplate
 
 public protocol TemplateHandler {
-    func resolveTemplate(for link: Link) -> String
+    func resolveTemplate(for link: Link) throws -> URL
 }
 
 public class TemplateLinkResolver: LinkResolver {
@@ -18,9 +18,10 @@ public class TemplateLinkResolver: LinkResolver {
     }
 
     public func resolveLink(_ link: Link, relationshipPath: String?) throws -> URL {
-        let resolvedString = templateHandler.resolveTemplate(for: link)
-
-        var urlComponent = try URLComponents(string: resolvedString) ?? throwError(HalleyKit.Error.cantResolveURLFromLink(link: link))
+        var urlComponent = try URLComponents(
+            url: try templateHandler.resolveTemplate(for: link),
+            resolvingAgainstBaseURL: false
+        ) ?? throwError(HalleyKit.Error.cantResolveURLFromLink(link: link))
         guard let parent = relationshipPath else { return try urlComponent.asURL() }
         let parameters = includeParameters[parent] ?? []
         // Avoid setting query items if there are no parameters to set

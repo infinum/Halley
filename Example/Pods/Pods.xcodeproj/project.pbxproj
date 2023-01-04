@@ -11,6 +11,7 @@
 		045DE6EBF9B2F63F60F5BE60C1198E06 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC720C885175FA3CC5A2FF025DC1BA3 /* RedirectHandler.swift */; };
 		04A896288CE3A59B530250337A5F8362 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83801715D153EDAADE812354EC22DFCD /* Result+Alamofire.swift */; };
 		0A054C3A294C8B4F0059A80D /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A054C39294C8B4F0059A80D /* InMemoryCache.swift */; };
+		0A51AC6F296597710076C716 /* Link+URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51AC6E296597710076C716 /* Link+URITemplate.swift */; };
 		0F4037DBF307AC8058BD0A3D35C7E7E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4384B97D260568603E21BCD9F1C45372 /* Foundation.framework */; };
 		112901D52E064FB030581178AE06514C /* RequesterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79F98A6F90897C886D07A896BCD3AAF /* RequesterInterface.swift */; };
 		125EF429AD0DDB734CF0C324EAB4CACE /* AssignToMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ADAFC3898CEB990CD0BBA7C9CE66390 /* AssignToMany.swift */; };
@@ -183,6 +184,7 @@
 		077CFF49E1BF73B8E7BA1459BE105D64 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
 		08F4F66C2A8F36D503AE932323B5E018 /* Halley.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Halley.swift; path = Halley/Classes/Core/Halley.swift; sourceTree = "<group>"; };
 		0A054C39294C8B4F0059A80D /* InMemoryCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
+		0A51AC6E296597710076C716 /* Link+URITemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Link+URITemplate.swift"; path = "Halley/Classes/URITemplate/Link+URITemplate.swift"; sourceTree = "<group>"; };
 		0AA026C69D8135D0FC83011150464C1A /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		0ADAFC3898CEB990CD0BBA7C9CE66390 /* AssignToMany.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssignToMany.swift; path = Sources/Operators/AssignToMany.swift; sourceTree = "<group>"; };
 		12154D75166F90F1A92489C9E2222E2C /* URITemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = URITemplate.release.xcconfig; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 		D724F1CE31C7F165F0066A63B54521C7 /* URITemplate */ = {
 			isa = PBXGroup;
 			children = (
+				0A51AC6E296597710076C716 /* Link+URITemplate.swift */,
 				5E0BC6D5C5D636ACE1E5E7ECA5BF7DB0 /* DefaultTemplateHandler.swift */,
 				AA8EEB08563C59B81980C30EF47AE9F2 /* OverridingTemplateHandler.swift */,
 				9D444495D647988AC2F9574A7B9418BF /* TemplateLinkResolver.swift */,
@@ -1056,6 +1059,7 @@
 				6F3CC84D25D05D1AED8C7C955E875516 /* Dictionary+Decoding.swift in Sources */,
 				7040761F085C6F81DE0A14BEF7F12928 /* Error+Halley.swift in Sources */,
 				59592D9D6DED81A63F2E66A073DF01FE /* Halley.swift in Sources */,
+				0A51AC6F296597710076C716 /* Link+URITemplate.swift in Sources */,
 				E1DB55FB514465B75D69F170D49B4594 /* Halley-dummy.m in Sources */,
 				6F93FEF15F08DAFB31D4EE434A8F411A /* HalleyError.swift in Sources */,
 				A1BB4235A527E594F17772EEC336C543 /* Link.swift in Sources */,
