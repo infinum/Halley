@@ -21,7 +21,7 @@ public class DefaultTemplateHandler: TemplateHandler {
     // MARK: - TemplateHandler
 
     public func resolveTemplate(for link: Link) throws -> URL {
-        return try link.asUrl(with: expandedValues)
+        return try link.asURL(with: expandedValues)
     }
 
     // MARK: - Interface

@@ -5,6 +5,13 @@ import URITemplate
 
 public extension Link {
 
+    /// Expands current link, removing templates if present
+    /// - Parameter queryItems: query items, default empty array
+    /// - Returns: Expanded link
+    func expand() -> String {
+        return expand(with: [:])
+    }
+
     /// If link is templated it expands it with given query items, otherwise it just returns current href
     /// - Parameter queryItems: query items, default empty array
     /// - Returns: Expanded link
@@ -28,17 +35,24 @@ public extension Link {
 
 public extension Link {
 
+    /// Expands current link to URL, removing templates if present
+    /// - Parameter queryItems: query items, default empty array
+    /// - Returns: Expanded link URL
+    func asURL() throws -> URL {
+        return try expand().asURL()
+    }
+
     /// If link is templated it expands it with given query items, otherwise it just returns current href
     /// - Parameter queryItems: query items, default empty array
     /// - Returns: Expanded link URL
-    func asUrl(with queryItems: [URLQueryItem] = []) throws -> URL {
+    func asURL(with queryItems: [URLQueryItem] = []) throws -> URL {
         return try expand(with: queryItems).asURL()
     }
 
     /// If link is templated it expands it with given query items, otherwise it just returns current URL
     /// - Parameter variables: key-value variables, default is empty array
     /// - Returns: Expanded link URL
-    func asUrl(with variables: [String: Any] = [:]) throws -> URL {
+    func asURL(with variables: [String: Any] = [:]) throws -> URL {
         return try expand(with: variables).asURL()
     }
 }

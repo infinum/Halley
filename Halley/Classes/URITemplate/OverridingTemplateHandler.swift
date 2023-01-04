@@ -14,6 +14,6 @@ public class OverridingTemplateHandler: TemplateHandler {
         let defaultValues = `default`.expandedValues
         let overrideValues = queryItems.compactMapValues(\.value)
         let newValues = defaultValues.merging(overrideValues) { (_, new) in new }
-        return try link.asUrl(with: newValues)
+        return try link.asURL(with: newValues)
     }
 }

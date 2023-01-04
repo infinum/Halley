@@ -1,6 +1,6 @@
 {
   "name": "Halley",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "summary": "A short description of Halley.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Infinum/Halley",
@@ -14,8 +14,8 @@
     "Zoran Turk": "zoran.turk@infinum.com"
   },
   "source": {
-    "git": "https://github.com/Filip Gulan/Halley.git",
-    "tag": "1.0.0"
+    "git": "https://github.com/infinum/Halley.git",
+    "tag": "1.2.0"
   },
   "platforms": {
     "ios": "13.0"
@@ -37,10 +37,19 @@
       }
     },
     {
+      "name": "Codable",
+      "source_files": "Halley/Classes/Codable/**/*",
+      "dependencies": {
+        "Halley/Core": [
+
+        ]
+      }
+    },
+    {
       "name": "URITemplate",
       "source_files": "Halley/Classes/URITemplate/**/*",
       "dependencies": {
-        "Halley/Core": [
+        "Halley/Codable": [
 
         ],
         "URITemplate": [

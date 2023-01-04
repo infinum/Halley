@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Halley'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'A short description of Halley.'
 
   s.description      = <<-DESC
@@ -23,9 +23,14 @@ TODO: Add long description of the pod here.
       sp.dependency 'CombineExt'
     end
 
+    s.subspec 'Codable' do |sp|
+      sp.source_files = 'Halley/Classes/Codable/**/*'
+      sp.dependency 'Halley/Core'
+    end
+
     s.subspec 'URITemplate' do |sp|
       sp.source_files = 'Halley/Classes/URITemplate/**/*'
-      sp.dependency 'Halley/Core'
+      sp.dependency 'Halley/Codable'
       sp.dependency 'URITemplate'
     end
 end
