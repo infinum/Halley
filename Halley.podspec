@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
     end
 
     s.subspec 'Codable' do |sp|
-      sp.source_files = 'Halley/Classes/Codable/**/*'
+      sp.source_files = ['Halley/Classes/Codable/**/*']
       sp.dependency 'Halley/Core'
     end
 

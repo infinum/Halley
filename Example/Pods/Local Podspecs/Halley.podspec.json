@@ -38,7 +38,9 @@
     },
     {
       "name": "Codable",
-      "source_files": "Halley/Classes/Codable/**/*",
+      "source_files": [
+        "Halley/Classes/Codable/**/*"
+      ],
       "dependencies": {
         "Halley/Core": [
 
