@@ -7,7 +7,7 @@ public extension ResourceManager {
 
     func request<Item: Decodable>(
         _ type: Item.Type,
-        onURL urlConvertible: URLConvertible,
+        onURL urlConvertible: HalleyURLConvertible,
         includes: [String],
         linkResolver: LinkResolver,
         decodedWith decoder: JSONDecoder
@@ -24,7 +24,7 @@ public extension ResourceManager {
 
     func requestCollection<Item: Decodable>(
         _ type: Item.Type,
-        onURL urlConvertible: URLConvertible,
+        onURL urlConvertible: HalleyURLConvertible,
         includes: [String],
         linkResolver: LinkResolver,
         decodedWith decoder: JSONDecoder
@@ -41,7 +41,7 @@ public extension ResourceManager {
 
     func requestPage<Item: Decodable>(
         _ type: Item.Type,
-        onURL urlConvertible: URLConvertible,
+        onURL urlConvertible: HalleyURLConvertible,
         includes: [String],
         linkResolver: LinkResolver,
         decodedWith decoder: JSONDecoder
@@ -63,7 +63,7 @@ public extension ResourceManager {
 
     func request<Item: HalleyCodable & IncludeableType>(
         _ type: Item.Type,
-        onURL urlConvertible: URLConvertible,
+        onURL urlConvertible: HalleyURLConvertible,
         includeType: Item.IncludeType?,
         customTemplatedQueryItems queryItems: [URLQueryItem],
         decodedWith decoder: JSONDecoder
@@ -80,7 +80,7 @@ public extension ResourceManager {
 
     func requestCollection<Item: HalleyCodable & IncludeableType>(
         _ type: Item.Type,
-        onURL urlConvertible: URLConvertible,
+        onURL urlConvertible: HalleyURLConvertible,
         includeType: Item.IncludeType? = nil,
         customTemplatedQueryItems queryItems: [URLQueryItem] = [],
         decodedWith decoder: JSONDecoder
@@ -97,7 +97,7 @@ public extension ResourceManager {
 
     func requestPage<Item: HalleyCodable & IncludeableType>(
         _ type: Item.Type,
-        onURL urlConvertible: URLConvertible,
+        onURL urlConvertible: HalleyURLConvertible,
         includeType: Item.IncludeType?,
         customTemplatedQueryItems queryItems: [URLQueryItem],
         decodedWith decoder: JSONDecoder
