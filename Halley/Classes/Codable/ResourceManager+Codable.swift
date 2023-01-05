@@ -3,9 +3,9 @@ import Combine
 
 // MARK: - Codable
 
-public extension ResourceManager {
+extension ResourceManager: ResourceManagerCodableInterface {
 
-    func request<Item: Decodable>(
+    public func request<Item: Decodable>(
         _ type: Item.Type,
         onURL urlConvertible: HalleyURLConvertible,
         includes: [String],
@@ -22,7 +22,7 @@ public extension ResourceManager {
             .eraseToAnyPublisher()
     }
 
-    func requestCollection<Item: Decodable>(
+    public func requestCollection<Item: Decodable>(
         _ type: Item.Type,
         onURL urlConvertible: HalleyURLConvertible,
         includes: [String],
@@ -39,7 +39,7 @@ public extension ResourceManager {
             .eraseToAnyPublisher()
     }
 
-    func requestPage<Item: Decodable>(
+    public func requestPage<Item: Decodable>(
         _ type: Item.Type,
         onURL urlConvertible: HalleyURLConvertible,
         includes: [String],
@@ -59,15 +59,15 @@ public extension ResourceManager {
 
 // MARK: - HalleyCodable
 
-public extension ResourceManager {
+extension ResourceManager: ResourceManagerHalleyCodableInterface {
 
-    func request<Item: HalleyCodable & IncludeableType>(
+    public func request<Item: HalleyCodable & IncludeableType>(
         _ type: Item.Type,
         onURL urlConvertible: HalleyURLConvertible,
         includeType: Item.IncludeType?,
         customTemplatedQueryItems queryItems: [URLQueryItem],
         decodedWith decoder: JSONDecoder
-    ) -> some Publisher<Item, Error> {
+    ) -> AnyPublisher<Item, Error> {
         let includeFields = includeType?.prepareIncludes() ?? []
         return request(
             type,
@@ -78,13 +78,13 @@ public extension ResourceManager {
         )
     }
 
-    func requestCollection<Item: HalleyCodable & IncludeableType>(
+    public func requestCollection<Item: HalleyCodable & IncludeableType>(
         _ type: Item.Type,
         onURL urlConvertible: HalleyURLConvertible,
-        includeType: Item.IncludeType? = nil,
-        customTemplatedQueryItems queryItems: [URLQueryItem] = [],
+        includeType: Item.IncludeType?,
+        customTemplatedQueryItems queryItems: [URLQueryItem],
         decodedWith decoder: JSONDecoder
-    ) -> some Publisher<[Item], Error> {
+    ) -> AnyPublisher<[Item], Error> {
         let includeFields = includeType?.prepareIncludes() ?? []
         return requestCollection(
             type,
@@ -95,13 +95,13 @@ public extension ResourceManager {
         )
     }
 
-    func requestPage<Item: HalleyCodable & IncludeableType>(
+    public func requestPage<Item: HalleyCodable & IncludeableType>(
         _ type: Item.Type,
         onURL urlConvertible: HalleyURLConvertible,
         includeType: Item.IncludeType?,
         customTemplatedQueryItems queryItems: [URLQueryItem],
         decodedWith decoder: JSONDecoder
-    ) -> some Publisher<PaginationPage<Item>, Error> {
+    ) -> AnyPublisher<PaginationPage<Item>, Error> {
         let includeFields = includeType?.prepareIncludes() ?? []
         return requestPage(
             type,
