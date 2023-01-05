@@ -51,7 +51,7 @@ public protocol IncludeableType {
     associatedtype IncludeType: IncludeTypeInterface
 }
 
-extension IncludeableType where Self: HalleyCodable {
+public extension IncludeableType where Self: HalleyCodable {
 
     @inlinable
     func links(for codingKey: IncludeType.IncludeCodingKey) -> [Link]? {
