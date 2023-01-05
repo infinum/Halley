@@ -23,14 +23,14 @@ TODO: Add long description of the pod here.
       sp.dependency 'CombineExt'
     end
 
-    s.subspec 'Codable' do |sp|
-      sp.source_files = ['Halley/Classes/Codable/**/*']
-      sp.dependency 'Halley/Core'
-    end
-
     s.subspec 'URITemplate' do |sp|
       sp.source_files = 'Halley/Classes/URITemplate/**/*'
-      sp.dependency 'Halley/Codable'
+      sp.dependency 'Halley/Core'
       sp.dependency 'URITemplate'
+    end
+
+    s.subspec 'Codable' do |sp|
+      sp.source_files = ['Halley/Classes/Codable/**/*']
+      sp.dependency 'Halley/URITemplate'
     end
 end

@@ -37,24 +37,24 @@
       }
     },
     {
-      "name": "Codable",
-      "source_files": [
-        "Halley/Classes/Codable/**/*"
-      ],
+      "name": "URITemplate",
+      "source_files": "Halley/Classes/URITemplate/**/*",
       "dependencies": {
         "Halley/Core": [
+
+        ],
+        "URITemplate": [
 
         ]
       }
     },
     {
-      "name": "URITemplate",
-      "source_files": "Halley/Classes/URITemplate/**/*",
+      "name": "Codable",
+      "source_files": [
+        "Halley/Classes/Codable/**/*"
+      ],
       "dependencies": {
-        "Halley/Codable": [
-
-        ],
-        "URITemplate": [
+        "Halley/URITemplate": [
 
         ]
       }

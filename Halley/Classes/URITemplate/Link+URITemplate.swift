@@ -39,27 +39,33 @@ public extension Link {
     /// - Parameter queryItems: query items, default empty array
     /// - Returns: Expanded link URL
     func asURL() throws -> URL {
-        return try expand().asURL()
+        return try expand().asHalleyURL()
     }
 
     /// If link is templated it expands it with given query items, otherwise it just returns current href
     /// - Parameter queryItems: query items, default empty array
     /// - Returns: Expanded link URL
     func asURL(with queryItems: [URLQueryItem] = []) throws -> URL {
-        return try expand(with: queryItems).asURL()
+        return try expand(with: queryItems).asHalleyURL()
     }
 
     /// If link is templated it expands it with given query items, otherwise it just returns current URL
     /// - Parameter variables: key-value variables, default is empty array
     /// - Returns: Expanded link URL
     func asURL(with variables: [String: Any] = [:]) throws -> URL {
-        return try expand(with: variables).asURL()
+        return try expand(with: variables).asHalleyURL()
     }
 }
 
-private extension String {
+public extension Halley.Links {
 
-    func asURL() throws -> URL {
-        try URL(string: self) ?? throwHalleyError(.cantResolveURLFromString(string: self))
+    @inlinable
+    func asURL(for key: String, with variables: [String: Any]) throws -> URL? {
+        return try relationships[key]?.first?.asURL(with: variables)
+    }
+
+    @inlinable
+    func asURL(for key: String, with queryItems: [URLQueryItem]) throws -> URL? {
+        return try relationships[key]?.first?.asURL(with: queryItems)
     }
 }

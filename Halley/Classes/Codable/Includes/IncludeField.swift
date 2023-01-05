@@ -16,7 +16,6 @@ public struct IncludeField {
     }
 }
 
-
 public extension Array where Element == IncludeField {
 
     func includeKeys() -> [String] {

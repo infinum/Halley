@@ -37,11 +37,6 @@ public extension IncludeKey {
 
 // MARK: - IncludeTypeInterface
 
-enum IncludeRelationshipType {
-    case toOne
-    case toMany
-}
-
 public protocol IncludeTypeInterface {
     associatedtype IncludeCodingKey: IncludeKey
     typealias Keys = IncludeCodingKey

@@ -20,8 +20,7 @@ public struct PageMetadata: Codable {
         self.currentPage = currentPage
     }
 
-    static func fromParameters(_ parameters: Parameters) -> PageMetadata? {
-        return (try? JSONSerialization.data(withJSONObject: parameters, options: .fragmentsAllowed))
-            .flatMap { try? JSONDecoder().decode(PageMetadata.self, from: $0) }
+    public static func empty() -> PageMetadata {
+        return PageMetadata(size: 0, totalElements: 0, totalPages: 0, currentPage: 0)
     }
 }

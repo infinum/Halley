@@ -22,7 +22,7 @@ public class TemplateLinkResolver: LinkResolver {
             url: try templateHandler.resolveTemplate(for: link),
             resolvingAgainstBaseURL: false
         ) ?? throwError(HalleyKit.Error.cantResolveURLFromLink(link: link))
-        guard let parent = relationshipPath else { return try urlComponent.asURL() }
+        guard let parent = relationshipPath else { return try urlComponent.asHalleyURL() }
         let parameters = includeParameters[parent] ?? []
         // Avoid setting query items if there are no parameters to set
         // This will avoid an issue where empty array for `queryItems` will result
@@ -30,14 +30,6 @@ public class TemplateLinkResolver: LinkResolver {
         if !parameters.isEmpty {
             urlComponent.queryItems = (urlComponent.queryItems ?? []) + parameters
         }
-        return try urlComponent.asURL()
-    }
-}
-
-extension URLComponents {
-
-    func asURL() throws -> URL {
-        guard let url = url else { throw HalleyKit.Error.cantResolveURLFromString(string: string)}
-        return url
+        return try urlComponent.asHalleyURL()
     }
 }

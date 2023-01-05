@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0AB3F58A2792C53F009FDC80 /* HalleyAlamofireRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F5892792C53F009FDC80 /* HalleyAlamofireRequester.swift */; };
-		56FA35C4E92822B70F1E7D0D /* Pods_Halley_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C412832D59341992F7B190 /* Pods_Halley_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		ABB0A03EF8ACEE4E7502370B /* Pods_Halley_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD480B7BE15C525D7D5E417 /* Pods_Halley_Example.framework */; };
+		B420E97F3227E4B344964757 /* Pods_Halley_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B365AE46E36C4787F1E8F99 /* Pods_Halley_Tests.framework */; };
+		BFA871582509502E84EFB608 /* Pods_Halley_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAAC7F12C7859F07C355C241 /* Pods_Halley_Example.framework */; };
 		FED9310E27C946330067C73D /* TemplateLinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED9310D27C946330067C73D /* TemplateLinkResolver.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +29,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00E788297E5031AE566A4FDA /* Pods-Halley_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Example.release.xcconfig"; path = "Target Support Files/Pods-Halley_Example/Pods-Halley_Example.release.xcconfig"; sourceTree = "<group>"; };
 		0AB3F5892792C53F009FDC80 /* HalleyAlamofireRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalleyAlamofireRequester.swift; sourceTree = "<group>"; };
+		2E0B02124B38A0B6CF48A4BA /* Pods-Halley_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Example.debug.xcconfig"; path = "Target Support Files/Pods-Halley_Example/Pods-Halley_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		359B68B42A45F38F30B14053 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		4BCD5F9D9E264837FA0B884D /* Pods-Halley_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Tests.release.xcconfig"; path = "Target Support Files/Pods-Halley_Tests/Pods-Halley_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Halley_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Halley_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,13 +42,12 @@
 		607FACE51AFB9204008FA782 /* Halley_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Halley_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		82C412832D59341992F7B190 /* Pods_Halley_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Halley_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8DD480B7BE15C525D7D5E417 /* Pods_Halley_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Halley_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B365AE46E36C4787F1E8F99 /* Pods_Halley_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Halley_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0247DE816296A628A26D14E /* Halley.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Halley.podspec; path = ../Halley.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B341277AFD235B141E66DD39 /* Pods-Halley_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Tests.release.xcconfig"; path = "Target Support Files/Pods-Halley_Tests/Pods-Halley_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BB7367CB5FCD5C6AB629DF2D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		BC284524D77EF4CD85285B13 /* Pods-Halley_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Example.release.xcconfig"; path = "Target Support Files/Pods-Halley_Example/Pods-Halley_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DAEB17959B3F5470F471AFA0 /* Pods-Halley_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Halley_Tests/Pods-Halley_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		F044EA8FEEE3936E3B28EE2C /* Pods-Halley_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Example.debug.xcconfig"; path = "Target Support Files/Pods-Halley_Example/Pods-Halley_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DAAC7F12C7859F07C355C241 /* Pods_Halley_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Halley_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E83B9C6A917B74B04C95135B /* Pods-Halley_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Halley_Tests/Pods-Halley_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FED9310D27C946330067C73D /* TemplateLinkResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateLinkResolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABB0A03EF8ACEE4E7502370B /* Pods_Halley_Example.framework in Frameworks */,
+				BFA871582509502E84EFB608 /* Pods_Halley_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56FA35C4E92822B70F1E7D0D /* Pods_Halley_Tests.framework in Frameworks */,
+				B420E97F3227E4B344964757 /* Pods_Halley_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +79,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				9654AFF3496B498B995DE41E /* Pods */,
-				A73371808869A64CE527ACBC /* Frameworks */,
+				65C77AA254FC319BD319DB87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,24 +142,24 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		65C77AA254FC319BD319DB87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAAC7F12C7859F07C355C241 /* Pods_Halley_Example.framework */,
+				9B365AE46E36C4787F1E8F99 /* Pods_Halley_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9654AFF3496B498B995DE41E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F044EA8FEEE3936E3B28EE2C /* Pods-Halley_Example.debug.xcconfig */,
-				BC284524D77EF4CD85285B13 /* Pods-Halley_Example.release.xcconfig */,
-				DAEB17959B3F5470F471AFA0 /* Pods-Halley_Tests.debug.xcconfig */,
-				4BCD5F9D9E264837FA0B884D /* Pods-Halley_Tests.release.xcconfig */,
+				2E0B02124B38A0B6CF48A4BA /* Pods-Halley_Example.debug.xcconfig */,
+				00E788297E5031AE566A4FDA /* Pods-Halley_Example.release.xcconfig */,
+				E83B9C6A917B74B04C95135B /* Pods-Halley_Tests.debug.xcconfig */,
+				B341277AFD235B141E66DD39 /* Pods-Halley_Tests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		A73371808869A64CE527ACBC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8DD480B7BE15C525D7D5E417 /* Pods_Halley_Example.framework */,
-				82C412832D59341992F7B190 /* Pods_Halley_Tests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,11 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Halley_Example" */;
 			buildPhases = (
-				A07F2A74E4361B94CDA0E490 /* [CP] Check Pods Manifest.lock */,
+				C8B55BF3ED0E93A9EAFA1E76 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				FA1C5AD81B115B5557E6FE79 /* [CP] Embed Pods Frameworks */,
+				75D2D938D27B6D2C51411E7D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,7 +188,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Halley_Tests" */;
 			buildPhases = (
-				8D52FABD6EA901BD8DB60788 /* [CP] Check Pods Manifest.lock */,
+				8371D1FEDDCB9AFB706AF348 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -264,51 +264,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8D52FABD6EA901BD8DB60788 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Halley_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A07F2A74E4361B94CDA0E490 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Halley_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA1C5AD81B115B5557E6FE79 /* [CP] Embed Pods Frameworks */ = {
+		75D2D938D27B6D2C51411E7D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,6 +286,50 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Halley_Example/Pods-Halley_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8371D1FEDDCB9AFB706AF348 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Halley_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8B55BF3ED0E93A9EAFA1E76 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Halley_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -492,7 +492,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F044EA8FEEE3936E3B28EE2C /* Pods-Halley_Example.debug.xcconfig */;
+			baseConfigurationReference = 2E0B02124B38A0B6CF48A4BA /* Pods-Halley_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Halley/Info.plist;
@@ -506,7 +506,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC284524D77EF4CD85285B13 /* Pods-Halley_Example.release.xcconfig */;
+			baseConfigurationReference = 00E788297E5031AE566A4FDA /* Pods-Halley_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Halley/Info.plist;
@@ -520,7 +520,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAEB17959B3F5470F471AFA0 /* Pods-Halley_Tests.debug.xcconfig */;
+			baseConfigurationReference = E83B9C6A917B74B04C95135B /* Pods-Halley_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
@@ -541,7 +541,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BCD5F9D9E264837FA0B884D /* Pods-Halley_Tests.release.xcconfig */;
+			baseConfigurationReference = B341277AFD235B141E66DD39 /* Pods-Halley_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
