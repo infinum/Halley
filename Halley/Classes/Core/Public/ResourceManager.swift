@@ -20,7 +20,7 @@ public extension ResourceManager {
         includes: [String] = [],
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
-    ) -> AnyPublisher<Result<Parameters, Error>, Never> {
+    ) -> some Publisher<Result<Parameters, Error>, Never> {
         let cache = options.responseFromCache ? JSONCache() : nil
         return traverser
             .resource(
@@ -39,7 +39,7 @@ public extension ResourceManager {
         includes: [String] = [],
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
-    ) -> AnyPublisher<Result<[Parameters], Error>, Never> {
+    ) -> some Publisher<Result<[Parameters], Error>, Never> {
         let cache = options.responseFromCache ? JSONCache() : nil
         return traverser
             .resourceCollection(
@@ -58,7 +58,7 @@ public extension ResourceManager {
         includes: [String] = [],
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
-    ) -> AnyPublisher<Result<Parameters, Error>, Never> {
+    ) -> some Publisher<Result<Parameters, Error>, Never> {
         let cache = options.responseFromCache ? JSONCache() : nil
         return traverser
             .resourceCollectionWithMetadata(
@@ -78,7 +78,7 @@ private extension Publisher {
     // Cache holds a reference to Publisher which again needs to keep a reference
     // to a publisher. That way we are creating retain cycle so it is crucial to
     // clear the cache after use.
-    func clearCacheOnCompletion(_ cache: JSONCache?) -> AnyPublisher<Output, Failure> {
+    func clearCacheOnCompletion(_ cache: JSONCache?) -> some Publisher<Output, Failure> {
         guard let cache = cache else { return self.eraseToAnyPublisher() }
         return self
             .handleEvents(
@@ -86,7 +86,8 @@ private extension Publisher {
                     cache.clear()
                 }, receiveCancel: {
                     cache.clear()
-                })
+                }
+            )
             .eraseToAnyPublisher()
     }
 }

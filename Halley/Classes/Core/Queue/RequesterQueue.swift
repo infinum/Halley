@@ -49,7 +49,7 @@ class RequesterQueue {
         at url: URL,
         requester: RequesterInterface,
         cache: JSONCache?
-    ) -> AnyPublisher<JSONResponse, Never> {
+    ) -> some Publisher<JSONResponse, Never> {
         if let chain = cache?[url] {
             return chain
         }

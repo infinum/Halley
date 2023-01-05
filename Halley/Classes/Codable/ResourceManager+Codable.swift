@@ -67,7 +67,7 @@ public extension ResourceManager {
         includeType: Item.IncludeType?,
         customTemplatedQueryItems queryItems: [URLQueryItem],
         decodedWith decoder: JSONDecoder
-    ) -> AnyPublisher<Item, Error> {
+    ) -> some Publisher<Item, Error> {
         let includeFields = includeType?.prepareIncludes() ?? []
         return request(
             type,
@@ -84,7 +84,7 @@ public extension ResourceManager {
         includeType: Item.IncludeType? = nil,
         customTemplatedQueryItems queryItems: [URLQueryItem] = [],
         decodedWith decoder: JSONDecoder
-    ) -> AnyPublisher<[Item], Error> {
+    ) -> some Publisher<[Item], Error> {
         let includeFields = includeType?.prepareIncludes() ?? []
         return requestCollection(
             type,
@@ -101,7 +101,7 @@ public extension ResourceManager {
         includeType: Item.IncludeType?,
         customTemplatedQueryItems queryItems: [URLQueryItem],
         decodedWith decoder: JSONDecoder
-    ) -> AnyPublisher<PaginationPage<Item>, Error> {
+    ) -> some Publisher<PaginationPage<Item>, Error> {
         let includeFields = includeType?.prepareIncludes() ?? []
         return requestPage(
             type,
