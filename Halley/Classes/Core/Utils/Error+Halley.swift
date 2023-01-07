@@ -11,7 +11,13 @@ func throwHalleyError<T>(_ error: HalleyKit.Error) throws -> T {
 
 extension AnyPublisher {
 
-    static func error(_ error: HalleyKit.Error) -> AnyPublisher<Output, Error> {
+    static func just(_ value: Output) -> AnyPublisher<Output, Failure> {
+        return Just(value)
+            .setFailureType(to: Failure.self)
+            .eraseToAnyPublisher()
+    }
+
+    static func error(_ error: Failure) -> AnyPublisher<Output, Failure> {
         return Fail(error: error).eraseToAnyPublisher()
     }
 }

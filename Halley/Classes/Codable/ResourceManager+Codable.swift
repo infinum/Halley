@@ -3,113 +3,42 @@ import Combine
 
 // MARK: - Codable
 
-extension ResourceManager: ResourceManagerCodableInterface {
+public extension ResourceManager {
 
-    public func request<Item: Decodable>(
-        _ type: Item.Type,
-        onURL urlConvertible: HalleyURLConvertible,
-        includes: [String],
-        linkResolver: LinkResolver,
-        decodedWith decoder: JSONDecoder
-    ) -> AnyPublisher<Item, Error> {
-        guard let url = try? urlConvertible.asHalleyURL() else {
-            return .error(.cantResolveURLFromString(string: urlConvertible.description))
+    func request<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<Item, Error> {
+        do {
+            return self
+                .resource(from: try input.url(), includes: input.includes, linkResolver: input.linkResolver)
+                .unwrapResult()
+                .tryMap { try Self.decode(data: $0, type: Item.self, decoder: input.decoder) }
+                .eraseToAnyPublisher()
+        } catch {
+            return .error(error)
         }
-        return self
-            .resource(from: url, includes: includes, linkResolver: linkResolver)
-            .unwrapResult()
-            .tryMap { try Self.decode(data: $0, type: type, decoder: decoder) }
-            .eraseToAnyPublisher()
     }
 
-    public func requestCollection<Item: Decodable>(
-        _ type: Item.Type,
-        onURL urlConvertible: HalleyURLConvertible,
-        includes: [String],
-        linkResolver: LinkResolver,
-        decodedWith decoder: JSONDecoder
-    ) -> AnyPublisher<[Item], Error> {
-        guard let url = try? urlConvertible.asHalleyURL() else {
-            return .error(.cantResolveURLFromString(string: urlConvertible.description))
+    func requestCollection<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<[Item], Error> {
+        do {
+            return self
+                .resourceCollection(from: try input.url(), includes: input.includes, linkResolver: input.linkResolver)
+                .unwrapResult()
+                .tryMap { try Self.decode(data: $0, type: [Item].self, decoder: input.decoder) }
+                .eraseToAnyPublisher()
+        } catch {
+            return .error(error)
         }
-        return self
-            .resourceCollection(from: url, includes: includes, linkResolver: linkResolver)
-            .unwrapResult()
-            .tryMap { try Self.decode(data: $0, type: [Item].self, decoder: decoder) }
-            .eraseToAnyPublisher()
     }
 
-    public func requestPage<Item: Decodable>(
-        _ type: Item.Type,
-        onURL urlConvertible: HalleyURLConvertible,
-        includes: [String],
-        linkResolver: LinkResolver,
-        decodedWith decoder: JSONDecoder
-    ) -> AnyPublisher<PaginationPage<Item>, Error> {
-        guard let url = try? urlConvertible.asHalleyURL() else {
-            return .error(.cantResolveURLFromString(string: urlConvertible.description))
+    func requestPage<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<PaginationPage<Item>, Error> {
+        do {
+            return self
+                .resourceCollectionWithMetadata(from: try input.url(), includes: input.includes, linkResolver: input.linkResolver)
+                .unwrapResult()
+                .tryMap { try Self.decode(data: $0, type: PaginationPage<Item>.self, decoder: input.decoder) }
+                .eraseToAnyPublisher()
+        } catch {
+            return .error(error)
         }
-        return self
-            .resourceCollectionWithMetadata(from: url, includes: includes, linkResolver: linkResolver)
-            .unwrapResult()
-            .tryMap { try Self.decode(data: $0, type: PaginationPage<Item>.self, decoder: decoder) }
-            .eraseToAnyPublisher()
-    }
-}
-
-// MARK: - HalleyCodable
-
-extension ResourceManager: ResourceManagerHalleyCodableInterface {
-
-    public func request<Item: HalleyCodable & IncludeableType>(
-        _ type: Item.Type,
-        onURL urlConvertible: HalleyURLConvertible,
-        includeType: Item.IncludeType?,
-        customTemplatedQueryItems queryItems: [URLQueryItem],
-        decodedWith decoder: JSONDecoder
-    ) -> AnyPublisher<Item, Error> {
-        let includeFields = includeType?.prepareIncludes() ?? []
-        return request(
-            type,
-            onURL: urlConvertible,
-            includes: includeFields.includeKeys(),
-            linkResolver: includeFields.linkResolver(customTemplatedQueryItems: queryItems),
-            decodedWith: decoder
-        )
-    }
-
-    public func requestCollection<Item: HalleyCodable & IncludeableType>(
-        _ type: Item.Type,
-        onURL urlConvertible: HalleyURLConvertible,
-        includeType: Item.IncludeType?,
-        customTemplatedQueryItems queryItems: [URLQueryItem],
-        decodedWith decoder: JSONDecoder
-    ) -> AnyPublisher<[Item], Error> {
-        let includeFields = includeType?.prepareIncludes() ?? []
-        return requestCollection(
-            type,
-            onURL: urlConvertible,
-            includes: includeFields.includeKeys(),
-            linkResolver: includeFields.linkResolver(customTemplatedQueryItems: queryItems),
-            decodedWith: decoder
-        )
-    }
-
-    public func requestPage<Item: HalleyCodable & IncludeableType>(
-        _ type: Item.Type,
-        onURL urlConvertible: HalleyURLConvertible,
-        includeType: Item.IncludeType?,
-        customTemplatedQueryItems queryItems: [URLQueryItem],
-        decodedWith decoder: JSONDecoder
-    ) -> AnyPublisher<PaginationPage<Item>, Error> {
-        let includeFields = includeType?.prepareIncludes() ?? []
-        return requestPage(
-            type,
-            onURL: urlConvertible,
-            includes: includeFields.includeKeys(),
-            linkResolver: includeFields.linkResolver(customTemplatedQueryItems: queryItems),
-            decodedWith: decoder
-        )
     }
 }
 
@@ -118,7 +47,7 @@ extension ResourceManager: ResourceManagerHalleyCodableInterface {
 private extension ResourceManager {
 
     static func decode<T, U: Decodable>(data: T, type: U.Type, decoder: JSONDecoder) throws -> U {
-        let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+        let jsonData = try JSONSerialization.data(withJSONObject: data, options: [.fragmentsAllowed])
         return try decoder.decode(U.self, from: jsonData)
     }
 }

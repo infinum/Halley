@@ -39,21 +39,21 @@ public extension Link {
     /// - Parameter queryItems: query items, default empty array
     /// - Returns: Expanded link URL
     func asURL() throws -> URL {
-        return try expand().asHalleyURL()
+        return try expand().asURL()
     }
 
     /// If link is templated it expands it with given query items, otherwise it just returns current href
     /// - Parameter queryItems: query items, default empty array
     /// - Returns: Expanded link URL
     func asURL(with queryItems: [URLQueryItem] = []) throws -> URL {
-        return try expand(with: queryItems).asHalleyURL()
+        return try expand(with: queryItems).asURL()
     }
 
     /// If link is templated it expands it with given query items, otherwise it just returns current URL
     /// - Parameter variables: key-value variables, default is empty array
     /// - Returns: Expanded link URL
     func asURL(with variables: [String: Any] = [:]) throws -> URL {
-        return try expand(with: variables).asHalleyURL()
+        return try expand(with: variables).asURL()
     }
 }
 

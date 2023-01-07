@@ -1,23 +1,23 @@
 import Foundation
 
-public protocol HalleyURLConvertible: CustomStringConvertible {
-    func asHalleyURL() throws -> URL
+public protocol URLConvertible: CustomStringConvertible {
+    func asURL() throws -> URL
 }
 
-extension String: HalleyURLConvertible {
+extension String: URLConvertible {
 
-    public func asHalleyURL() throws -> URL {
+    public func asURL() throws -> URL {
         try URL(string: self) ?? throwHalleyError(.cantResolveURLFromString(string: self))
     }
 }
 
-extension URL: HalleyURLConvertible {
-    public func asHalleyURL() throws -> URL { self }
+extension URL: URLConvertible {
+    public func asURL() throws -> URL { self }
 }
 
-extension URLComponents: HalleyURLConvertible {
+extension URLComponents: URLConvertible {
 
-    public func asHalleyURL() throws -> URL {
+    public func asURL() throws -> URL {
         try url ?? throwHalleyError(.cantResolveURLFromString(string: string))
     }
 }
