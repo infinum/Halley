@@ -11,9 +11,11 @@ public class OverridingTemplateHandler: TemplateHandler {
     }
 
     public func resolveTemplate(for link: Link) throws -> URL {
-        let defaultValues = `default`.expandedValues
-        let overrideValues = queryItems.compactMapValues(\.value)
-        let newValues = defaultValues.merging(overrideValues) { (_, new) in new }
+        let defaultValues = `default`.expandedValues.mapValues(Optional.init)
+        let overrideValues = queryItems.mapValues(\.value)
+        let newValues = defaultValues
+            .merging(overrideValues) { (_, new) in new }
+            .compactMapValues { $0 }
         return try link.asURL(with: newValues)
     }
 }
