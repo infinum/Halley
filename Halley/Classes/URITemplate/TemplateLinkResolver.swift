@@ -28,7 +28,14 @@ public class TemplateLinkResolver: LinkResolver {
         // This will avoid an issue where empty array for `queryItems` will result
         // in dangling `?` in `url`
         if !parameters.isEmpty {
-            urlComponent.queryItems = (urlComponent.queryItems ?? []) + parameters
+            // We merge same name query parameters and separate the value with `,`
+            let queries = (urlComponent.queryItems ?? []) + parameters
+            var dictionary = [String: String]()
+            for query in queries {
+                let value = [dictionary[query.name], query.value].compactMap{ $0 }
+                dictionary[query.name] = value.joined(separator: ",")
+            }
+            urlComponent.queryItems = dictionary.map(URLQueryItem.init)
         }
         return try urlComponent.asURL()
     }
