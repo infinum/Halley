@@ -158,36 +158,101 @@ private extension Traverser {
         cache: JSONCache?,
         linkResolver: LinkResolver
     ) throws -> some Publisher<LinkResponse, Never> {
+        switch linkElement.linkType {
+        case .toOne:
+            return try parseSingleEmbeddedResource(
+                for: resource,
+                linkElement: linkElement,
+                options: options,
+                cache: cache,
+                linkResolver: linkResolver
+            )
+        case .toMany:
+            return try parseManyEmbeddedResources(
+                for: resource,
+                linkElement: linkElement,
+                options: options,
+                cache: cache,
+                linkResolver: linkResolver
+            )
+        }
+    }
+
+    func parseSingleEmbeddedResource(
+        for resource: ResourceContainer,
+        linkElement: LinkIncludesElement,
+        options: HalleyKit.Options,
+        cache: JSONCache?,
+        linkResolver: LinkResolver
+    ) throws -> AnyPublisher<LinkResponse, Never> {
         let embeddedResource = resource
             .parameters[linkElement.relationship]
             .flatMap { $0 as? Parameters }
             .flatMap(ResourceContainer.init)
-
-        guard let _embeddedResource = embeddedResource else {
+        guard let embeddedResource else {
             throw HalleyKit.Error.relationshipNotFound(data: resource)
         }
+        return
+            try fetchSingleResourceLinkedResources(
+                for: embeddedResource,
+                includes: linkElement.includes,
+                options: options,
+                cache: cache,
+                linkResolver: linkResolver
+            )
+            .map { LinkResponse(relationship: linkElement.relationship, result: $0) }
+            .eraseToAnyPublisher()
+    }
 
-        switch linkElement.linkType {
-        case .toOne:
-            return
-                try fetchSingleResourceLinkedResources(
-                    for: _embeddedResource,
-                    includes: linkElement.includes,
-                    options: options,
-                    cache: cache,
-                    linkResolver: linkResolver
-                )
-                .map { LinkResponse(relationship: linkElement.relationship, result: $0) }
-        case .toMany:
+    func parseManyEmbeddedResources(
+        for resource: ResourceContainer,
+        linkElement: LinkIncludesElement,
+        options: HalleyKit.Options,
+        cache: JSONCache?,
+        linkResolver: LinkResolver
+    ) throws -> AnyPublisher<LinkResponse, Never> {
+        let resourceParameters = resource.parameters[linkElement.relationship]
+
+        if let singleResource = resourceParameters as? Parameters {
+            // This represents an embedded page with metadata as an embedded structure. For example:
+            //    "_embedded": {
+            //        "some_items": {
+            //            "_embedded": {
+            //                "item": [...]
+            //            },
+            //            "_links": { ... },
+            //            "page": { ... }
+            //        }
+            //    }
             return
                 try parseCollectionLinkedResources(
-                    for: _embeddedResource,
+                    for: ResourceContainer(singleResource),
                     includes: linkElement.includes,
                     options: options,
                     cache: cache,
                     linkResolver: linkResolver
                 )
                 .map { LinkResponse(relationship: linkElement.relationship, result: $0) }
+                .eraseToAnyPublisher()
+        } else if let manyResources = resourceParameters as? [Parameters] {
+            // This represents an embedded collection with items, without any additional metadata
+            // "_embedded": {
+            //    "some_items":  [{
+            //        "_embedded": { ... }
+            //    }]
+            // }
+            return
+                try fetchLinksForEmbeddedResources(
+                    embeddedResources: manyResources.map(ResourceContainer.init),
+                    includes: linkElement.includes,
+                    options: options,
+                    cache: cache,
+                    linkResolver: linkResolver
+                )
+                .map { LinkResponse(relationship: linkElement.relationship, result: $0) }
+                .eraseToAnyPublisher()
+        } else {
+            throw HalleyKit.Error.relationshipNotFound(data: resource)
         }
     }
 }
