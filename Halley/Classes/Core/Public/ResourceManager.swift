@@ -5,7 +5,6 @@ public class ResourceManager {
 
     private let requester: RequesterInterface
     private let traverser: Traverser
-    private let requesterQueue: RequesterQueue = .shared
 
     public init(requester: RequesterInterface) {
         self.traverser = Traverser(requester: requester)
@@ -20,18 +19,20 @@ public extension ResourceManager {
         includes: [String] = [],
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
-    ) -> some Publisher<Result<Parameters, Error>, Never> {
-        let cache = options.responseFromCache ? JSONCache() : nil
-        return traverser
-            .resource(
-                from: url,
-                includes: includes,
-                options: options,
-                cache: cache,
-                linkResolver: linkResolver
-            )
-            .map(\.asDictionary)
-            .clearCacheOnCompletion(cache)
+    ) -> AnyPublisher<Result<Parameters, Error>, Never> {
+#warning("TODO")
+        fatalError()
+//        let cache = options.responseFromCache ? JSONCache() : nil
+//        return traverser
+//            .resource(
+//                from: url,
+//                includes: includes,
+//                options: options,
+//                cache: cache,
+//                linkResolver: linkResolver
+//            )
+//            .map(\.asDictionary)
+//            .clearCacheOnCompletion(cache)
     }
 
     func resourceCollection(
@@ -39,18 +40,20 @@ public extension ResourceManager {
         includes: [String] = [],
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
-    ) -> some Publisher<Result<[Parameters], Error>, Never> {
-        let cache = options.responseFromCache ? JSONCache() : nil
-        return traverser
-            .resourceCollection(
-                from: url,
-                includes: includes,
-                options: options,
-                cache: cache,
-                linkResolver: linkResolver
-            )
-            .map(\.asArrayOfDictionaries)
-            .clearCacheOnCompletion(cache)
+    ) -> AnyPublisher<Result<[Parameters], Error>, Never> {
+#warning("TODO")
+        fatalError()
+//        let cache = options.responseFromCache ? JSONCache() : nil
+//        return traverser
+//            .resourceCollection(
+//                from: url,
+//                includes: includes,
+//                options: options,
+//                cache: cache,
+//                linkResolver: linkResolver
+//            )
+//            .map(\.asArrayOfDictionaries)
+//            .clearCacheOnCompletion(cache)
     }
 
     func resourceCollectionWithMetadata(
@@ -58,18 +61,20 @@ public extension ResourceManager {
         includes: [String] = [],
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
-    ) -> some Publisher<Result<Parameters, Error>, Never> {
-        let cache = options.responseFromCache ? JSONCache() : nil
-        return traverser
-            .resourceCollectionWithMetadata(
-                from: url,
-                includes: includes,
-                options: options,
-                cache: cache,
-                linkResolver: linkResolver
-            )
-            .map(\.asDictionary)
-            .clearCacheOnCompletion(cache)
+    ) -> AnyPublisher<Result<Parameters, Error>, Never> {
+#warning("TODO")
+        fatalError()
+//        let cache = options.responseFromCache ? JSONCache() : nil
+//        return traverser
+//            .resourceCollectionWithMetadata(
+//                from: url,
+//                includes: includes,
+//                options: options,
+//                cache: cache,
+//                linkResolver: linkResolver
+//            )
+//            .map(\.asDictionary)
+//            .clearCacheOnCompletion(cache)
     }
 }
 

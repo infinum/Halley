@@ -31,33 +31,22 @@ class RequesterQueue {
         self.queue.qualityOfService = .userInitiated
     }
 
-    func response(at url: URL, requester: RequesterInterface) -> AnyPublisher<APIResponse, Never> {
-        return AnyPublisher<APIResponse, Never>.create { [lock, queue] subscriber in
-            let operation = HALRequestOperation(
-                url: url,
-                requester: requester
-            ) {
-                subscriber.send($0)
-                subscriber.send(completion: .finished)
-            }
-            lock.safe { queue.addOperation(operation) }
-            return AnyCancellable { operation.cancel() }
-        }
-    }
+    // MARK: - Async variant
 
-    func jsonResponse(
+    func response(
         at url: URL,
         requester: RequesterInterface,
         cache: JSONCache?
-    ) -> some Publisher<JSONResponse, Never> {
-        if let chain = cache?[url] {
-            return chain
+    ) async -> JSONResponse {
+        #warning("TODO - cache")
+        let operation = HALRequestOperation(url: url, requester: requester)
+        return await withTaskCancellationHandler {
+            await withCheckedContinuation { continuation in
+                operation.addCompletionHandler { continuation.resume(returning: $0) }
+                lock.safe { queue.addOperation(operation) }
+            }
+        } onCancel: {
+            operation.cancel()
         }
-        let response = response(at: url, requester: requester)
-            .map { $0.tryMap { try JSONSerialization.jsonObject(with: $0, options: .fragmentsAllowed) } }
-            .share(replay: 1) // Replay last value when subscribed on cache event
-            .eraseToAnyPublisher()
-        cache?[url] = response
-        return response
     }
 }
