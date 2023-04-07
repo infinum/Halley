@@ -1,8 +1,6 @@
 import Foundation
-import Combine
-import CombineExt
 
-typealias JSONCache = Cache<URL, AnyPublisher<JSONResponse, Never>>
+typealias JSONCache = Cache<URL, JSONResponse>
 
 // Shared Queue for all network request
 

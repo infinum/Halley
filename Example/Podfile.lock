@@ -1,10 +1,8 @@
 PODS:
   - Alamofire (5.6.4)
-  - CombineExt (1.8.0)
   - Halley/Codable (1.2.3):
     - Halley/URITemplate
-  - Halley/Core (1.2.3):
-    - CombineExt
+  - Halley/Core (1.2.3)
   - Halley/URITemplate (1.2.3):
     - Halley/Core
     - URITemplate
@@ -17,7 +15,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - CombineExt
     - URITemplate
 
 EXTERNAL SOURCES:
@@ -26,8 +23,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
-  CombineExt: c4daa97ef75754d8ef319bd79edeef82652f3eea
-  Halley: a9e89eff31e6b735f940cfd1183358f205f70ade
+  Halley: 7538a75fc99b68bc3ba7af1d3db61fcbadee7c11
   URITemplate: 5f5a79f3e384884102c4e6b3325d159c20a8035a
 
 PODFILE CHECKSUM: 1186b9b406013f8c2919d40cc8ee906ef71f4e62

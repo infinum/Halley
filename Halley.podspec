@@ -20,7 +20,6 @@ TODO: Add long description of the pod here.
     s.subspec 'Core' do |sp|
       sp.source_files = 'Halley/Classes/Core/**/*'
       sp.frameworks = 'Foundation', 'Combine'
-      sp.dependency 'CombineExt'
     end
 
     s.subspec 'URITemplate' do |sp|

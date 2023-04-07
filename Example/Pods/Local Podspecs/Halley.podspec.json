@@ -29,12 +29,7 @@
       "frameworks": [
         "Foundation",
         "Combine"
-      ],
-      "dependencies": {
-        "CombineExt": [
-
-        ]
-      }
+      ]
     },
     {
       "name": "URITemplate",
