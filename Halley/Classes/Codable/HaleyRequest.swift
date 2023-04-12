@@ -1,5 +1,4 @@
 import Foundation
-import Combine
 
 public struct HalleyRequest<Item: Decodable> {
     public let urlConvertible: URLConvertible

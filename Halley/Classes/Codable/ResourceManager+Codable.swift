@@ -5,40 +5,60 @@ import Combine
 
 public extension ResourceManager {
 
+    func request<Item>(_ input: HalleyRequest<Item>) async throws -> Item {
+        let jsonResponse = await resource(
+            from: try input.url(),
+            includes: input.includes,
+            linkResolver: input.linkResolver
+        )
+        return try Self.decode(data: jsonResponse, type: Item.self, decoder: input.decoder)
+    }
+
+    func requestCollection<Item>(_ input: HalleyRequest<Item>) async throws -> [Item] {
+        let jsonResponse = await resourceCollection(
+            from: try input.url(),
+            includes: input.includes,
+            linkResolver: input.linkResolver
+        )
+        return try Self.decode(data: jsonResponse, type: [Item].self, decoder: input.decoder)
+    }
+
+    func requestPage<Item>(_ input: HalleyRequest<Item>) async throws -> PaginationPage<Item> {
+        let jsonResponse = await resourceCollectionWithMetadata(
+            from: try input.url(),
+            includes: input.includes,
+            linkResolver: input.linkResolver
+        )
+        return try Self.decode(data: jsonResponse, type: PaginationPage<Item>.self, decoder: input.decoder)
+    }
+}
+
+// MARK: Codable + Combine
+
+public extension ResourceManager {
+
     func request<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<Item, Error> {
-        do {
-            return self
-                .resource(from: try input.url(), includes: input.includes, linkResolver: input.linkResolver)
-                .unwrapResult()
-                .tryMap { try Self.decode(data: $0, type: Item.self, decoder: input.decoder) }
-                .eraseToAnyPublisher()
-        } catch {
-            return .error(error)
+        let publisher = ThrowingTaskPublisher { [weak self] in
+            guard let self else { throw HalleyKit.Error.deinited }
+            return try await self.request(input)
         }
+        return publisher.eraseToAnyPublisher()
     }
 
     func requestCollection<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<[Item], Error> {
-        do {
-            return self
-                .resourceCollection(from: try input.url(), includes: input.includes, linkResolver: input.linkResolver)
-                .unwrapResult()
-                .tryMap { try Self.decode(data: $0, type: [Item].self, decoder: input.decoder) }
-                .eraseToAnyPublisher()
-        } catch {
-            return .error(error)
+        let publisher = ThrowingTaskPublisher { [weak self] in
+            guard let self else { throw HalleyKit.Error.deinited }
+            return try await self.requestCollection(input)
         }
+        return publisher.eraseToAnyPublisher()
     }
 
-    func requestPage<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<PaginationPage<Item>, Error> {
-        do {
-            return self
-                .resourceCollectionWithMetadata(from: try input.url(), includes: input.includes, linkResolver: input.linkResolver)
-                .unwrapResult()
-                .tryMap { try Self.decode(data: $0, type: PaginationPage<Item>.self, decoder: input.decoder) }
-                .eraseToAnyPublisher()
-        } catch {
-            return .error(error)
+    func requestCollection<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<PaginationPage<Item>, Error> {
+        let publisher = ThrowingTaskPublisher { [weak self] in
+            guard let self else { throw HalleyKit.Error.deinited }
+            return try await self.requestPage(input)
         }
+        return publisher.eraseToAnyPublisher()
     }
 }
 
@@ -64,5 +84,22 @@ private extension Publisher {
             }
         }
         .eraseToAnyPublisher()
+    }
+}
+
+
+extension Future where Failure == Error {
+
+    convenience init(asyncFunc: @escaping () async throws -> Output) {
+        self.init { promise in
+            Task {
+                do {
+                    let result = try await asyncFunc()
+                    promise(.success(result))
+                } catch {
+                    promise(.failure(error))
+                }
+            }
+        }
     }
 }

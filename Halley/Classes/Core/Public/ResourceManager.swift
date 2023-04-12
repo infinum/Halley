@@ -1,5 +1,4 @@
 import Foundation
-import Combine
 
 public class ResourceManager {
 
@@ -19,20 +18,18 @@ public extension ResourceManager {
         includes: [String] = [],
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
-    ) -> AnyPublisher<Result<Parameters, Error>, Never> {
-#warning("TODO")
-        fatalError()
-//        let cache = options.responseFromCache ? JSONCache() : nil
-//        return traverser
-//            .resource(
-//                from: url,
-//                includes: includes,
-//                options: options,
-//                cache: cache,
-//                linkResolver: linkResolver
-//            )
-//            .map(\.asDictionary)
-//            .clearCacheOnCompletion(cache)
+    ) async -> Result<Parameters, Error> {
+        let cache = options.responseFromCache ? JSONCache() : nil
+        defer { cache?.clear() }
+        return await traverser
+            .resource(
+                from: url,
+                includes: includes,
+                options: options,
+                cache: cache,
+                linkResolver: linkResolver
+            )
+            .asDictionary
     }
 
     func resourceCollection(
@@ -40,20 +37,18 @@ public extension ResourceManager {
         includes: [String] = [],
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
-    ) -> AnyPublisher<Result<[Parameters], Error>, Never> {
-#warning("TODO")
-        fatalError()
-//        let cache = options.responseFromCache ? JSONCache() : nil
-//        return traverser
-//            .resourceCollection(
-//                from: url,
-//                includes: includes,
-//                options: options,
-//                cache: cache,
-//                linkResolver: linkResolver
-//            )
-//            .map(\.asArrayOfDictionaries)
-//            .clearCacheOnCompletion(cache)
+    ) async -> Result<[Parameters], Error> {
+        let cache = options.responseFromCache ? JSONCache() : nil
+        defer { cache?.clear() }
+        return await traverser
+            .resourceCollection(
+                from: url,
+                includes: includes,
+                options: options,
+                cache: cache,
+                linkResolver: linkResolver
+            )
+            .asArrayOfDictionaries
     }
 
     func resourceCollectionWithMetadata(
@@ -61,38 +56,17 @@ public extension ResourceManager {
         includes: [String] = [],
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
-    ) -> AnyPublisher<Result<Parameters, Error>, Never> {
-#warning("TODO")
-        fatalError()
-//        let cache = options.responseFromCache ? JSONCache() : nil
-//        return traverser
-//            .resourceCollectionWithMetadata(
-//                from: url,
-//                includes: includes,
-//                options: options,
-//                cache: cache,
-//                linkResolver: linkResolver
-//            )
-//            .map(\.asDictionary)
-//            .clearCacheOnCompletion(cache)
-    }
-}
-
-private extension Publisher {
-
-    // Cache holds a reference to Publisher which again needs to keep a reference
-    // to a publisher. That way we are creating retain cycle so it is crucial to
-    // clear the cache after use.
-    func clearCacheOnCompletion(_ cache: JSONCache?) -> some Publisher<Output, Failure> {
-        guard let cache = cache else { return self.eraseToAnyPublisher() }
-        return self
-            .handleEvents(
-                receiveCompletion: { _ in
-                    cache.clear()
-                }, receiveCancel: {
-                    cache.clear()
-                }
+    ) async -> Result<Parameters, Error> {
+        let cache = options.responseFromCache ? JSONCache() : nil
+        defer { cache?.clear() }
+        return await traverser
+            .resourceCollectionWithMetadata(
+                from: url,
+                includes: includes,
+                options: options,
+                cache: cache,
+                linkResolver: linkResolver
             )
-            .eraseToAnyPublisher()
+            .asDictionary
     }
 }
