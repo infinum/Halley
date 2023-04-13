@@ -3,18 +3,23 @@ PODS:
   - Halley/Codable (1.2.3):
     - Halley/URITemplate
   - Halley/Core (1.2.3)
+  - Halley/Rx (1.2.3):
+    - Halley/Codable
+    - RxSwift
   - Halley/URITemplate (1.2.3):
     - Halley/Core
     - URITemplate
+  - RxSwift (6.5.0)
   - URITemplate (3.0.1)
 
 DEPENDENCIES:
   - Alamofire
-  - Halley/Codable (from `../`)
+  - Halley/Rx (from `../`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - RxSwift
     - URITemplate
 
 EXTERNAL SOURCES:
@@ -23,9 +28,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
-  Halley: 7538a75fc99b68bc3ba7af1d3db61fcbadee7c11
+  Halley: 2416540b57bc683ea208b7edeba24b98085f23b4
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   URITemplate: 5f5a79f3e384884102c4e6b3325d159c20a8035a
 
-PODFILE CHECKSUM: 1186b9b406013f8c2919d40cc8ee906ef71f4e62
+PODFILE CHECKSUM: 04d81699e6ad8fc96154ca4c05e51a4c3f1231bc
 
 COCOAPODS: 1.12.0

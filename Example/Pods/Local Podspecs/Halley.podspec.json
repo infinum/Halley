@@ -53,6 +53,17 @@
 
         ]
       }
+    },
+    {
+      "name": "Rx",
+      "dependencies": {
+        "Halley/Codable": [
+
+        ],
+        "RxSwift": [
+
+        ]
+      }
     }
   ],
   "swift_version": "5.0"

@@ -32,4 +32,9 @@ TODO: Add long description of the pod here.
       sp.source_files = ['Halley/Classes/Codable/**/*']
       sp.dependency 'Halley/URITemplate'
     end
+
+    s.subspec 'Rx' do |sp|
+      sp.dependency 'Halley/Codable'
+      sp.dependency 'RxSwift'
+    end
 end
