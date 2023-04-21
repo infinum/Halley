@@ -1,21 +1,25 @@
 import Foundation
+import Combine
 
 class HALRequestOperation: ConcurrentOperation {
 
     typealias CompletionHanlder = (JSONResponse) -> Void
 
-    private let lock: NSLock = .init()
     private let url: URL
     private let requester: RequesterInterface
-    private var completionHandlers: [CompletionHanlder]
+    private let completionHandler: CompletionHanlder
 
     // Request should not be started at init, hence filling this in main
     private var requestContainer: RequestContainerInterface?
 
-    init(url: URL, requester: RequesterInterface) {
+    init(
+        url: URL,
+        requester: RequesterInterface,
+        completionHandler: @escaping CompletionHanlder
+    ) {
         self.url = url
         self.requester = requester
-        self.completionHandlers = []
+        self.completionHandler = completionHandler
         super.init()
     }
 
@@ -25,15 +29,7 @@ class HALRequestOperation: ConcurrentOperation {
             self.finish()
             let jsonResult = dataResult
                 .tryMap { try JSONSerialization.jsonObject(with: $0, options: .fragmentsAllowed) }
-            self.lock.safe {
-                self.completionHandlers.forEach { $0(jsonResult) }
-            }
-        }
-    }
-
-    func addCompletionHandler(_ completionHandler: @escaping CompletionHanlder) {
-        lock.safe {
-            completionHandlers.append(completionHandler)
+            self.completionHandler(jsonResult)
         }
     }
 

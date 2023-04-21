@@ -6,7 +6,7 @@
 
 // MARK: - ForEach
 
-public extension Sequence {
+extension Sequence {
     /// Run an async closure for each element within the sequence.
     ///
     /// The closure calls will be performed in order, by waiting for
@@ -79,7 +79,7 @@ public extension Sequence {
 
 // MARK: - Map
 
-public extension Sequence {
+extension Sequence {
     /// Transform the sequence into an array of new values using
     /// an async closure.
     ///
@@ -180,7 +180,7 @@ public extension Sequence {
 
 // MARK: - CompactMap
 
-public extension Sequence {
+extension Sequence {
     /// Transform the sequence into an array of new values using
     /// an async closure that returns optional values. Only the
     /// non-`nil` return values will be included in the new array.
@@ -291,7 +291,7 @@ public extension Sequence {
 
 // MARK: - FlatMap
 
-public extension Sequence {
+extension Sequence {
     /// Transform the sequence into an array of new values using
     /// an async closure that returns sequences. The returned sequences
     /// will be flattened into the array returned from this function.

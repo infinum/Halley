@@ -6,6 +6,8 @@ public extension HalleyKit {
     enum Error: Swift.Error {
         /// Error thrown in case if `HalleyKit` classes were deinited while traversing the link
         case deinited
+        /// Error thrown in case there is no response
+        case noResponse
         /// Returned when `data` is not [String: Any] or [[String: Any]]
         case cantProcess(data: Any)
         /// Returned when `data` is not [String: Any]
