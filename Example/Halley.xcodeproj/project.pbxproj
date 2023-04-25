@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AABFF4229F7E2F600B9AA20 /* HalleyResourceFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AABFF3C29F7E2F600B9AA20 /* HalleyResourceFetcher.swift */; };
+		0AABFF4329F7E2F600B9AA20 /* HalleyMockReferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AABFF3D29F7E2F600B9AA20 /* HalleyMockReferences.swift */; };
+		0AABFF4429F7E2F600B9AA20 /* HalleyMockReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AABFF3E29F7E2F600B9AA20 /* HalleyMockReference.swift */; };
+		0AABFF4529F7E2F600B9AA20 /* HalleyMockRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AABFF3F29F7E2F600B9AA20 /* HalleyMockRequester.swift */; };
+		0AABFF4629F7E2F600B9AA20 /* JSONParsingUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AABFF4129F7E2F600B9AA20 /* JSONParsingUtilities.swift */; };
+		0AABFF4829F7E3A600B9AA20 /* HalleyTestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AABFF4729F7E3A600B9AA20 /* HalleyTestError.swift */; };
 		0AB3F58A2792C53F009FDC80 /* HalleyAlamofireRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB3F5892792C53F009FDC80 /* HalleyAlamofireRequester.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,6 +36,12 @@
 
 /* Begin PBXFileReference section */
 		00E788297E5031AE566A4FDA /* Pods-Halley_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Example.release.xcconfig"; path = "Target Support Files/Pods-Halley_Example/Pods-Halley_Example.release.xcconfig"; sourceTree = "<group>"; };
+		0AABFF3C29F7E2F600B9AA20 /* HalleyResourceFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalleyResourceFetcher.swift; sourceTree = "<group>"; };
+		0AABFF3D29F7E2F600B9AA20 /* HalleyMockReferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalleyMockReferences.swift; sourceTree = "<group>"; };
+		0AABFF3E29F7E2F600B9AA20 /* HalleyMockReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalleyMockReference.swift; sourceTree = "<group>"; };
+		0AABFF3F29F7E2F600B9AA20 /* HalleyMockRequester.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalleyMockRequester.swift; sourceTree = "<group>"; };
+		0AABFF4129F7E2F600B9AA20 /* JSONParsingUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParsingUtilities.swift; sourceTree = "<group>"; };
+		0AABFF4729F7E3A600B9AA20 /* HalleyTestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalleyTestError.swift; sourceTree = "<group>"; };
 		0AB3F5892792C53F009FDC80 /* HalleyAlamofireRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalleyAlamofireRequester.swift; sourceTree = "<group>"; };
 		2E0B02124B38A0B6CF48A4BA /* Pods-Halley_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Halley_Example.debug.xcconfig"; path = "Target Support Files/Pods-Halley_Example/Pods-Halley_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		359B68B42A45F38F30B14053 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -71,6 +83,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AABFF3A29F7E2F600B9AA20 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0AABFF3B29F7E2F600B9AA20 /* HAL */,
+				0AABFF4029F7E2F600B9AA20 /* JSON */,
+				0AABFF4729F7E3A600B9AA20 /* HalleyTestError.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		0AABFF3B29F7E2F600B9AA20 /* HAL */ = {
+			isa = PBXGroup;
+			children = (
+				0AABFF3C29F7E2F600B9AA20 /* HalleyResourceFetcher.swift */,
+				0AABFF3D29F7E2F600B9AA20 /* HalleyMockReferences.swift */,
+				0AABFF3E29F7E2F600B9AA20 /* HalleyMockReference.swift */,
+				0AABFF3F29F7E2F600B9AA20 /* HalleyMockRequester.swift */,
+			);
+			path = HAL;
+			sourceTree = "<group>";
+		};
+		0AABFF4029F7E2F600B9AA20 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				0AABFF4129F7E2F600B9AA20 /* JSONParsingUtilities.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +159,7 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				0AABFF3A29F7E2F600B9AA20 /* Utility */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -349,7 +391,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AABFF4429F7E2F600B9AA20 /* HalleyMockReference.swift in Sources */,
+				0AABFF4329F7E2F600B9AA20 /* HalleyMockReferences.swift in Sources */,
+				0AABFF4529F7E2F600B9AA20 /* HalleyMockRequester.swift in Sources */,
+				0AABFF4229F7E2F600B9AA20 /* HalleyResourceFetcher.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				0AABFF4629F7E2F600B9AA20 /* JSONParsingUtilities.swift in Sources */,
+				0AABFF4829F7E3A600B9AA20 /* HalleyTestError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
