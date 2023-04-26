@@ -21,17 +21,26 @@ public extension ResourceManager {
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
     ) -> some Publisher<Result<Parameters, Error>, Never> {
-        let cache = options.responseFromCache ? JSONCache() : nil
-        return traverser
-            .resource(
-                from: url,
-                includes: includes,
-                options: options,
-                cache: cache,
-                linkResolver: linkResolver
-            )
-            .map(\.asDictionary)
-            .clearCacheOnCompletion(cache)
+        // Deffer initial request to allow retry on client side - responses inside Halley
+        // are shared and replied which would cause the endless retry loop if initial request
+        // fails - it would repeat error all over again. Deferred will recreate whole request again.
+        return Deferred { [weak self] in
+            guard let self else {
+                return Just(Result<Parameters, Error>.failure(HalleyKit.Error.deinited)).eraseToAnyPublisher()
+            }
+            let cache = options.responseFromCache ? JSONCache() : nil
+            return self.traverser
+                .resource(
+                    from: url,
+                    includes: includes,
+                    options: options,
+                    cache: cache,
+                    linkResolver: linkResolver
+                )
+                .map(\.asDictionary)
+                .clearCacheOnCompletion(cache)
+                .eraseToAnyPublisher()
+        }
     }
 
     func resourceCollection(
@@ -40,17 +49,26 @@ public extension ResourceManager {
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
     ) -> some Publisher<Result<[Parameters], Error>, Never> {
-        let cache = options.responseFromCache ? JSONCache() : nil
-        return traverser
-            .resourceCollection(
-                from: url,
-                includes: includes,
-                options: options,
-                cache: cache,
-                linkResolver: linkResolver
-            )
-            .map(\.asArrayOfDictionaries)
-            .clearCacheOnCompletion(cache)
+        // Deffer initial request to allow retry on client side - responses inside Halley
+        // are shared and replied which would cause the endless retry loop if initial request
+        // fails - it would repeat error all over again. Deferred will recreate whole request again.
+        return Deferred { [weak self] in
+            guard let self else {
+                return Just(Result<[Parameters], Error>.failure(HalleyKit.Error.deinited)).eraseToAnyPublisher()
+            }
+            let cache = options.responseFromCache ? JSONCache() : nil
+            return self.traverser
+                .resourceCollection(
+                    from: url,
+                    includes: includes,
+                    options: options,
+                    cache: cache,
+                    linkResolver: linkResolver
+                )
+                .map(\.asArrayOfDictionaries)
+                .clearCacheOnCompletion(cache)
+                .eraseToAnyPublisher()
+        }
     }
 
     func resourceCollectionWithMetadata(
@@ -59,17 +77,26 @@ public extension ResourceManager {
         options: HalleyKit.Options = .default,
         linkResolver: LinkResolver = URLLinkResolver()
     ) -> some Publisher<Result<Parameters, Error>, Never> {
-        let cache = options.responseFromCache ? JSONCache() : nil
-        return traverser
-            .resourceCollectionWithMetadata(
-                from: url,
-                includes: includes,
-                options: options,
-                cache: cache,
-                linkResolver: linkResolver
-            )
-            .map(\.asDictionary)
-            .clearCacheOnCompletion(cache)
+        // Deffer initial request to allow retry on client side - responses inside Halley
+        // are shared and replied which would cause the endless retry loop if initial request
+        // fails - it would repeat error all over again. Deferred will recreate whole request again.
+        return Deferred { [weak self] in
+            guard let self else {
+                return Just(Result<Parameters, Error>.failure(HalleyKit.Error.deinited)).eraseToAnyPublisher()
+            }
+            let cache = options.responseFromCache ? JSONCache() : nil
+            return self.traverser
+                .resourceCollectionWithMetadata(
+                    from: url,
+                    includes: includes,
+                    options: options,
+                    cache: cache,
+                    linkResolver: linkResolver
+                )
+                .map(\.asDictionary)
+                .clearCacheOnCompletion(cache)
+                .eraseToAnyPublisher()
+        }
     }
 }
 
