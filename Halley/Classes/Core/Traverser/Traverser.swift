@@ -135,6 +135,8 @@ private extension Traverser {
             }
         }
 
+        // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
+        // and ends whole pipeline
         guard requests.isEmpty == false else {
             return .success(resource.parameters)
         }
@@ -336,7 +338,12 @@ private extension Traverser {
         options: HalleyKit.Options,
         cache: JSONCache?,
         linkResolver: LinkResolver
-    ) throws -> some Publisher<JSONResult, Never> {
+    ) throws -> AnyPublisher<JSONResult, Never> {
+        // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
+        // and ends whole pipeline
+        guard embeddedResources.isEmpty == false else {
+            return .success([])
+        }
         return try embeddedResources
             .map { resource in
                 return try fetchSingleResourceLinkedResources(
@@ -349,6 +356,7 @@ private extension Traverser {
             }
             .zip()
             .map { $0.collect() }
+            .eraseToAnyPublisher()
     }
 
     func fetchCollectionResources(
@@ -369,9 +377,13 @@ private extension Traverser {
                 )
             }
             .map { $0.eraseToAnyPublisher() }
+
+        // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
+        // and ends whole pipeline
         guard requests.isEmpty == false else {
             return .success([])
         }
+
         return requests
             .zip()
             .map { $0.collect() }
