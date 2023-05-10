@@ -26,7 +26,7 @@ public class DefaultTemplateHandler: TemplateHandler {
 
     // MARK: - Interface
 
-    public func updateTamplate(for key: String, value: @escaping () -> String?) {
+    public func updateTemplate(for key: String, value: @escaping () -> String?) {
         templateValues.updateValue(value, forKey: key)
     }
 

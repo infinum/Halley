@@ -1,0 +1,9 @@
+{
+    "_links": {
+        "self": {
+            "href": "http://example.org/api/locations/mwop"
+        }
+    },
+    "id": "mwop",
+    "url": "http://www.mwop.net"
+}

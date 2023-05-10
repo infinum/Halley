@@ -23,16 +23,16 @@ class URITemplateManager {
     private lazy var _uriTemplateHandler = DefaultTemplateHandler.shared
 
     func setupTemplates() {
-        _uriTemplateHandler.updateTamplate(for: URITemplates.countryKey, value: {
+        _uriTemplateHandler.updateTemplate(for: URITemplates.countryKey, value: {
             return "DE"
         })
-        _uriTemplateHandler.updateTamplate(for: URITemplates.countriesKey, value: {
+        _uriTemplateHandler.updateTemplate(for: URITemplates.countriesKey, value: {
             return "DE"
         })
-        _uriTemplateHandler.updateTamplate(for: URITemplates.unitSystem, value: {
+        _uriTemplateHandler.updateTemplate(for: URITemplates.unitSystem, value: {
             return "METRIC"
         })
-        _uriTemplateHandler.updateTamplate(for: URITemplates.electricSystem, value: {
+        _uriTemplateHandler.updateTemplate(for: URITemplates.electricSystem, value: {
             return "220V"
         })
     }
