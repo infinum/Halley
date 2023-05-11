@@ -40,31 +40,4 @@ final class SingleResourceTests: XCTestCase {
         let person = try awaitPublisher(fetcher.resource(ofType: Contact.self))
         XCTAssertEqual(person.website?._links?.selfLink?.href, "http://example.org/api/locations/mwop")
     }
-
-    func testDecodingWithoutEmbeddedRelationships() throws {
-        let fetcher = HalleyResourceFetcher(
-            fromJson: "single_resource_without_embedded",
-            for: Contact.self,
-            includeType: .full,
-            registeredMocks: .shared
-                .adding(url: "http://example.org/api/user/matthew/website", for: .init(jsonName: "matthew_website"))
-                .adding(url: "http://example.org/api/user/matthew/contacts", for: .init(jsonName: "matthew_contacts"))
-        )
-        let person = try awaitPublisher(fetcher.resource(ofType: Contact.self))
-        XCTAssertNotNil(person.contacts)
-        XCTAssertNotNil(person.website)
-    }
-
-    func testDecodingWithoutEmbeddedRelationshipsPartial() throws {
-        let fetcher = HalleyResourceFetcher(
-            fromJson: "single_resource_without_embedded",
-            for: Contact.self,
-            includeType: .contacts,
-            registeredMocks: .shared
-                .adding(url: "http://example.org/api/user/matthew/contacts", for: .init(jsonName: "matthew_contacts"))
-        )
-        let person = try awaitPublisher(fetcher.resource(ofType: Contact.self))
-        XCTAssertNotNil(person.contacts)
-        XCTAssertNil(person.website)
-    }
 }

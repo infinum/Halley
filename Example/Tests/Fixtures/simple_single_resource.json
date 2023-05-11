@@ -2,6 +2,12 @@
     "_links": {
         "self": {
             "href": "http://example.org/api/user/matthew"
+        },
+        "contacts": {
+            "href": "http://example.org/api/user/matthew/contacts"
+        },
+        "website": {
+            "href": "http://example.org/api/user/matthew/website"
         }
     },
     "id": "matthew",
@@ -12,6 +18,12 @@
                 "_links": {
                     "self": {
                         "href": "http://example.org/api/user/mac_nibblet"
+                    },
+                    "contacts": {
+                        "href": "http://example.org/api/user/mac_nibblet/contacts"
+                    },
+                    "website": {
+                        "href": "http://example.org/api/user/mac_nibblet/website"
                     }
                 },
                 "id": "mac_nibblet",

@@ -5,6 +5,9 @@
                 "_links": {
                     "self": {
                         "href": "http://example.org/api/user/mac_nibblet"
+                    },
+                    "contacts": {
+                        "href": "http://example.org/api/user/mac_nibblet/contacts"
                     }
                 },
                 "id": "mac_nibblet",

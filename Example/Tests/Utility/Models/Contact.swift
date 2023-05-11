@@ -38,6 +38,9 @@ extension Contact: IncludeableType {
     enum IncludeType {
         case full
         case contacts
+        case website
+        case contactsOfContacts
+        case contactsAndWebsiteOfContacts
     }
 }
 
@@ -52,6 +55,12 @@ extension Contact.IncludeType: IncludeTypeInterface {
             ToOne(.website)
         case .contacts:
             ToMany(.contacts)
+        case .website:
+            ToOne(.website)
+        case .contactsOfContacts:
+            Nested(Contact.self, including: .contacts, at: .contacts, toMany: true)
+        case .contactsAndWebsiteOfContacts:
+            Nested(Contact.self, including: .full, at: .contacts, toMany: true)
         }
     }
 }
