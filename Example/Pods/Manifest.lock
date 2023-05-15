@@ -1,12 +1,12 @@
 PODS:
-  - Alamofire (5.6.4)
-  - Halley/Codable (1.2.3):
+  - Alamofire (5.7.1)
+  - Halley/Codable (1.2.6):
     - Halley/URITemplate
-  - Halley/Core (1.2.3)
-  - Halley/Rx (1.2.3):
+  - Halley/Core (1.2.6)
+  - Halley/Rx (1.2.6):
     - Halley/Codable
     - RxSwift
-  - Halley/URITemplate (1.2.3):
+  - Halley/URITemplate (1.2.6):
     - Halley/Core
     - URITemplate
   - RxSwift (6.5.0)
@@ -27,11 +27,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
-  Halley: 2416540b57bc683ea208b7edeba24b98085f23b4
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Halley: 09abd7af87f892f535ac63898c347e91c6a64d35
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   URITemplate: 5f5a79f3e384884102c4e6b3325d159c20a8035a
 
 PODFILE CHECKSUM: 04d81699e6ad8fc96154ca4c05e51a4c3f1231bc
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.12.1

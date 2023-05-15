@@ -11,7 +11,7 @@ public extension ResourceManager {
             includes: input.includes,
             linkResolver: input.linkResolver
         )
-        return try Self.decode(data: jsonResponse, type: Item.self, decoder: input.decoder)
+        return try Self.decode(result: jsonResponse, type: Item.self, decoder: input.decoder)
     }
 
     func requestCollection<Item>(_ input: HalleyRequest<Item>) async throws -> [Item] {
@@ -20,7 +20,7 @@ public extension ResourceManager {
             includes: input.includes,
             linkResolver: input.linkResolver
         )
-        return try Self.decode(data: jsonResponse, type: [Item].self, decoder: input.decoder)
+        return try Self.decode(result: jsonResponse, type: [Item].self, decoder: input.decoder)
     }
 
     func requestPage<Item>(_ input: HalleyRequest<Item>) async throws -> PaginationPage<Item> {
@@ -29,7 +29,7 @@ public extension ResourceManager {
             includes: input.includes,
             linkResolver: input.linkResolver
         )
-        return try Self.decode(data: jsonResponse, type: PaginationPage<Item>.self, decoder: input.decoder)
+        return try Self.decode(result: jsonResponse, type: PaginationPage<Item>.self, decoder: input.decoder)
     }
 }
 
@@ -37,8 +37,13 @@ public extension ResourceManager {
 
 private extension ResourceManager {
 
-    static func decode<T, U: Decodable>(data: T, type: U.Type, decoder: JSONDecoder) throws -> U {
-        let jsonData = try JSONSerialization.data(withJSONObject: data, options: [.fragmentsAllowed])
-        return try decoder.decode(U.self, from: jsonData)
+    static func decode<T, U: Decodable>(result: Result<T, Error>, type: U.Type, decoder: JSONDecoder) throws -> U {
+        switch result {
+        case .success(let jsonObject):
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [.fragmentsAllowed])
+            return try decoder.decode(U.self, from: jsonData)
+        case .failure(let failure):
+            throw failure
+        }
     }
 }

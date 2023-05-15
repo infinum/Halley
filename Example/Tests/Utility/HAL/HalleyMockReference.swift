@@ -1,11 +1,11 @@
 import Foundation
 import Halley
 
-struct HalleyMockReference {
-    let jsonName: String
-    let bundle: Bundle
+public struct HalleyMockReference {
+    public let jsonName: String
+    public let bundle: Bundle
 
-    init(
+    public init(
         jsonName: String,
         bundle: Bundle = Bundle(for: JSONParsingUtilities.self)
     ) {
@@ -16,7 +16,17 @@ struct HalleyMockReference {
     func load() throws -> Data {
         let path = try bundle
             .url(forResource: jsonName, withExtension: "json")
-            .orThrow(HalleyTestError.conditionFailed("File \(jsonName).json not found in \(bundle)."))
+            .orThrow(HalleyTestsError.conditionFailed("File \(jsonName).json not found in \(bundle)."))
         return try Data(contentsOf: path)
+    }
+}
+
+extension Optional {
+
+    func orThrow<E: Error>(_ errorClosure: @autoclosure () -> E) throws -> Wrapped {
+        guard let value = self else {
+            throw errorClosure()
+        }
+        return value
     }
 }

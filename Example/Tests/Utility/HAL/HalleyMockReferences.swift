@@ -1,10 +1,10 @@
 import Foundation
 
-typealias HalleyMockReferences = [String: HalleyMockReference]
+public typealias HalleyMockReferences = [String: HalleyMockReference]
 
-extension HalleyMockReferences {
+public extension HalleyMockReferences {
 
-    static let baseUrl = "https://halley.com/api"
+    static let baseUrl = "https://halley.com"
 
     /// Contains base fixtures used while fetching mocked resources
     /// Please don't modify URLs in this list since URLs aren't typesafe and replacing/removing
@@ -13,7 +13,7 @@ extension HalleyMockReferences {
     static let shared: HalleyMockReferences = [:]
 }
 
-extension HalleyMockReferences {
+public extension HalleyMockReferences {
 
     func adding(url: String, for reference: HalleyMockReference) -> HalleyMockReferences {
         var result = self

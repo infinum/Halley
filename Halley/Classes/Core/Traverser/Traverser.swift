@@ -314,6 +314,11 @@ private extension Traverser {
         cache: JSONCache?,
         linkResolver: LinkResolver
     ) async throws -> JSONResult {
+        // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
+        // and ends whole pipeline
+        guard embeddedResources.isEmpty == false else {
+            return .success([])
+        }
         let responses = try await embeddedResources.concurrentMap { [self] resource in
             return try await fetchSingleResourceLinkedResources(
                 for: resource,
@@ -409,17 +414,26 @@ private extension Traverser {
         includes: Includes,
         options: HalleyKit.Options
     ) -> [LinkIncludesElement] {
+        // Skip if there is no relationship requested to be included
+        let includeValues = includes.values
+        guard includeValues.isEmpty == false else { return [] }
+
+        // In case there are no links to fetch, skip
         guard
             let _links = resource._links?.relationships,
-            _links.isEmpty == false, includes.values.isEmpty == false
+            _links.isEmpty == false
         else { return [] }
 
-        let includeValues = includes.values
-        // Fetch rels available only in both includes and links
-        let relevantRels: [Include] = includeValues.filter({ _links.keys.contains($0.key) })
-        var embeddedRels: Set<String> = []
+        // We support fetching only those relationships which have a link
+        let relevantRels: [Include] = includeValues.filter {
+            _links.keys.contains($0.key)
+        }
+
+        let embeddedRels: Set<String>
         if options.preferEmbeddedOverLinkTraversing {
-            embeddedRels = Set(relevantRels.filter { resource.hasEmbeddedRelationship($0.key) == true }.map(\.key))
+            embeddedRels = Set(relevantRels.filter { resource.hasEmbeddedRelationship($0.key) }.map(\.key))
+        } else {
+            embeddedRels = []
         }
 
         // Since we are parsing single resource, and it is checked before, only one link will be here

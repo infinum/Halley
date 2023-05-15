@@ -1,6 +1,6 @@
 {
   "name": "Halley",
-  "version": "1.2.3",
+  "version": "1.2.6",
   "summary": "A short description of Halley.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Infinum/Halley",
@@ -15,7 +15,7 @@
   },
   "source": {
     "git": "https://github.com/infinum/Halley.git",
-    "tag": "1.2.3"
+    "tag": "1.2.6"
   },
   "platforms": {
     "ios": "13.0"

@@ -1,0 +1,9 @@
+{
+    "_links": {
+        "self": {
+            "href": "http://example.org/api/locations/antn"
+        }
+    },
+    "id": "antn",
+    "url": "http://www.antn.net"
+}
