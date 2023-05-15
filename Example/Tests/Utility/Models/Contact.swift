@@ -61,6 +61,7 @@ extension Contact.IncludeType: IncludeTypeInterface {
             Nested(Contact.self, including: .contacts, at: .contacts, toMany: true)
         case .contactsAndWebsiteOfContacts:
             Nested(Contact.self, including: .full, at: .contacts, toMany: true)
+            ToOne(.website)
         }
     }
 }
