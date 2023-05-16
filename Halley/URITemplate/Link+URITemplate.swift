@@ -1,5 +1,4 @@
 import Foundation
-import URITemplate
 
 // MARK: - Expand
 

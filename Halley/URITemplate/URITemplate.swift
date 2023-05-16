@@ -11,11 +11,11 @@ import Foundation
 // MARK: URITemplate
 
 /// A data structure to represent an RFC6570 URI template.
-public struct URITemplate : RawRepresentable, CustomStringConvertible, Equatable, Hashable, ExpressibleByStringLiteral, ExpressibleByExtendedGraphemeClusterLiteral, ExpressibleByUnicodeScalarLiteral {
-  public let rawValue: String
+struct URITemplate : RawRepresentable, CustomStringConvertible, Equatable, Hashable, ExpressibleByStringLiteral, ExpressibleByExtendedGraphemeClusterLiteral, ExpressibleByUnicodeScalarLiteral {
+  let rawValue: String
 
   /// The underlying URI template
-  public var template: String {
+  var template: String {
     return rawValue
   }
 
@@ -43,43 +43,43 @@ public struct URITemplate : RawRepresentable, CustomStringConvertible, Equatable
   }
 
   /// Initialize a URITemplate with the given template
-  public init(template: String) {
+  init(template: String) {
     self.rawValue = template
   }
 
-  public init(rawValue: String) {
+  init(rawValue: String) {
     self.rawValue = rawValue
   }
 
-  public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
-  public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
+  typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
+  init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
     rawValue = value
   }
 
-  public typealias UnicodeScalarLiteralType = StringLiteralType
-  public init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
+  typealias UnicodeScalarLiteralType = StringLiteralType
+  init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
     rawValue = value
   }
 
-  public init(stringLiteral value: StringLiteralType) {
+  init(stringLiteral value: StringLiteralType) {
     rawValue = value
   }
 
-  public init(from decoder: Decoder) throws {
+  init(from decoder: Decoder) throws {
     rawValue = try decoder.singleValueContainer().decode(String.self)
   }
 
   /// Returns a description of the URITemplate
-  public var description: String {
+  var description: String {
     return template
   }
 
-  public func hash(into hasher: inout Hasher) {
+  func hash(into hasher: inout Hasher) {
     template.hash(into: &hasher)
   }
 
   /// Returns the set of keywords in the URI Template
-  public var variables: [String] {
+  var variables: [String] {
     let expressions = regex.matches(template).map { expression -> String in
       // Removes the { and } from the expression
       return String(expression[expression.index(after: expression.startIndex)..<expression.index(before: expression.endIndex)])
@@ -108,7 +108,7 @@ public struct URITemplate : RawRepresentable, CustomStringConvertible, Equatable
   }
 
   /// Expand template as a URI Template using the given variables
-  public func expand(_ variables: [String: Any]) -> String {
+  func expand(_ variables: [String: Any]) -> String {
     return regex.substitute(template) { string in
       var expression = String(string[string.index(after: string.startIndex)..<string.index(before: string.endIndex)])
       let firstCharacter = String(expression[..<expression.index(after: expression.startIndex)])
@@ -212,7 +212,7 @@ public struct URITemplate : RawRepresentable, CustomStringConvertible, Equatable
   }
 
   /// Extract the variables used in a given URL
-  public func extract(_ url:String) -> [String:String]? {
+  func extract(_ url:String) -> [String:String]? {
     if let expression = extractionRegex {
       let input = url as NSString
       let range = NSRange(location: 0, length: input.length)
@@ -236,14 +236,14 @@ public struct URITemplate : RawRepresentable, CustomStringConvertible, Equatable
 }
 
 extension URITemplate: Codable {
-  public func encode(to encoder: Encoder) throws {
+  func encode(to encoder: Encoder) throws {
     var container = encoder.singleValueContainer()
     try container.encode(template)
   }
 }
 
 /// Determine if two URITemplate's are equivalent
-public func ==(lhs:URITemplate, rhs:URITemplate) -> Bool {
+func ==(lhs:URITemplate, rhs:URITemplate) -> Bool {
   return lhs.template == rhs.template
 }
 

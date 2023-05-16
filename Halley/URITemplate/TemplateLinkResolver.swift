@@ -1,5 +1,4 @@
 import Foundation
-import URITemplate
 
 public protocol TemplateHandler {
     func resolveTemplate(for link: Link) throws -> URL

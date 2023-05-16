@@ -15,18 +15,13 @@ let package = Package(
         .package(
             url: "https://github.com/CombineCommunity/CombineExt.git",
             .upToNextMajor(from: "1.0.0")
-        ),
-        .package(
-            url: "https://github.com/kylef/URITemplate.swift.git",
-            .upToNextMajor(from: "3.0.0")
         )
     ],
     targets: [
         .target(
             name: "Halley",
             dependencies: [
-                "CombineExt",
-                .product(name: "URITemplate", package: "URITemplate.swift")
+                "CombineExt"
             ],
             path: "Halley"
         ),
