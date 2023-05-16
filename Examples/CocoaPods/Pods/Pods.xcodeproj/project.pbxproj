@@ -1,0 +1,901 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00506A804822E12B550A31410E06865B /* HalleyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127751BB2893A605D17BEE7FE5FFB766 /* HalleyError.swift */; };
+		0174BE5F116BF396A32AE6DC5FD5DA36 /* HaleyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9D27226D31E402DD5BFF7542E91565 /* HaleyRequest.swift */; };
+		01B64F5725641BA95F46A44B9D90A18A /* IncludeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E696B162AE8B499B7DAC89154FC6994 /* IncludeField.swift */; };
+		01DF5D69A81FA6824EEC2CBDF3A80B46 /* DemandBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AEBF42A502B39ECF5E2612B2B8E08F /* DemandBuffer.swift */; };
+		0DCA24644C44571926F22330A3ED7D4F /* ResourceManager+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E60648221950BDFF34D7ED2D1FAEB24 /* ResourceManager+Combine.swift */; };
+		0F40E568A42C27A56B63E15D4D0212C6 /* LinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E0C8D8E36730AA05693EB5F2401C2 /* LinkResolver.swift */; };
+		10C96B9CB83765947673D627E78A7378 /* Traverser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAD2F00DB75F9D54377E668EA5CA161 /* Traverser.swift */; };
+		1D113DE57FA3A2091F86CBFD34EDE7D7 /* PageMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03045CC2F6E6C3A1BA1B11DC5946E0D /* PageMetadata.swift */; };
+		1F7704A2144886FE7F8E806AA682CB4A /* Halley-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9998D3CF9AC21566112EEF0977E64880 /* Halley-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FFB26985BDCE5DA386E854079F90725 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CF71CA1358E7D1BA83C3B33EDD4429 /* ConcurrentOperation.swift */; };
+		26F9A2484659951D1083FD94BBAD8F2E /* IncludesResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD2B81D41E6CC12FACB55F6799BEE6D /* IncludesResultBuilder.swift */; };
+		29EBB548B8556AA53E6E1EB7E7839CF8 /* IncludeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89E2DB859037100D2C93DCE16E8B79 /* IncludeKey.swift */; };
+		319F9889A32CF410DD7E20CB605363D5 /* URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E601678059A035A9DFDCB760B211001 /* URITemplate.swift */; };
+		34F43B43E10ABE6867056A3DD1824796 /* PageLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F9270A0F5C8A2FF8F18F007FC248F /* PageLinks.swift */; };
+		359735CA15BB5CE5A4F1DE08FC739C89 /* Pods-HalleyCocoaPodExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 35948331D02AE4729EB929F8BFC99588 /* Pods-HalleyCocoaPodExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D9B4E7247FDF144DA9DA6CCF3F3B3C9 /* ShareReplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87FDAC069AE8AA000C01D4C62510573 /* ShareReplay.swift */; };
+		3EFD3EC9EB0BF119911CAC6ABC93E20E /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DE25B0D7EE8FA330CB3055137CD23 /* Links.swift */; };
+		43E6FABF3628F49528D7D8CB05D215FE /* ResourceManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3220D21081EEB344B026BB42D773625D /* ResourceManager+Rx.swift */; };
+		4C9B152E38D223842E960838F5C8EB7D /* HalleyURLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E3487130BE0D6E0E796DEC5F8F384 /* HalleyURLConvertible.swift */; };
+		5A6A00D5293151D08245FBFB06D7360F /* RequesterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CA9590244E7D0EAE958527487E7A5F /* RequesterInterface.swift */; };
+		5E503CE08DA55A67E3EF0396E67BF9F3 /* OverridingTemplateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC110AF07605B1AC4AE9163C784F77D4 /* OverridingTemplateHandler.swift */; };
+		67D4088ADD8FC8BCB867C28F903C5F37 /* Dictionary+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE4087138522C5B38C8B69D12061D1B /* Dictionary+Decoding.swift */; };
+		6C6BD91646D27B394B81BAE0720B4D47 /* CollectionConcurrencyKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB913EE070F8925ED0670A3CFCB4DD0 /* CollectionConcurrencyKit.swift */; };
+		6DDA2F71C70048D78CA9B7C9D80BDC5B /* DefaultTemplateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117D04DA60E247BC56103C23DFCCEBFE /* DefaultTemplateHandler.swift */; };
+		7067F32ED282555B785AC80228A8E6BF /* Result+TryMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B0CF0809467F41D74BB1B347677C17 /* Result+TryMap.swift */; };
+		75074DD5997FED83B27FFE9DB5F812F3 /* Error+Halley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643C3035B7B086ED66FF80633CDD9CBF /* Error+Halley.swift */; };
+		7B94858984DB028074460A9C60C408AD /* Halley-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA43778A0D4BBCF59963D4152DFC8FF /* Halley-dummy.m */; };
+		7DB34019D702BB54264591C7C39EA6AB /* RequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8790A71A2431B9D81842956C8C5C1 /* RequestOperation.swift */; };
+		88E746853201EEC47D131CFBD4DA9DD0 /* PaginationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5502A314A7246C28BF7FFCBF6C1ECFE /* PaginationPage.swift */; };
+		8B96C2828E049648B718E6ABF2653381 /* RequesterQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694FF1789ECEFEE6F2620BB2BF47ACC1 /* RequesterQueue.swift */; };
+		8E799AD05F185BCDD64B843C73D0BACF /* ToManyIncludeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A2A70EB21BEA425918889486E3A388 /* ToManyIncludeKey.swift */; };
+		9EC972DDAD86FA443EE2294D654E3654 /* TemplateLinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81C823813D68678BC37C3D3961229F /* TemplateLinkResolver.swift */; };
+		A67109C24097891617078C2E004CCD17 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7375A81860FC8096B64A8F25B9DAFB77 /* Combine.framework */; };
+		ABF9FE343AC887F78A4652627EBDB06F /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D37BC7635900FC91CE6C9008FE0746 /* Types.swift */; };
+		AE7EE07CD49A5B5F3BAFA3BEB9D2D4C8 /* Result+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98839857D8FD32FF0F012C5618BCCB9 /* Result+Transform.swift */; };
+		AFBC489C324B336B053B0EF4B8D42456 /* AnyPublisher+JSONResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0920D2370DB48DDADF7D29788112F8F /* AnyPublisher+JSONResult.swift */; };
+		B0487598647A0669DDF490CC880A2533 /* ResourceManager+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732D7582E7C79E15D0633C8D87FF4A9F /* ResourceManager+Codable.swift */; };
+		BB37DB32627C25B0556552E717AEBCE6 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728F23DCF93182F069DA09E491756188 /* Link.swift */; };
+		BDA74B6CD3AC9141C738AB8A2134BB00 /* Halley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109E7AEB8D2872C8C3FD1C60B1C6B03D /* Halley.swift */; };
+		CD26E99D6A3A9C7B8D849ECB0F1B1FB6 /* Pods-HalleyCocoaPodExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E3449E078272FC4C31C9F19AA91B1F /* Pods-HalleyCocoaPodExample-dummy.m */; };
+		D11B3F6FA1DF6D3A00090279F3946D73 /* Halley+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936DB9165EAA4128AA41B810D84D4623 /* Halley+Codable.swift */; };
+		D2352E6CAC6E74DD814469466535819A /* Links+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D526904755E080059EF0C217850894DD /* Links+Helpers.swift */; };
+		D26796829FD79283AD1BB994585F3CE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */; };
+		D7BEB13D76625A3A6B31AA183EA59AAC /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B930CE83EDA7749CA14C235B21F6A8F /* Create.swift */; };
+		DA99FBAB8A5A8F69A71FA3C0E0FEDBD9 /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B70D4C2BB8CA8F15E53074DAB51D06F /* InMemoryCache.swift */; };
+		DC6D2CCD13D4F645A76B3BF2CD35F73D /* FieldQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644DA906A16E21B02BB916AF11E38D22 /* FieldQueryItem.swift */; };
+		DC72788DE7FCDF3BDD7B08F3CB928EBB /* Task+ThrowingPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A158FEC2939438EA50E1E22341739D /* Task+ThrowingPublisher.swift */; };
+		DD9A30A3AE44765985ED913C6D219D4E /* Link+URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962DAD868F2CA18528711E6336F3480D /* Link+URITemplate.swift */; };
+		E274C35E2F6D89F8E2BCBE4655F46C8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */; };
+		E347E7835DFE97ADC80750F62C6BAEB5 /* ReplaySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432400BA8FF8730D8B3C2D13EE8EED1A /* ReplaySubject.swift */; };
+		EE4FAA2ED2B2D2196027D484039A313D /* ResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE715A58714F6DA06D6CD89F6E43B6F /* ResourceManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB12E9091A75EB6DB28A2F8EDF384840 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98490E5339DC07CB01DD6E1C6C5D62EA;
+			remoteInfo = Halley;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0144C0D6B911634588AEA42B9F86C14B /* Pods-HalleyCocoaPodExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HalleyCocoaPodExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		03CF71CA1358E7D1BA83C3B33EDD4429 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
+		0B930CE83EDA7749CA14C235B21F6A8F /* Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
+		0CA8790A71A2431B9D81842956C8C5C1 /* RequestOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestOperation.swift; sourceTree = "<group>"; };
+		109E7AEB8D2872C8C3FD1C60B1C6B03D /* Halley.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Halley.swift; sourceTree = "<group>"; };
+		117D04DA60E247BC56103C23DFCCEBFE /* DefaultTemplateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultTemplateHandler.swift; sourceTree = "<group>"; };
+		127751BB2893A605D17BEE7FE5FFB766 /* HalleyError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HalleyError.swift; sourceTree = "<group>"; };
+		15AEBF42A502B39ECF5E2612B2B8E08F /* DemandBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DemandBuffer.swift; sourceTree = "<group>"; };
+		183E0C8D8E36730AA05693EB5F2401C2 /* LinkResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkResolver.swift; sourceTree = "<group>"; };
+		18A158FEC2939438EA50E1E22341739D /* Task+ThrowingPublisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Task+ThrowingPublisher.swift"; sourceTree = "<group>"; };
+		18B719A459633559BEE5110A66E51540 /* Halley-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Halley-Info.plist"; sourceTree = "<group>"; };
+		226F9270A0F5C8A2FF8F18F007FC248F /* PageLinks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PageLinks.swift; sourceTree = "<group>"; };
+		2C3CFE44A0CCD5E2DDC0C000095562C5 /* Halley.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Halley.release.xcconfig; sourceTree = "<group>"; };
+		2E696B162AE8B499B7DAC89154FC6994 /* IncludeField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IncludeField.swift; sourceTree = "<group>"; };
+		2EB913EE070F8925ED0670A3CFCB4DD0 /* CollectionConcurrencyKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CollectionConcurrencyKit.swift; sourceTree = "<group>"; };
+		3220D21081EEB344B026BB42D773625D /* ResourceManager+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ResourceManager+Rx.swift"; sourceTree = "<group>"; };
+		35948331D02AE4729EB929F8BFC99588 /* Pods-HalleyCocoaPodExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HalleyCocoaPodExample-umbrella.h"; sourceTree = "<group>"; };
+		3E601678059A035A9DFDCB760B211001 /* URITemplate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = URITemplate.swift; sourceTree = "<group>"; };
+		432400BA8FF8730D8B3C2D13EE8EED1A /* ReplaySubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaySubject.swift; sourceTree = "<group>"; };
+		457AA72E5608619A101A3A31EA132166 /* Halley */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Halley; path = Halley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B70D4C2BB8CA8F15E53074DAB51D06F /* InMemoryCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
+		4C54DFB83F333182C22D299D9CCB535A /* Pods-HalleyCocoaPodExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HalleyCocoaPodExample.release.xcconfig"; sourceTree = "<group>"; };
+		500E3487130BE0D6E0E796DEC5F8F384 /* HalleyURLConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HalleyURLConvertible.swift; sourceTree = "<group>"; };
+		52757DD561AA523FAFF8C9A0930F624B /* Pods-HalleyCocoaPodExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HalleyCocoaPodExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		556BF38930DDD7A0DCC1C83B6F465115 /* Halley.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Halley.modulemap; sourceTree = "<group>"; };
+		5E60648221950BDFF34D7ED2D1FAEB24 /* ResourceManager+Combine.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ResourceManager+Combine.swift"; sourceTree = "<group>"; };
+		643C3035B7B086ED66FF80633CDD9CBF /* Error+Halley.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Error+Halley.swift"; sourceTree = "<group>"; };
+		644DA906A16E21B02BB916AF11E38D22 /* FieldQueryItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FieldQueryItem.swift; sourceTree = "<group>"; };
+		64B6DD3EEA3F5F443A7A584403F1EB68 /* Halley.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Halley.debug.xcconfig; sourceTree = "<group>"; };
+		694FF1789ECEFEE6F2620BB2BF47ACC1 /* RequesterQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequesterQueue.swift; sourceTree = "<group>"; };
+		703B10E0D6B95D517293F526F440FDC1 /* Halley-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Halley-prefix.pch"; sourceTree = "<group>"; };
+		728F23DCF93182F069DA09E491756188 /* Link.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		732D7582E7C79E15D0633C8D87FF4A9F /* ResourceManager+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ResourceManager+Codable.swift"; sourceTree = "<group>"; };
+		7375A81860FC8096B64A8F25B9DAFB77 /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Combine.framework; sourceTree = DEVELOPER_DIR; };
+		7A7DE25B0D7EE8FA330CB3055137CD23 /* Links.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		7A96761A5E44472C10CBB78776756714 /* Halley.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Halley.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		87A2A70EB21BEA425918889486E3A388 /* ToManyIncludeKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToManyIncludeKey.swift; sourceTree = "<group>"; };
+		88E3449E078272FC4C31C9F19AA91B1F /* Pods-HalleyCocoaPodExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HalleyCocoaPodExample-dummy.m"; sourceTree = "<group>"; };
+		8C89E2DB859037100D2C93DCE16E8B79 /* IncludeKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IncludeKey.swift; sourceTree = "<group>"; };
+		8FE4087138522C5B38C8B69D12061D1B /* Dictionary+Decoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dictionary+Decoding.swift"; sourceTree = "<group>"; };
+		936DB9165EAA4128AA41B810D84D4623 /* Halley+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Halley+Codable.swift"; sourceTree = "<group>"; };
+		962DAD868F2CA18528711E6336F3480D /* Link+URITemplate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Link+URITemplate.swift"; sourceTree = "<group>"; };
+		9998D3CF9AC21566112EEF0977E64880 /* Halley-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Halley-umbrella.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A362C1A436BB6E48E258C91EF35E8321 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A66B016FE6D169AE62B059B026C87488 /* Pods-HalleyCocoaPodExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HalleyCocoaPodExample.debug.xcconfig"; sourceTree = "<group>"; };
+		B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		B303D277F9D27CBD55ACB919C73A921C /* Pods-HalleyCocoaPodExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HalleyCocoaPodExample"; path = Pods_HalleyCocoaPodExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5B0CF0809467F41D74BB1B347677C17 /* Result+TryMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Result+TryMap.swift"; sourceTree = "<group>"; };
+		BC110AF07605B1AC4AE9163C784F77D4 /* OverridingTemplateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OverridingTemplateHandler.swift; sourceTree = "<group>"; };
+		BC9C2CBFC0834B993FA975DCCFD08517 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BFD2B81D41E6CC12FACB55F6799BEE6D /* IncludesResultBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IncludesResultBuilder.swift; sourceTree = "<group>"; };
+		CC9D27226D31E402DD5BFF7542E91565 /* HaleyRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HaleyRequest.swift; sourceTree = "<group>"; };
+		D03045CC2F6E6C3A1BA1B11DC5946E0D /* PageMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PageMetadata.swift; sourceTree = "<group>"; };
+		D526904755E080059EF0C217850894DD /* Links+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Links+Helpers.swift"; sourceTree = "<group>"; };
+		D5502A314A7246C28BF7FFCBF6C1ECFE /* PaginationPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationPage.swift; sourceTree = "<group>"; };
+		D98839857D8FD32FF0F012C5618BCCB9 /* Result+Transform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Result+Transform.swift"; sourceTree = "<group>"; };
+		E11896D9F1AE9DA24865C15DCAC95AD2 /* Pods-HalleyCocoaPodExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HalleyCocoaPodExample-Info.plist"; sourceTree = "<group>"; };
+		E59717ABBC876B1DBB04A2971411A789 /* Pods-HalleyCocoaPodExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-HalleyCocoaPodExample.modulemap"; sourceTree = "<group>"; };
+		E923F01714C69BAD99C5ECD7512F66D8 /* Pods-HalleyCocoaPodExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HalleyCocoaPodExample-frameworks.sh"; sourceTree = "<group>"; };
+		EC81C823813D68678BC37C3D3961229F /* TemplateLinkResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateLinkResolver.swift; sourceTree = "<group>"; };
+		F0920D2370DB48DDADF7D29788112F8F /* AnyPublisher+JSONResult.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "AnyPublisher+JSONResult.swift"; sourceTree = "<group>"; };
+		F2CA9590244E7D0EAE958527487E7A5F /* RequesterInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequesterInterface.swift; sourceTree = "<group>"; };
+		F6D37BC7635900FC91CE6C9008FE0746 /* Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		F87FDAC069AE8AA000C01D4C62510573 /* ShareReplay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShareReplay.swift; sourceTree = "<group>"; };
+		FBAD2F00DB75F9D54377E668EA5CA161 /* Traverser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Traverser.swift; sourceTree = "<group>"; };
+		FBE715A58714F6DA06D6CD89F6E43B6F /* ResourceManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResourceManager.swift; sourceTree = "<group>"; };
+		FFA43778A0D4BBCF59963D4152DFC8FF /* Halley-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Halley-dummy.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		125A77CA046C651844EFE2B271EFF59E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67109C24097891617078C2E004CCD17 /* Combine.framework in Frameworks */,
+				E274C35E2F6D89F8E2BCBE4655F46C8F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1A4C246D0119B99F6DC1900C2D7ED94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D26796829FD79283AD1BB994585F3CE0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0254E5993A4960592F4F4CB215CFB8F5 /* Halley */ = {
+			isa = PBXGroup;
+			children = (
+				86DCAE13BE79C1BCEE5C3A08BA34D25E /* Codable */,
+				E0B8F5AF6C32E8D2A1AD4854BCDF445B /* Core */,
+				6195F49EEB6997DA1F245039F99D0C15 /* Pod */,
+				B4DD7990A319F23DC51D2AEB9EF1917E /* Support Files */,
+				DA4F82AA97BD6F469F1EC31FE6C9F1CA /* URITemplate */,
+			);
+			name = Halley;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		0610545A9E84A3C3FD5B2FAB230E855A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				728F23DCF93182F069DA09E491756188 /* Link.swift */,
+				7A7DE25B0D7EE8FA330CB3055137CD23 /* Links.swift */,
+				D526904755E080059EF0C217850894DD /* Links+Helpers.swift */,
+				F6D37BC7635900FC91CE6C9008FE0746 /* Types.swift */,
+			);
+			name = Models;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA581D828EDF08531495EFA1CB2616BC /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E7CABF630DFBC32049285AE08D99A0D /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				127751BB2893A605D17BEE7FE5FFB766 /* HalleyError.swift */,
+				F2CA9590244E7D0EAE958527487E7A5F /* RequesterInterface.swift */,
+				FBE715A58714F6DA06D6CD89F6E43B6F /* ResourceManager.swift */,
+			);
+			name = Public;
+			path = Public;
+			sourceTree = "<group>";
+		};
+		406F5B09F84F7249A5512A19B821BAC7 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				03CF71CA1358E7D1BA83C3B33EDD4429 /* ConcurrentOperation.swift */,
+				694FF1789ECEFEE6F2620BB2BF47ACC1 /* RequesterQueue.swift */,
+				0CA8790A71A2431B9D81842956C8C5C1 /* RequestOperation.swift */,
+			);
+			name = Queue;
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		6195F49EEB6997DA1F245039F99D0C15 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				7A96761A5E44472C10CBB78776756714 /* Halley.podspec */,
+				BC9C2CBFC0834B993FA975DCCFD08517 /* LICENSE */,
+				A362C1A436BB6E48E258C91EF35E8321 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		70CED392686A5C3E7E58566F79135779 /* CombineExt */ = {
+			isa = PBXGroup;
+			children = (
+				F0920D2370DB48DDADF7D29788112F8F /* AnyPublisher+JSONResult.swift */,
+				0B930CE83EDA7749CA14C235B21F6A8F /* Create.swift */,
+				15AEBF42A502B39ECF5E2612B2B8E08F /* DemandBuffer.swift */,
+				432400BA8FF8730D8B3C2D13EE8EED1A /* ReplaySubject.swift */,
+				F87FDAC069AE8AA000C01D4C62510573 /* ShareReplay.swift */,
+			);
+			name = CombineExt;
+			path = CombineExt;
+			sourceTree = "<group>";
+		};
+		82F8D75CBE9BBF7992EA3E1AAFCF0504 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0254E5993A4960592F4F4CB215CFB8F5 /* Halley */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		86DCAE13BE79C1BCEE5C3A08BA34D25E /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				CC9D27226D31E402DD5BFF7542E91565 /* HaleyRequest.swift */,
+				936DB9165EAA4128AA41B810D84D4623 /* Halley+Codable.swift */,
+				732D7582E7C79E15D0633C8D87FF4A9F /* ResourceManager+Codable.swift */,
+				5E60648221950BDFF34D7ED2D1FAEB24 /* ResourceManager+Combine.swift */,
+				3220D21081EEB344B026BB42D773625D /* ResourceManager+Rx.swift */,
+				AE8D16E7D0D8146BC3D9AE9A4955395A /* Includes */,
+				C9A41B46C93437BDB2152A06F8C44472 /* Pagination */,
+			);
+			name = Codable;
+			path = Halley/Codable;
+			sourceTree = "<group>";
+		};
+		AA581D828EDF08531495EFA1CB2616BC /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7375A81860FC8096B64A8F25B9DAFB77 /* Combine.framework */,
+				B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		ADB107B07ED95016B111D448EB263D5A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2EB913EE070F8925ED0670A3CFCB4DD0 /* CollectionConcurrencyKit.swift */,
+				8FE4087138522C5B38C8B69D12061D1B /* Dictionary+Decoding.swift */,
+				643C3035B7B086ED66FF80633CDD9CBF /* Error+Halley.swift */,
+				4B70D4C2BB8CA8F15E53074DAB51D06F /* InMemoryCache.swift */,
+				D98839857D8FD32FF0F012C5618BCCB9 /* Result+Transform.swift */,
+				B5B0CF0809467F41D74BB1B347677C17 /* Result+TryMap.swift */,
+				18A158FEC2939438EA50E1E22341739D /* Task+ThrowingPublisher.swift */,
+				70CED392686A5C3E7E58566F79135779 /* CombineExt */,
+			);
+			name = Utils;
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AE8D16E7D0D8146BC3D9AE9A4955395A /* Includes */ = {
+			isa = PBXGroup;
+			children = (
+				644DA906A16E21B02BB916AF11E38D22 /* FieldQueryItem.swift */,
+				2E696B162AE8B499B7DAC89154FC6994 /* IncludeField.swift */,
+				8C89E2DB859037100D2C93DCE16E8B79 /* IncludeKey.swift */,
+				BFD2B81D41E6CC12FACB55F6799BEE6D /* IncludesResultBuilder.swift */,
+				87A2A70EB21BEA425918889486E3A388 /* ToManyIncludeKey.swift */,
+			);
+			name = Includes;
+			path = Includes;
+			sourceTree = "<group>";
+		};
+		B4DD7990A319F23DC51D2AEB9EF1917E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				556BF38930DDD7A0DCC1C83B6F465115 /* Halley.modulemap */,
+				FFA43778A0D4BBCF59963D4152DFC8FF /* Halley-dummy.m */,
+				18B719A459633559BEE5110A66E51540 /* Halley-Info.plist */,
+				703B10E0D6B95D517293F526F440FDC1 /* Halley-prefix.pch */,
+				9998D3CF9AC21566112EEF0977E64880 /* Halley-umbrella.h */,
+				64B6DD3EEA3F5F443A7A584403F1EB68 /* Halley.debug.xcconfig */,
+				2C3CFE44A0CCD5E2DDC0C000095562C5 /* Halley.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Examples/CocoaPods/Pods/Target Support Files/Halley";
+			sourceTree = "<group>";
+		};
+		BDB8ADD91B27FB513BE269DB54ECE5C7 /* Traverser */ = {
+			isa = PBXGroup;
+			children = (
+				183E0C8D8E36730AA05693EB5F2401C2 /* LinkResolver.swift */,
+				FBAD2F00DB75F9D54377E668EA5CA161 /* Traverser.swift */,
+			);
+			name = Traverser;
+			path = Traverser;
+			sourceTree = "<group>";
+		};
+		C144AC19A78E4AF06E839AE3ACC57C32 /* Pods-HalleyCocoaPodExample */ = {
+			isa = PBXGroup;
+			children = (
+				E59717ABBC876B1DBB04A2971411A789 /* Pods-HalleyCocoaPodExample.modulemap */,
+				0144C0D6B911634588AEA42B9F86C14B /* Pods-HalleyCocoaPodExample-acknowledgements.markdown */,
+				52757DD561AA523FAFF8C9A0930F624B /* Pods-HalleyCocoaPodExample-acknowledgements.plist */,
+				88E3449E078272FC4C31C9F19AA91B1F /* Pods-HalleyCocoaPodExample-dummy.m */,
+				E923F01714C69BAD99C5ECD7512F66D8 /* Pods-HalleyCocoaPodExample-frameworks.sh */,
+				E11896D9F1AE9DA24865C15DCAC95AD2 /* Pods-HalleyCocoaPodExample-Info.plist */,
+				35948331D02AE4729EB929F8BFC99588 /* Pods-HalleyCocoaPodExample-umbrella.h */,
+				A66B016FE6D169AE62B059B026C87488 /* Pods-HalleyCocoaPodExample.debug.xcconfig */,
+				4C54DFB83F333182C22D299D9CCB535A /* Pods-HalleyCocoaPodExample.release.xcconfig */,
+			);
+			name = "Pods-HalleyCocoaPodExample";
+			path = "Target Support Files/Pods-HalleyCocoaPodExample";
+			sourceTree = "<group>";
+		};
+		C9A41B46C93437BDB2152A06F8C44472 /* Pagination */ = {
+			isa = PBXGroup;
+			children = (
+				226F9270A0F5C8A2FF8F18F007FC248F /* PageLinks.swift */,
+				D03045CC2F6E6C3A1BA1B11DC5946E0D /* PageMetadata.swift */,
+				D5502A314A7246C28BF7FFCBF6C1ECFE /* PaginationPage.swift */,
+			);
+			name = Pagination;
+			path = Pagination;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				82F8D75CBE9BBF7992EA3E1AAFCF0504 /* Development Pods */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				DFDADE1B0CEBE485D26BDF261A579F4B /* Products */,
+				DAE9B577542B17B834ECD302F1397F10 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		DA4F82AA97BD6F469F1EC31FE6C9F1CA /* URITemplate */ = {
+			isa = PBXGroup;
+			children = (
+				117D04DA60E247BC56103C23DFCCEBFE /* DefaultTemplateHandler.swift */,
+				500E3487130BE0D6E0E796DEC5F8F384 /* HalleyURLConvertible.swift */,
+				962DAD868F2CA18528711E6336F3480D /* Link+URITemplate.swift */,
+				BC110AF07605B1AC4AE9163C784F77D4 /* OverridingTemplateHandler.swift */,
+				EC81C823813D68678BC37C3D3961229F /* TemplateLinkResolver.swift */,
+				3E601678059A035A9DFDCB760B211001 /* URITemplate.swift */,
+			);
+			name = URITemplate;
+			path = Halley/URITemplate;
+			sourceTree = "<group>";
+		};
+		DAE9B577542B17B834ECD302F1397F10 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C144AC19A78E4AF06E839AE3ACC57C32 /* Pods-HalleyCocoaPodExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		DFDADE1B0CEBE485D26BDF261A579F4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				457AA72E5608619A101A3A31EA132166 /* Halley */,
+				B303D277F9D27CBD55ACB919C73A921C /* Pods-HalleyCocoaPodExample */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0B8F5AF6C32E8D2A1AD4854BCDF445B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				109E7AEB8D2872C8C3FD1C60B1C6B03D /* Halley.swift */,
+				0610545A9E84A3C3FD5B2FAB230E855A /* Models */,
+				2E7CABF630DFBC32049285AE08D99A0D /* Public */,
+				406F5B09F84F7249A5512A19B821BAC7 /* Queue */,
+				BDB8ADD91B27FB513BE269DB54ECE5C7 /* Traverser */,
+				ADB107B07ED95016B111D448EB263D5A /* Utils */,
+			);
+			name = Core;
+			path = Halley/Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		88E32FC8E204602A81CD0885C464D61F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F7704A2144886FE7F8E806AA682CB4A /* Halley-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A07E0F80ED49409D4D9A4A208BC0529B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				359735CA15BB5CE5A4F1DE08FC739C89 /* Pods-HalleyCocoaPodExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0181E2147CB65F9DFB89AFB3FD759D03 /* Pods-HalleyCocoaPodExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 454895A4B20EA78F263F11863E22DC17 /* Build configuration list for PBXNativeTarget "Pods-HalleyCocoaPodExample" */;
+			buildPhases = (
+				A07E0F80ED49409D4D9A4A208BC0529B /* Headers */,
+				F8F5A76239CC8B235405B8A02D72E48D /* Sources */,
+				F1A4C246D0119B99F6DC1900C2D7ED94 /* Frameworks */,
+				4D88EE74D8435A01A656BA0857F0660F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D10BECA888A2B8C6F32A8629066C267E /* PBXTargetDependency */,
+			);
+			name = "Pods-HalleyCocoaPodExample";
+			productName = Pods_HalleyCocoaPodExample;
+			productReference = B303D277F9D27CBD55ACB919C73A921C /* Pods-HalleyCocoaPodExample */;
+			productType = "com.apple.product-type.framework";
+		};
+		98490E5339DC07CB01DD6E1C6C5D62EA /* Halley */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31C8DEEAE065A28D269020DE4EFAA999 /* Build configuration list for PBXNativeTarget "Halley" */;
+			buildPhases = (
+				88E32FC8E204602A81CD0885C464D61F /* Headers */,
+				43F3383C11C0BCE00E949E40BDC1EAA1 /* Sources */,
+				125A77CA046C651844EFE2B271EFF59E /* Frameworks */,
+				999368E7B0975DC745B217668544C38B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Halley;
+			productName = Halley;
+			productReference = 457AA72E5608619A101A3A31EA132166 /* Halley */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = DFDADE1B0CEBE485D26BDF261A579F4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98490E5339DC07CB01DD6E1C6C5D62EA /* Halley */,
+				0181E2147CB65F9DFB89AFB3FD759D03 /* Pods-HalleyCocoaPodExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D88EE74D8435A01A656BA0857F0660F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999368E7B0975DC745B217668544C38B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43F3383C11C0BCE00E949E40BDC1EAA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBC489C324B336B053B0EF4B8D42456 /* AnyPublisher+JSONResult.swift in Sources */,
+				6C6BD91646D27B394B81BAE0720B4D47 /* CollectionConcurrencyKit.swift in Sources */,
+				1FFB26985BDCE5DA386E854079F90725 /* ConcurrentOperation.swift in Sources */,
+				D7BEB13D76625A3A6B31AA183EA59AAC /* Create.swift in Sources */,
+				6DDA2F71C70048D78CA9B7C9D80BDC5B /* DefaultTemplateHandler.swift in Sources */,
+				01DF5D69A81FA6824EEC2CBDF3A80B46 /* DemandBuffer.swift in Sources */,
+				67D4088ADD8FC8BCB867C28F903C5F37 /* Dictionary+Decoding.swift in Sources */,
+				75074DD5997FED83B27FFE9DB5F812F3 /* Error+Halley.swift in Sources */,
+				DC6D2CCD13D4F645A76B3BF2CD35F73D /* FieldQueryItem.swift in Sources */,
+				0174BE5F116BF396A32AE6DC5FD5DA36 /* HaleyRequest.swift in Sources */,
+				BDA74B6CD3AC9141C738AB8A2134BB00 /* Halley.swift in Sources */,
+				D11B3F6FA1DF6D3A00090279F3946D73 /* Halley+Codable.swift in Sources */,
+				7B94858984DB028074460A9C60C408AD /* Halley-dummy.m in Sources */,
+				00506A804822E12B550A31410E06865B /* HalleyError.swift in Sources */,
+				4C9B152E38D223842E960838F5C8EB7D /* HalleyURLConvertible.swift in Sources */,
+				01B64F5725641BA95F46A44B9D90A18A /* IncludeField.swift in Sources */,
+				29EBB548B8556AA53E6E1EB7E7839CF8 /* IncludeKey.swift in Sources */,
+				26F9A2484659951D1083FD94BBAD8F2E /* IncludesResultBuilder.swift in Sources */,
+				DA99FBAB8A5A8F69A71FA3C0E0FEDBD9 /* InMemoryCache.swift in Sources */,
+				BB37DB32627C25B0556552E717AEBCE6 /* Link.swift in Sources */,
+				DD9A30A3AE44765985ED913C6D219D4E /* Link+URITemplate.swift in Sources */,
+				0F40E568A42C27A56B63E15D4D0212C6 /* LinkResolver.swift in Sources */,
+				3EFD3EC9EB0BF119911CAC6ABC93E20E /* Links.swift in Sources */,
+				D2352E6CAC6E74DD814469466535819A /* Links+Helpers.swift in Sources */,
+				5E503CE08DA55A67E3EF0396E67BF9F3 /* OverridingTemplateHandler.swift in Sources */,
+				34F43B43E10ABE6867056A3DD1824796 /* PageLinks.swift in Sources */,
+				1D113DE57FA3A2091F86CBFD34EDE7D7 /* PageMetadata.swift in Sources */,
+				88E746853201EEC47D131CFBD4DA9DD0 /* PaginationPage.swift in Sources */,
+				E347E7835DFE97ADC80750F62C6BAEB5 /* ReplaySubject.swift in Sources */,
+				5A6A00D5293151D08245FBFB06D7360F /* RequesterInterface.swift in Sources */,
+				8B96C2828E049648B718E6ABF2653381 /* RequesterQueue.swift in Sources */,
+				7DB34019D702BB54264591C7C39EA6AB /* RequestOperation.swift in Sources */,
+				EE4FAA2ED2B2D2196027D484039A313D /* ResourceManager.swift in Sources */,
+				B0487598647A0669DDF490CC880A2533 /* ResourceManager+Codable.swift in Sources */,
+				0DCA24644C44571926F22330A3ED7D4F /* ResourceManager+Combine.swift in Sources */,
+				43E6FABF3628F49528D7D8CB05D215FE /* ResourceManager+Rx.swift in Sources */,
+				AE7EE07CD49A5B5F3BAFA3BEB9D2D4C8 /* Result+Transform.swift in Sources */,
+				7067F32ED282555B785AC80228A8E6BF /* Result+TryMap.swift in Sources */,
+				3D9B4E7247FDF144DA9DA6CCF3F3B3C9 /* ShareReplay.swift in Sources */,
+				DC72788DE7FCDF3BDD7B08F3CB928EBB /* Task+ThrowingPublisher.swift in Sources */,
+				9EC972DDAD86FA443EE2294D654E3654 /* TemplateLinkResolver.swift in Sources */,
+				8E799AD05F185BCDD64B843C73D0BACF /* ToManyIncludeKey.swift in Sources */,
+				10C96B9CB83765947673D627E78A7378 /* Traverser.swift in Sources */,
+				ABF9FE343AC887F78A4652627EBDB06F /* Types.swift in Sources */,
+				319F9889A32CF410DD7E20CB605363D5 /* URITemplate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8F5A76239CC8B235405B8A02D72E48D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD26E99D6A3A9C7B8D849ECB0F1B1FB6 /* Pods-HalleyCocoaPodExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D10BECA888A2B8C6F32A8629066C267E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Halley;
+			target = 98490E5339DC07CB01DD6E1C6C5D62EA /* Halley */;
+			targetProxy = EB12E9091A75EB6DB28A2F8EDF384840 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8A1AF3A2E4F43799B0047E60A75921D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C54DFB83F333182C22D299D9CCB535A /* Pods-HalleyCocoaPodExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AD4DBB62D71771E47C8E12CF81FC3FE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64B6DD3EEA3F5F443A7A584403F1EB68 /* Halley.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Halley/Halley-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Halley/Halley-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Halley/Halley.modulemap";
+				PRODUCT_MODULE_NAME = Halley;
+				PRODUCT_NAME = Halley;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C12A8AE14DBBFBF681AF27730D8ED7AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A66B016FE6D169AE62B059B026C87488 /* Pods-HalleyCocoaPodExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CCC083D7D0C2C1B0B8A8EAA5A4733799 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C3CFE44A0CCD5E2DDC0C000095562C5 /* Halley.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Halley/Halley-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Halley/Halley-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Halley/Halley.modulemap";
+				PRODUCT_MODULE_NAME = Halley;
+				PRODUCT_NAME = Halley;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31C8DEEAE065A28D269020DE4EFAA999 /* Build configuration list for PBXNativeTarget "Halley" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD4DBB62D71771E47C8E12CF81FC3FE5 /* Debug */,
+				CCC083D7D0C2C1B0B8A8EAA5A4733799 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		454895A4B20EA78F263F11863E22DC17 /* Build configuration list for PBXNativeTarget "Pods-HalleyCocoaPodExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C12A8AE14DBBFBF681AF27730D8ED7AF /* Debug */,
+				8A1AF3A2E4F43799B0047E60A75921D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
