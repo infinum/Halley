@@ -10,7 +10,7 @@
 import Combine
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-public extension Publisher {
+extension Publisher {
     /// Zips `self` with an array of publishers with the same output and failure types.
     ///
     /// Since there can be any number of `others`, arrays of `Output` values are emitted after zipping.
@@ -33,7 +33,7 @@ public extension Publisher {
 
 // MARK: - Collection Helpers
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-public extension Collection where Element: Publisher {
+extension Collection where Element: Publisher {
     /// Zip an array of publishers with the same output and failure types.
     ///
     /// Since there can be any number of elements, arrays of `Output` values are emitted after zipping.

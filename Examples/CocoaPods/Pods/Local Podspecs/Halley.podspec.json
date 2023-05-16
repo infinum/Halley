@@ -26,10 +26,5 @@
     "Foundation",
     "Combine"
   ],
-  "dependencies": {
-    "CombineExt": [
-
-    ]
-  },
   "swift_version": "5.0"
 }

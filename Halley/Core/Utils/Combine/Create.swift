@@ -11,7 +11,7 @@ import Combine
 import Foundation
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-public extension AnyPublisher {
+extension AnyPublisher {
     /// Create a publisher which accepts a closure with a subscriber argument,
     /// to which you can dynamically send value or completion events.
     ///
@@ -86,7 +86,7 @@ public extension AnyPublisher {
 
 // MARK: - Publisher
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-public extension Publishers {
+extension Publishers {
     /// A publisher which accepts a closure with a subscriber argument,
     /// to which you can dynamically send value or completion events.
     ///
@@ -94,18 +94,18 @@ public extension Publishers {
     /// which you can define any cleanup actions to execute when the pubilsher
     /// completes or the subscription to the publisher is canceled.
     struct Create<Output, Failure: Swift.Error>: Publisher {
-        public typealias SubscriberHandler = (Subscriber) -> Cancellable
+        typealias SubscriberHandler = (Subscriber) -> Cancellable
         private let factory: SubscriberHandler
 
         /// Initialize the publisher with a provided factory
         ///
         /// - parameter factory: A factory with a closure to which you can
         ///                      dynamically push value or completion events
-        public init(factory: @escaping SubscriberHandler) {
+        init(factory: @escaping SubscriberHandler) {
             self.factory = factory
         }
 
-        public func receive<S: Combine.Subscriber>(subscriber: S) where Failure == S.Failure, Output == S.Input {
+        func receive<S: Combine.Subscriber>(subscriber: S) where Failure == S.Failure, Output == S.Input {
             subscriber.receive(subscription: Subscription(factory: factory, downstream: subscriber))
         }
     }
@@ -146,7 +146,7 @@ extension Publishers.Create.Subscription: CustomStringConvertible {
 }
 
 @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-public extension Publishers.Create {
+extension Publishers.Create {
     struct Subscriber {
         private let onValue: (Output) -> Void
         private let onCompletion: (Subscribers.Completion<Failure>) -> Void
@@ -160,14 +160,14 @@ public extension Publishers.Create {
         /// Sends a value to the subscriber.
         ///
         /// - Parameter value: The value to send.
-        public func send(_ input: Output) {
+        func send(_ input: Output) {
             onValue(input)
         }
 
         /// Sends a completion event to the subscriber.
         ///
         /// - Parameter completion: A `Completion` instance which indicates whether publishing has finished normally or failed with an error.
-        public func send(completion: Subscribers.Completion<Failure>) {
+        func send(completion: Subscribers.Completion<Failure>) {
             onCompletion(completion)
         }
     }

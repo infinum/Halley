@@ -1,22 +1,15 @@
 PODS:
-  - CombineExt (1.8.0)
-  - Halley (1.3.0):
-    - CombineExt
+  - Halley (1.3.0)
 
 DEPENDENCIES:
   - Halley (from `../..`)
-
-SPEC REPOS:
-  trunk:
-    - CombineExt
 
 EXTERNAL SOURCES:
   Halley:
     :path: "../.."
 
 SPEC CHECKSUMS:
-  CombineExt: c4daa97ef75754d8ef319bd79edeef82652f3eea
-  Halley: 6bcdbb99f314f86a7c0abf9f00bc6b1f525f21c7
+  Halley: d66e6b2248b90aee0a86be0cee15b7b16ed4bed6
 
 PODFILE CHECKSUM: 201a0e8f4024b5de51127a9f261edde119950b79
 

@@ -1,6 +1,5 @@
 import Foundation
 import Combine
-import CombineExt
 
 typealias JSONCache = Cache<URL, AnyPublisher<JSONResponse, Never>>
 

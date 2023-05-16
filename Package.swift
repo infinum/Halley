@@ -11,18 +11,9 @@ let package = Package(
     products: [
         .library(name: "Halley", targets: ["Halley"]),
     ],
-    dependencies: [
-        .package(
-            url: "https://github.com/CombineCommunity/CombineExt.git",
-            .upToNextMajor(from: "1.0.0")
-        )
-    ],
     targets: [
         .target(
             name: "Halley",
-            dependencies: [
-                "CombineExt"
-            ],
             path: "Halley"
         ),
         .testTarget(
