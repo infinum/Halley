@@ -1,0 +1,55 @@
+{
+    "_embedded": {
+        "item": [
+            {
+                "type": "PREPARATION",
+                "description": "First item",
+                "_links": {
+                    "self": {
+                        "href": "https://halley.com/items/1"
+                    }
+                }
+            },
+            {
+                "type": "PROCESSING",
+                "description": "Second item",
+                "_links": {
+                    "self": {
+                        "href": "https://halley.com/items/2"
+                    }
+                }
+            },
+            {
+                "type": "PREPARATION",
+                "description": "Third item",
+                "_links": {
+                    "self": {
+                        "href": "https://halley.com/items/3"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://halley.com/items?page=1&size=20"
+        },
+        "item": [
+            {
+                "href": "https://halley.com/items/1"
+            },
+            {
+                "href": "https://halley.com/items/2"
+            },
+            {
+                "href": "https://halley.com/items/3"
+            }
+        ]
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 3,
+        "totalPages": 1,
+        "number": 1
+    }
+}

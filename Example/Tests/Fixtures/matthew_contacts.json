@@ -1,0 +1,41 @@
+{
+    "_embedded": {
+        "item": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://example.org/api/user/mac_nibblet"
+                    },
+                    "contacts": {
+                        "href": "http://example.org/api/user/mac_nibblet/contacts"
+                    }
+                },
+                "id": "mac_nibblet",
+                "name": "Antoine Hedgecock"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://example.org/api/user/spiffyjr"
+                    }
+                },
+                "id": "spiffyjr",
+                "name": "Kyle Spraggs"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://halley.com/items?page=1&size=20"
+        },
+        "item": [
+            {
+                "href": "http://example.org/api/user/mac_nibblet"
+            },
+            {
+                "href": "http://example.org/api/user/spiffyjr"
+            }
+        ]
+    }
+}
+

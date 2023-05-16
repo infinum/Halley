@@ -1,0 +1,11 @@
+{
+    "_links": {
+        "self": {
+            "href": "https://halley.com/empty_collection"
+        },
+        "item": []
+    },
+    "_embedded": {
+        "item": []
+    }
+}

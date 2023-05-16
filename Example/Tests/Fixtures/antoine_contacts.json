@@ -1,0 +1,37 @@
+{
+    "_embedded": {
+        "item": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://example.org/api/user/user1"
+                    }
+                },
+                "id": "user1",
+                "name": "User1 User1"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://example.org/api/user/user2"
+                    }
+                },
+                "id": "user2",
+                "name": "User2 User2"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://halley.com/items?page=1&size=20"
+        },
+        "item": [
+            {
+                "href": "http://example.org/api/user/user1"
+            },
+            {
+                "href": "http://example.org/api/user/user2"
+            }
+        ]
+    }
+}

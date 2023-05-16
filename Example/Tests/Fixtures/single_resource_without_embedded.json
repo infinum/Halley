@@ -1,0 +1,15 @@
+{
+    "_links": {
+        "self": {
+            "href": "http://example.org/api/user/matthew"
+        },
+        "contacts": {
+            "href": "http://example.org/api/user/matthew/contacts"
+        },
+        "website": {
+            "href": "http://example.org/api/user/matthew/website"
+        }
+    },
+    "id": "matthew",
+    "name": "Matthew Weier O'Phinney"
+}

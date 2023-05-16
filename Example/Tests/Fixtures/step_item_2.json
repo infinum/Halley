@@ -1,0 +1,9 @@
+{
+    "type": "PREPARATION",
+    "description": "Second item",
+    "_links": {
+        "self": {
+            "href": "https://halley.com/items/2"
+        }
+    }
+}
