@@ -1,5 +1,4 @@
 import Foundation
-import URITemplate
 
 public class OverridingTemplateHandler: TemplateHandler {
 

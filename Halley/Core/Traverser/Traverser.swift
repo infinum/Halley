@@ -1,6 +1,5 @@
 import Foundation
 import Combine
-import CombineExt
 
 typealias JSONResult = Result<Any, Error>
 
@@ -329,7 +328,7 @@ private extension Traverser {
             )
         }
 
-        return .success([])
+        return .success([Any]())
     }
 
     func fetchLinksForEmbeddedResources(
@@ -342,7 +341,7 @@ private extension Traverser {
         // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
         // and ends whole pipeline
         guard embeddedResources.isEmpty == false else {
-            return .success([])
+            return .success([Any]())
         }
         return try embeddedResources
             .map { resource in
@@ -381,7 +380,7 @@ private extension Traverser {
         // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
         // and ends whole pipeline
         guard requests.isEmpty == false else {
-            return .success([])
+            return .success([Any]())
         }
 
         return requests

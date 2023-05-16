@@ -1,31 +1,16 @@
 PODS:
-  - CombineExt (1.8.0)
-  - Halley/Codable (1.2.6):
-    - Halley/URITemplate
-  - Halley/Core (1.2.6):
-    - CombineExt
-  - Halley/URITemplate (1.2.6):
-    - Halley/Core
-    - URITemplate
-  - URITemplate (3.0.1)
+  - Halley (1.3.0)
 
 DEPENDENCIES:
-  - Halley/Codable (from `../..`)
-
-SPEC REPOS:
-  trunk:
-    - CombineExt
-    - URITemplate
+  - Halley (from `../..`)
 
 EXTERNAL SOURCES:
   Halley:
     :path: "../.."
 
 SPEC CHECKSUMS:
-  CombineExt: c4daa97ef75754d8ef319bd79edeef82652f3eea
-  Halley: 9cb63b328a9cf13ce3870dcc72a902e76e98a193
-  URITemplate: 5f5a79f3e384884102c4e6b3325d159c20a8035a
+  Halley: d66e6b2248b90aee0a86be0cee15b7b16ed4bed6
 
-PODFILE CHECKSUM: 2e1318a7c6250ef4d5fd86fdb24138b1f183ec0a
+PODFILE CHECKSUM: 201a0e8f4024b5de51127a9f261edde119950b79
 
 COCOAPODS: 1.12.1
