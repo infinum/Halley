@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
+use_frameworks!
+inhibit_all_warnings!
+workspace '../../Halley.xcworkspace'
+
+
+target 'HalleyCocoaPodExample' do
+  
+  # Pods for CocoapodsExample
+  pod 'Halley/Codable', :path => '../..'
+
+end
+
+post_install do |installer|
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['ENABLE_BITCODE'] = 'NO'
+        # Fix for Xcode 12/13/14 warnings
+        if ['8.0', '9.0', '10.0', '10.3'].include? config.build_settings['IPHONEOS_DEPLOYMENT_TARGET']
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+        end
+      end
+    end
+  end
+end

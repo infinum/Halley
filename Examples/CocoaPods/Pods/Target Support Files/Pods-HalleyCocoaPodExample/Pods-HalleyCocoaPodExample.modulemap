@@ -1,0 +1,6 @@
+framework module Pods_HalleyCocoaPodExample {
+  umbrella header "Pods-HalleyCocoaPodExample-umbrella.h"
+
+  export *
+  module * { export * }
+}

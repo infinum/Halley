@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CombineExt/CombineExt.framework
+${BUILT_PRODUCTS_DIR}/Halley/Halley.framework
+${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework

@@ -18,19 +18,19 @@ TODO: Add long description of the pod here.
   s.default_subspec = 'Core'
 
     s.subspec 'Core' do |sp|
-      sp.source_files = 'Halley/Classes/Core/**/*'
+      sp.source_files = 'Halley/Core/**/*'
       sp.frameworks = 'Foundation', 'Combine'
       sp.dependency 'CombineExt'
     end
 
     s.subspec 'URITemplate' do |sp|
-      sp.source_files = 'Halley/Classes/URITemplate/**/*'
+      sp.source_files = 'Halley/URITemplate/**/*'
       sp.dependency 'Halley/Core'
       sp.dependency 'URITemplate'
     end
 
     s.subspec 'Codable' do |sp|
-      sp.source_files = ['Halley/Classes/Codable/**/*']
+      sp.source_files = ['Halley/Codable/**/*']
       sp.dependency 'Halley/URITemplate'
     end
 end

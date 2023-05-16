@@ -1,0 +1,64 @@
+{
+  "name": "Halley",
+  "version": "1.2.6",
+  "summary": "A short description of Halley.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Infinum/Halley",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Infinum": "ios@infinum.hr",
+    "Filip Gulan": "filip.gulan@infinum.com",
+    "Zoran Turk": "zoran.turk@infinum.com"
+  },
+  "source": {
+    "git": "https://github.com/infinum/Halley.git",
+    "tag": "1.2.6"
+  },
+  "platforms": {
+    "ios": "13.0"
+  },
+  "swift_versions": "5.0",
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Halley/Core/**/*",
+      "frameworks": [
+        "Foundation",
+        "Combine"
+      ],
+      "dependencies": {
+        "CombineExt": [
+
+        ]
+      }
+    },
+    {
+      "name": "URITemplate",
+      "source_files": "Halley/URITemplate/**/*",
+      "dependencies": {
+        "Halley/Core": [
+
+        ],
+        "URITemplate": [
+
+        ]
+      }
+    },
+    {
+      "name": "Codable",
+      "source_files": [
+        "Halley/Codable/**/*"
+      ],
+      "dependencies": {
+        "Halley/URITemplate": [
+
+        ]
+      }
+    }
+  ],
+  "swift_version": "5.0"
+}
