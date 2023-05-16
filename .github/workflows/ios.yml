@@ -1,0 +1,19 @@
+name: iOS starter workflow
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build and Test default scheme using any available iPhone simulator
+    runs-on: macos-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run tests
+        run: xcodebuild test -scheme "Halley (Halley)" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 8,OS=latest" | xcpretty && exit ${PIPESTATUS[0]}
