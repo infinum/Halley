@@ -1,5 +1,5 @@
 ---
-name: Issue template
+name: Report an issue
 about: A general template for reporting issues with Halley
 title: ''
 labels: ''
