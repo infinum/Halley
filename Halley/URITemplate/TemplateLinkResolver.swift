@@ -34,7 +34,7 @@ public class TemplateLinkResolver: LinkResolver {
                 let value = [dictionary[query.name], query.value].compactMap{ $0 }
                 dictionary[query.name] = value.joined(separator: ",")
             }
-            urlComponent.queryItems = dictionary.map(URLQueryItem.init)
+            urlComponent.queryItems = dictionary.map(URLQueryItem.init).sorted { $0.name < $1.name }
         }
         return try urlComponent.asURL()
     }
