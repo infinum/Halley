@@ -28,6 +28,8 @@ public class TemplateLinkResolver: LinkResolver {
         // in dangling `?` in `url`
         if !parameters.isEmpty {
             // We merge same name query parameters and separate the value with `,`
+            // We sort query parameters alphabetically by name and value in ascending order
+            // This guarantees a consistent order for query parameters
             let queries = (urlComponent.queryItems ?? []) + parameters
             var dictionary = [String: String]()
             for query in queries {
