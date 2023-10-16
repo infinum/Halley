@@ -32,7 +32,7 @@ public class TemplateLinkResolver: LinkResolver {
             var dictionary = [String: String]()
             for query in queries {
                 let value = [dictionary[query.name], query.value].compactMap{ $0 }
-                dictionary[query.name] = value.joined(separator: ",")
+                dictionary[query.name] = value.sorted().joined(separator: ",")
             }
             urlComponent.queryItems = dictionary.map(URLQueryItem.init).sorted { $0.name < $1.name }
         }
