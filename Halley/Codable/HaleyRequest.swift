@@ -24,7 +24,7 @@ public struct HalleyRequest<Item: Decodable> {
         includeType: Item.IncludeType?,
         queryItems: [URLQueryItem],
         decoder: JSONDecoder
-    ) where Item: HalleyCodable & IncludeableType {
+    ) where Item: HalleyCodable & IncludableType {
         let includeFields = includeType?.prepareIncludes() ?? []
         self.init(
             url: url,

@@ -25,7 +25,7 @@ struct Contact: HalleyCodable {
     }
 }
 
-extension Contact: IncludeableType {
+extension Contact: IncludableType {
 
     enum IncludeType {
         case full

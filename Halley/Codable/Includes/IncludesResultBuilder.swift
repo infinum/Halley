@@ -106,7 +106,7 @@ public struct Nested<IncludeCodingKey: IncludeKey> {
 
     public let fields: [IncludeField]
 
-    public init<T: IncludeableType>(
+    public init<T: IncludableType>(
         _ type: T.Type,
         including includeType: T.IncludeType,
         at key: IncludeCodingKey,

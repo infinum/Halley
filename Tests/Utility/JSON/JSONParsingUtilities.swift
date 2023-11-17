@@ -117,7 +117,7 @@ extension HalleyRequest {
         includeType: Item.IncludeType? = nil,
         queryItems: [URLQueryItem] = [],
         decoder: JSONDecoder = .init()
-    ) where Item: HalleyCodable & IncludeableType {
+    ) where Item: HalleyCodable & IncludableType {
         self.init(
             url: url,
             includeType: includeType,

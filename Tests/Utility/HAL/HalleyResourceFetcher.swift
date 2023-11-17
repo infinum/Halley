@@ -29,7 +29,7 @@ public class HalleyResourceFetcher {
         self.onCreation = onCreation
     }
 
-    convenience init<Item: IncludeableType>(
+    convenience init<Item: IncludableType>(
         fromJson jsonName: String,
         bundle: Bundle = Bundle.module,
         for: Item.Type,

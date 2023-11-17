@@ -47,11 +47,11 @@ public protocol IncludeTypeInterface {
 
 // MARK: - IncludeTypeInterface
 
-public protocol IncludeableType {
+public protocol IncludableType {
     associatedtype IncludeType: IncludeTypeInterface
 }
 
-public extension IncludeableType where Self: HalleyCodable {
+public extension IncludableType where Self: HalleyCodable {
 
     @inlinable
     func links(for codingKey: IncludeType.IncludeCodingKey) -> [Link]? {
@@ -83,3 +83,8 @@ public extension IncludeableType where Self: HalleyCodable {
         return try _links?.asURL(for: codingKey.includeKey, with: queryItems)
     }
 }
+
+// Fixes typo in previous releases
+@available(*, unavailable, renamed: "IncludableType")
+public typealias IncludeableType = IncludableType
+
