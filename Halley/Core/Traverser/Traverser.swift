@@ -142,12 +142,18 @@ private extension Traverser {
 
         return requests
             .zip()
-            .map { responses -> Parameters in
+            .map { responses -> JSONResult in
                 var responseModel = resource.parameters
-                responses.forEach { responseModel[$0.relationship] = $0.response }
-                return responseModel
+                for response in responses {
+                    switch response.result {
+                    case .success(let value):
+                        responseModel[response.relationship] = value
+                    case .failure(let error):
+                        return JSONResult.failure(error)
+                    }
+                }
+                return JSONResult.success(responseModel)
             }
-            .map { JSONResult.success($0) }
             .eraseToAnyPublisher()
     }
 
