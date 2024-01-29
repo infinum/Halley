@@ -18,6 +18,10 @@ public extension HalleyKit {
         /// In case if a same link will be fetched during single traversal - it will reuse the same response
         public var responseFromCache = true
 
+        /// If `true` the result of inital request is a `Failure` if any request for nested resources returns error.
+        /// If `false` results of failed nested requests are mapped to `nil` and the result of initial request can still be `Success`.
+        public var failWhenAnyNestedRequestErrors = true
+
         /// Keyword used for embedding collections or links to collection elements
         public var arrayKey = "item"
 

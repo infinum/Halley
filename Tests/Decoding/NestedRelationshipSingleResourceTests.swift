@@ -1,4 +1,5 @@
 import XCTest
+@testable import Halley
 
 final class NestedRelationshipSingleResourceTests: XCTestCase {
 
@@ -73,5 +74,22 @@ final class NestedRelationshipSingleResourceTests: XCTestCase {
         /// We are expecting an error here since `ResoureFetcher` `includeType` is `full` and
         /// we did not provide URL for  `website` resource in  `registeredMocks`.
         XCTAssertThrowsError(try awaitPublisher(fetcher.resource(ofType: Contact.self)))
+    }
+
+    func testDecodingDoesReturnsSuccessWhenFetchingNestedRelationshipFails() throws {
+        let fetcher = HalleyResourceFetcher(
+            fromJson: "single_resource_without_embedded",
+            for: Contact.self,
+            includeType: .full,
+            registeredMocks: .shared
+                .adding(url: "http://example.org/api/user/matthew/contacts", for: .init(jsonName: "matthew_contacts"))
+        )
+
+        let options = HalleyKit.Options(failWhenAnyNestedRequestErrors: false)
+
+        /// We are not expecting an error here even though `ResoureFetcher` `includeType` is `full` and
+        /// we did not provide URL for  `website` resource in  `registeredMocks`
+        /// because the provided `options` parameter has `failWhenAnyNestedRequestErrors` set to `false`.
+        XCTAssertNoThrow(try awaitPublisher(fetcher.resource(ofType: Contact.self, options: options)))
     }
 }

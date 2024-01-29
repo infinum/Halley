@@ -102,13 +102,15 @@ extension HalleyRequest {
         onURL url: URLConvertible,
         includes: [String] = [],
         linkResolver: LinkResolver = TemplateLinkResolver(parameters: [:]),
-        decoder: JSONDecoder = .init()
+        decoder: JSONDecoder = .init(),
+        options: HalleyKit.Options = .default
     ) where Item: Decodable {
         self.init(
             url: url,
             includes: includes,
             linkResolver: linkResolver,
-            decoder: decoder
+            decoder: decoder,
+            options: options
         )
     }
 
@@ -116,13 +118,15 @@ extension HalleyRequest {
         onURL url: URLConvertible,
         includeType: Item.IncludeType? = nil,
         queryItems: [URLQueryItem] = [],
-        decoder: JSONDecoder = .init()
+        decoder: JSONDecoder = .init(),
+        options: HalleyKit.Options
     ) where Item: HalleyCodable & IncludableType {
         self.init(
             url: url,
             includeType: includeType,
             queryItems: queryItems,
-            decoder: decoder
+            decoder: decoder,
+            options: options
         )
     }
 }

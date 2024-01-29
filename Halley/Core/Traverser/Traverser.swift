@@ -149,7 +149,11 @@ private extension Traverser {
                     case .success(let value):
                         responseModel[response.relationship] = value
                     case .failure(let error):
-                        return JSONResult.failure(error)
+                        if options.failWhenAnyNestedRequestErrors {
+                            return JSONResult.failure(error)
+                        } else {
+                            responseModel[response.relationship] = nil
+                        }
                     }
                 }
                 return JSONResult.success(responseModel)
