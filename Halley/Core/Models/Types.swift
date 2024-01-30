@@ -59,10 +59,6 @@ enum LinkType {
 struct LinkResponse {
     let relationship: String
     let result: JSONResult
-
-    var response: Any? {
-        try? result.get()
-    }
 }
 
 struct LinkIncludesElement {

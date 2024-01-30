@@ -8,7 +8,7 @@ public extension ResourceManager {
     func request<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<Item, Error> {
         do {
             return self
-                .resource(from: try input.url(), includes: input.includes, linkResolver: input.linkResolver)
+                .resource(from: try input.url(), includes: input.includes, options: input.options, linkResolver: input.linkResolver)
                 .unwrapResult()
                 .tryMap { try Self.decode(data: $0, type: Item.self, decoder: input.decoder) }
                 .eraseToAnyPublisher()
@@ -20,7 +20,7 @@ public extension ResourceManager {
     func requestCollection<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<[Item], Error> {
         do {
             return self
-                .resourceCollection(from: try input.url(), includes: input.includes, linkResolver: input.linkResolver)
+                .resourceCollection(from: try input.url(), includes: input.includes, options: input.options, linkResolver: input.linkResolver)
                 .unwrapResult()
                 .tryMap { try Self.decode(data: $0, type: [Item].self, decoder: input.decoder) }
                 .eraseToAnyPublisher()
@@ -32,7 +32,7 @@ public extension ResourceManager {
     func requestPage<Item>(_ input: HalleyRequest<Item>) -> AnyPublisher<PaginationPage<Item>, Error> {
         do {
             return self
-                .resourceCollectionWithMetadata(from: try input.url(), includes: input.includes, linkResolver: input.linkResolver)
+                .resourceCollectionWithMetadata(from: try input.url(), includes: input.includes, options: input.options, linkResolver: input.linkResolver)
                 .unwrapResult()
                 .tryMap { try Self.decode(data: $0, type: PaginationPage<Item>.self, decoder: input.decoder) }
                 .eraseToAnyPublisher()

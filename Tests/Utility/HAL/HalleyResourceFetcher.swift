@@ -50,15 +50,15 @@ public class HalleyResourceFetcher {
 
 public extension HalleyResourceFetcher {
 
-    func resource<T>(ofType type: T.Type) throws -> AnyPublisher<T, Error> where T: Decodable {
-        return resourceManager.request(HalleyRequest<T>(onURL: baseUrl, includes: includes))
+    func resource<T>(ofType type: T.Type, options: HalleyKit.Options = .default) throws -> AnyPublisher<T, Error> where T: Decodable {
+        return resourceManager.request(HalleyRequest<T>(onURL: baseUrl, includes: includes, options: options))
     }
 
-    func resourcePage<T>(ofType type: T.Type) throws -> AnyPublisher<PaginationPage<T>, Error> where T: Decodable {
-        return resourceManager.requestPage(HalleyRequest<T>(onURL: baseUrl, includes: includes))
+    func resourcePage<T>(ofType type: T.Type, options: HalleyKit.Options = .default) throws -> AnyPublisher<PaginationPage<T>, Error> where T: Decodable {
+        return resourceManager.requestPage(HalleyRequest<T>(onURL: baseUrl, includes: includes, options: options))
     }
 
-    func resourceCollection<T>(ofType type: T.Type) throws -> AnyPublisher<[T], Error> where T: Decodable {
-        return resourceManager.requestCollection(HalleyRequest<T>(onURL: baseUrl, includes: includes))
+    func resourceCollection<T>(ofType type: T.Type, options: HalleyKit.Options = .default) throws -> AnyPublisher<[T], Error> where T: Decodable {
+        return resourceManager.requestCollection(HalleyRequest<T>(onURL: baseUrl, includes: includes, options: options))
     }
 }
