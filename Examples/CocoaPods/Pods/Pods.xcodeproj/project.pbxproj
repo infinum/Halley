@@ -71,7 +71,7 @@
 		0144C0D6B911634588AEA42B9F86C14B /* Pods-HalleyCocoaPodExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HalleyCocoaPodExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		02CEC66B5C10DC213F09359E2FE2E2B4 /* ResourceManager+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ResourceManager+Codable.swift"; sourceTree = "<group>"; };
 		0669B9C2AE6507D86D5DF3C0176A1FDD /* Halley.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Halley.release.xcconfig; sourceTree = "<group>"; };
-		0FE04811336C2A53A5A446DE7E608B87 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		0FE04811336C2A53A5A446DE7E608B87 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		195D119BDCE95FE2122F003BD887B33F /* Result+Transform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Result+Transform.swift"; sourceTree = "<group>"; };
 		1B5FEF412BB8C07AF5B2A809D3E955C7 /* Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
 		20F6262518E50271CFA698F11674A46B /* ToManyIncludeKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToManyIncludeKey.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		35948331D02AE4729EB929F8BFC99588 /* Pods-HalleyCocoaPodExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HalleyCocoaPodExample-umbrella.h"; sourceTree = "<group>"; };
 		36C9FB5BEA45F0D829B6318E17D8776F /* HalleyError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HalleyError.swift; sourceTree = "<group>"; };
 		37231E3BE81D986FBD72A60820D50F90 /* ShareReplay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShareReplay.swift; sourceTree = "<group>"; };
-		3C09D0C6F49B41A84A64D477C96AA7B3 /* Halley.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Halley.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3C09D0C6F49B41A84A64D477C96AA7B3 /* Halley.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Halley.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		3F638E6D3676E4BF83F8B611041E890A /* DefaultTemplateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultTemplateHandler.swift; sourceTree = "<group>"; };
 		457AA72E5608619A101A3A31EA132166 /* Halley */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Halley; path = Halley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C54DFB83F333182C22D299D9CCB535A /* Pods-HalleyCocoaPodExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HalleyCocoaPodExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		93C1D09C786BC4D3A8CD31C19239FDC0 /* PageLinks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PageLinks.swift; sourceTree = "<group>"; };
 		97CB8C6D4CABD48314F4AA7B58A51944 /* LinkResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkResolver.swift; sourceTree = "<group>"; };
 		9D412460FA71EFAAE5871476728A0016 /* ReplaySubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaySubject.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A112DC6370656DDE1CB26756835F6636 /* Halley-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Halley-prefix.pch"; sourceTree = "<group>"; };
 		A118F88A9D4B451AAE155017AF9D74B4 /* PaginationPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationPage.swift; sourceTree = "<group>"; };
 		A5828094A7D0300768B4E6AC500A6A98 /* IncludesResultBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IncludesResultBuilder.swift; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		A845F1CC4E3F45B084E259FC035CC5E1 /* OverridingTemplateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OverridingTemplateHandler.swift; sourceTree = "<group>"; };
 		B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B303D277F9D27CBD55ACB919C73A921C /* Pods-HalleyCocoaPodExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HalleyCocoaPodExample"; path = Pods_HalleyCocoaPodExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD0A7C96603AD52421D5DFCB7BF87188 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BD0A7C96603AD52421D5DFCB7BF87188 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C6B0C02A679CDA3537BEB0FD68DFC52E /* Result+TryMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Result+TryMap.swift"; sourceTree = "<group>"; };
 		C88568387550A6FC059E27F15B21C0C0 /* Error+Halley.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Error+Halley.swift"; sourceTree = "<group>"; };
 		C964F0103D3B27586DFC7AE9C5CF4B08 /* HalleyURLConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HalleyURLConvertible.swift; sourceTree = "<group>"; };
@@ -197,7 +197,6 @@
 				52ED6527A1289A2A457B05FD6E09DB55 /* Links+Helpers.swift */,
 				FBE14D6AB61ACD19DF344DA756E799D3 /* Types.swift */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -208,7 +207,6 @@
 				C9A6A62E4D489A3F8F3F0191CD45A6A2 /* RequesterInterface.swift */,
 				E54228E204944448310BFFCD4D259963 /* ResourceManager.swift */,
 			);
-			name = Public;
 			path = Public;
 			sourceTree = "<group>";
 		};
@@ -222,7 +220,6 @@
 				37231E3BE81D986FBD72A60820D50F90 /* ShareReplay.swift */,
 				23B60E8031DE4334038368D951EC6343 /* ZipMany.swift */,
 			);
-			name = Combine;
 			path = Combine;
 			sourceTree = "<group>";
 		};
@@ -235,7 +232,6 @@
 				A5828094A7D0300768B4E6AC500A6A98 /* IncludesResultBuilder.swift */,
 				20F6262518E50271CFA698F11674A46B /* ToManyIncludeKey.swift */,
 			);
-			name = Includes;
 			path = Includes;
 			sourceTree = "<group>";
 		};
@@ -246,7 +242,6 @@
 				5A89EC610CC0469B1560CF0DA0D7C5E8 /* PageMetadata.swift */,
 				A118F88A9D4B451AAE155017AF9D74B4 /* PaginationPage.swift */,
 			);
-			name = Pagination;
 			path = Pagination;
 			sourceTree = "<group>";
 		};
@@ -260,7 +255,6 @@
 				C6B0C02A679CDA3537BEB0FD68DFC52E /* Result+TryMap.swift */,
 				580BB702A064CA9140675698115D610B /* Combine */,
 			);
-			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -305,7 +299,6 @@
 				D4CA7504E4EE10FFD84282E4B277924A /* RequesterQueue.swift */,
 				289D2D7D1FA6B546EEC1FD82A6F11900 /* RequestOperation.swift */,
 			);
-			name = Queue;
 			path = Queue;
 			sourceTree = "<group>";
 		};
@@ -315,7 +308,6 @@
 				97CB8C6D4CABD48314F4AA7B58A51944 /* LinkResolver.swift */,
 				8DAE7C12D05E42D4E1C26672F1EFB2FD /* Traverser.swift */,
 			);
-			name = Traverser;
 			path = Traverser;
 			sourceTree = "<group>";
 		};
