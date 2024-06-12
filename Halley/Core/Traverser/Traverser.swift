@@ -108,30 +108,25 @@ private extension Traverser {
         cache: JSONCache?,
         linkResolver: LinkResolver
     ) throws -> AnyPublisher<JSONResult, Never> {
-        let linksToFetch = singleResourceLinksToFetch(for: resource, includes: includes, options: options)
-        let requests: [AnyPublisher<LinkResponse, Never>] = try linksToFetch.map { link in
-            guard link.isEmbedded == false else {
+        let relationshipsToFetch = singleResourceLinksToFetch(for: resource, includes: includes, options: options)
+        let requests: [AnyPublisher<LinkResponse, Never>] = try relationshipsToFetch.map { relationship in
+            guard relationship.isEmbedded == false else {
                 // Resource is embedded so we only need to handle their included links
                 return try handleLinksOfEmbeddedResource(
                     for: resource,
-                    linkElement: link,
+                    linkElement: relationship,
                     options: options,
                     cache: cache,
                     linkResolver: linkResolver
                 ).eraseToAnyPublisher()
             }
-            // Makes request to the included link
-            let url = try linkResolver.resolveLink(link.link, relationshipPath: link.includes.relationshipPath)
-            switch link.linkType {
-            case .toOne:
-                return self.resource(from: url, includes: link.includes, cache: cache, linkResolver: linkResolver)
-                    .map { LinkResponse(relationship: link.relationship, result: $0) }
-                    .eraseToAnyPublisher()
-            case .toMany:
-                return self.resourceCollection(from: url, includes: link.includes, cache: cache, linkResolver: linkResolver)
-                    .map { LinkResponse(relationship: link.relationship, result: $0) }
-                    .eraseToAnyPublisher()
-            }
+            return try prepareRequestForFetchingRelationship(
+                relOptions: relationship,
+                resource: resource,
+                options: options,
+                cache: cache,
+                linkResolver: linkResolver
+            )
         }
 
         // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
@@ -164,12 +159,12 @@ private extension Traverser {
     /// Request links for resources that where embedded
     func handleLinksOfEmbeddedResource(
         for resource: ResourceContainer,
-        linkElement: LinkIncludesElement,
+        linkElement: Relationship.FetchOptions,
         options: HalleyKit.Options,
         cache: JSONCache?,
         linkResolver: LinkResolver
     ) throws -> some Publisher<LinkResponse, Never> {
-        switch linkElement.linkType {
+        switch linkElement.parsingType {
         case .toOne:
             return try parseSingleEmbeddedResource(
                 for: resource,
@@ -191,7 +186,7 @@ private extension Traverser {
 
     func parseSingleEmbeddedResource(
         for resource: ResourceContainer,
-        linkElement: LinkIncludesElement,
+        linkElement: Relationship.FetchOptions,
         options: HalleyKit.Options,
         cache: JSONCache?,
         linkResolver: LinkResolver
@@ -217,7 +212,7 @@ private extension Traverser {
 
     func parseManyEmbeddedResources(
         for resource: ResourceContainer,
-        linkElement: LinkIncludesElement,
+        linkElement: Relationship.FetchOptions,
         options: HalleyKit.Options,
         cache: JSONCache?,
         linkResolver: LinkResolver
@@ -469,14 +464,14 @@ private extension Traverser {
         for resource: ResourceContainer,
         includes: Includes,
         options: HalleyKit.Options
-    ) -> [LinkIncludesElement] {
+    ) -> [Relationship.FetchOptions] {
         // Skip if there is no relationship requested to be included
         let includeValues = includes.values
         guard includeValues.isEmpty == false else { return [] }
 
         // In case there are no links to fetch, skip
         guard
-            let _links = resource._links?.relationships,
+            let _links = resource._links?.parsedLinks,
             _links.isEmpty == false
         else { return [] }
 
@@ -492,20 +487,93 @@ private extension Traverser {
             embeddedRels = []
         }
 
-        // Since we are parsing single resource, and it is checked before, only one link will be here
-        // as per specification
-        return zip(relevantRels, relevantRels.map { _links[$0.key]?.first })
-            .compactMap { rel, link in
-                guard let link = link else { return nil }
+        return zip(relevantRels, relevantRels.map { _links[$0.key] })
+            .compactMap { rel, parsedLink -> Relationship.FetchOptions? in
+                guard let parsedLink, !parsedLink.isEmpty else { return nil }
                 let relIncludes = rootIncludes(from: rel.value ?? [])
                 let relationshipPath = includes.path(for: rel.rawKey)
-                return LinkIncludesElement(
+                return Relationship.FetchOptions(
                     relationship: rel.key,
-                    link: link,
+                    parsedLink: parsedLink,
                     includes: Includes(values: relIncludes, relationshipPath: relationshipPath),
-                    linkType: rel.type,
+                    parsingType: rel.type,
                     isEmbedded: embeddedRels.contains(rel.key)
                 )
             }
+    }
+
+    func prepareRequestForFetchingRelationship(
+        relOptions: Relationship.FetchOptions,
+        resource: ResourceContainer,
+        options: HalleyKit.Options,
+        cache: JSONCache?,
+        linkResolver: LinkResolver
+    ) throws -> AnyPublisher<LinkResponse, Never> {
+        switch (relOptions.parsingType, relOptions.parsedLink) {
+        case (.toOne, .object(let link)):
+            // Client expects to parse a single resource
+            // Parsed a single link object - link to a single resource
+            // Possible `_links` content:
+            //
+            // "_links": {
+            //     "stepItem": { "href": "https://halley.com/items/3" }
+            // }
+            let url = try linkResolver.resolveLink(link, relationshipPath: relOptions.includes.relationshipPath)
+            return self.resource(from: url, includes: relOptions.includes, cache: cache, linkResolver: linkResolver)
+                .map { LinkResponse(relationship: relOptions.relationship, result: $0) }
+                .eraseToAnyPublisher()
+        case (.toOne, .array(let links)) where links.count == 1:
+            // Client expects to parse a single resource
+            // Parsed an array of links with a single object inside - link to a single resource
+            // Possible `_links` content:
+            //
+            // "_links": {
+            //     "stepItems": [
+            //         { "href": "https://halley.com/items/1" }
+            //     ]
+            // }
+            let url = try linkResolver.resolveLink(links[0], relationshipPath: relOptions.includes.relationshipPath)
+            return self.resource(from: url, includes: relOptions.includes, cache: cache, linkResolver: linkResolver)
+                .map { LinkResponse(relationship: relOptions.relationship, result: $0) }
+                .eraseToAnyPublisher()
+        case (.toMany, .object(let link)):
+            // Client expects to parse an array of resources
+            // Parsed a single link object - link to a collection of resources
+            // Possible `_links` content:
+            //
+            // "_links": {
+            //     "stepItems": { "href": "https://halley.com/items" }
+            // }
+            let url = try linkResolver.resolveLink(link, relationshipPath: relOptions.includes.relationshipPath)
+            return self.resourceCollection(from: url, includes: relOptions.includes, cache: cache, linkResolver: linkResolver)
+                .map { LinkResponse(relationship: relOptions.relationship, result: $0) }
+                .eraseToAnyPublisher()
+        case (.toMany, .array(let links)):
+            // Client expects to parse an array of resources
+            // Parsed an array of links - each link for a separate single resource
+            // Possible `_links` content:
+            //
+            // "_links": {
+            //     "stepItems": [
+            //         { "href": "https://halley.com/items/3" },
+            //         { "href": "https://halley.com/items/2" }
+            //     ]
+            // }
+            let singleResourceRequests = try links.map { singleRelLink in
+                let url = try linkResolver.resolveLink(singleRelLink, relationshipPath: relOptions.includes.relationshipPath)
+                return self.resource(from: url, includes: relOptions.includes, cache: cache, linkResolver: linkResolver)
+                    .map { LinkResponse(relationship: relOptions.relationship, result: $0) }
+                    .eraseToAnyPublisher()
+            }
+            return singleResourceRequests
+                .zip()
+                .map { $0.map(\.result).collect() }
+                .map { LinkResponse(relationship: relOptions.relationship, result: $0) }
+                .eraseToAnyPublisher()
+        case (.toOne, .array(let links)):
+            // This case is not supported - logically it makes no sense to expect a single resource
+            // and receive multiple links for the same resource
+            throw HalleyKit.Error.unsupportedLinkType(relationship: relOptions.relationship, link: .array(links))
+        }
     }
 }

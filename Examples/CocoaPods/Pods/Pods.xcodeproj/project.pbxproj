@@ -10,6 +10,7 @@
 		003DAE0DC7B275B8EDB22E142D89FAB9 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE14D6AB61ACD19DF344DA756E799D3 /* Types.swift */; };
 		06046231FE2EC15F4BCAEB0A216ED497 /* ToManyIncludeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F6262518E50271CFA698F11674A46B /* ToManyIncludeKey.swift */; };
 		0A5AB67D1CEB89F97682AD0555606FEA /* Dictionary+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBD1B4374B52F21873C19F4F0EECD77 /* Dictionary+Decoding.swift */; };
+		0AC06BC02C1ABF7100E1CF08 /* ParsedLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC06BBF2C1ABF7100E1CF08 /* ParsedLink.swift */; };
 		19BE20E7FD770E7F8736CEFC18DDE123 /* PaginationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118F88A9D4B451AAE155017AF9D74B4 /* PaginationPage.swift */; };
 		1CD4BD129E46D732CB2CF8B5A356751E /* Links+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ED6527A1289A2A457B05FD6E09DB55 /* Links+Helpers.swift */; };
 		23FCA80EDB2951A00524B0FDC2E62B7D /* PageMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A89EC610CC0469B1560CF0DA0D7C5E8 /* PageMetadata.swift */; };
@@ -70,6 +71,7 @@
 		0144C0D6B911634588AEA42B9F86C14B /* Pods-HalleyCocoaPodExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HalleyCocoaPodExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		02CEC66B5C10DC213F09359E2FE2E2B4 /* ResourceManager+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ResourceManager+Codable.swift"; sourceTree = "<group>"; };
 		0669B9C2AE6507D86D5DF3C0176A1FDD /* Halley.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Halley.release.xcconfig; sourceTree = "<group>"; };
+		0AC06BBF2C1ABF7100E1CF08 /* ParsedLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsedLink.swift; sourceTree = "<group>"; };
 		0FE04811336C2A53A5A446DE7E608B87 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		195D119BDCE95FE2122F003BD887B33F /* Result+Transform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Result+Transform.swift"; sourceTree = "<group>"; };
 		1B5FEF412BB8C07AF5B2A809D3E955C7 /* Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				8AB39F536B5604F032BACA0D41525A42 /* Links.swift */,
 				52ED6527A1289A2A457B05FD6E09DB55 /* Links+Helpers.swift */,
 				FBE14D6AB61ACD19DF344DA756E799D3 /* Types.swift */,
+				0AC06BBF2C1ABF7100E1CF08 /* ParsedLink.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				6E418EEF40E4047C4122202AFE7F90B1 /* Link+URITemplate.swift in Sources */,
 				FADFD2C583A10B2AC4E5B16C84068056 /* LinkResolver.swift in Sources */,
 				6937C4AD467231F703CCBE548F3D26B1 /* Links.swift in Sources */,
+				0AC06BC02C1ABF7100E1CF08 /* ParsedLink.swift in Sources */,
 				1CD4BD129E46D732CB2CF8B5A356751E /* Links+Helpers.swift in Sources */,
 				3F1EBF6D317E57BDC2638F62C7C6100A /* OverridingTemplateHandler.swift in Sources */,
 				23FCA80EDB2951A00524B0FDC2E62B7D /* PageMetadata.swift in Sources */,

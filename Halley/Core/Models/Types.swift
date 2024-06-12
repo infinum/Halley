@@ -36,7 +36,7 @@ struct Includes {
 /// Model for handling includes
 /// To specify if a include is `toMany`, the key must be inside `[]` (eg. `[images]`)
 struct Include {
-    let type: LinkType
+    let type: Relationship.ParsingType
     let key: String
     /// Includes the `[]` in the string
     let rawKey: String
@@ -51,20 +51,23 @@ struct Include {
     }
 }
 
-enum LinkType {
-    case toOne
-    case toMany
+enum Relationship {
+
+    enum ParsingType {
+        case toOne
+        case toMany
+    }
+
+    struct FetchOptions {
+        let relationship: String
+        let parsedLink: ParsedLink
+        let includes: Includes
+        let parsingType: Relationship.ParsingType
+        let isEmbedded: Bool
+    }
 }
 
 struct LinkResponse {
     let relationship: String
     let result: JSONResult
-}
-
-struct LinkIncludesElement {
-    let relationship: String
-    let link: Link
-    let includes: Includes
-    let linkType: LinkType
-    let isEmbedded: Bool
 }
