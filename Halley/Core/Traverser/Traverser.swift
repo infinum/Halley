@@ -559,10 +559,19 @@ private extension Traverser {
             //         { "href": "https://halley.com/items/2" }
             //     ]
             // }
+            // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
+            // and ends whole pipeline
             let singleResourceRequests = try links.map { singleRelLink in
                 let url = try linkResolver.resolveLink(singleRelLink, relationshipPath: relOptions.includes.relationshipPath)
                 return self.resource(from: url, includes: relOptions.includes, cache: cache, linkResolver: linkResolver)
                     .map { LinkResponse(relationship: relOptions.relationship, result: $0) }
+                    .eraseToAnyPublisher()
+            }
+            // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
+            // and ends whole pipeline
+            guard singleResourceRequests.isEmpty == false else {
+                let emptyResult = JSONResult.success(Parameters())
+                return Just(LinkResponse(relationship: relOptions.relationship, result: emptyResult))
                     .eraseToAnyPublisher()
             }
             return singleResourceRequests
