@@ -57,7 +57,6 @@ public struct Links: Codable {
                 // Skip the encoding if there is no link for given relationship
                 break
             }
-
         }
     }
 
