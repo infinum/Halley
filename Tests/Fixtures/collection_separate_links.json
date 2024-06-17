@@ -1,0 +1,103 @@
+{
+    "_embedded": {
+        "item": [
+            {
+                "_links": {
+                    "stepItems": [
+                        {
+                            "href": "https://halley.com/items/1"
+                        },
+                        {
+                            "href": "https://halley.com/items/2"
+                        },
+                        {
+                            "href": "https://halley.com/items/3"
+                        }
+                    ]
+                },
+                "code": "EN"
+            },
+            {
+                "_links": {
+                    "stepItems": [
+                        {
+                            "href": "https://halley.com/items/3"
+                        },
+                        {
+                            "href": "https://halley.com/items/2"
+                        }
+                    ]
+                },
+                "code": "ES"
+            },
+            {
+                "_links": {
+                    "stepItems": [
+                        {
+                            "href": "https://halley.com/items/1"
+                        }
+                    ]
+                },
+                "code": "DE"
+            },
+            {
+                "_links": {
+                    "stepItems": {
+                        "href": "https://halley.com/step_items"
+                    }
+                },
+                "code": "GB"
+            },
+            {
+                "_links": {
+                },
+                "code": "SG"
+            },
+            {
+                "_links": {
+                    "stepItems": [
+                        {
+                            "href": "https://halley.com/items/1"
+                        },
+                        {
+                            "href": "https://halley.com/items/2"
+                        },
+                        {
+                            "href": "https://halley.com/items/3"
+                        }
+                    ],
+                    "mainStepItem": [
+                        {
+                            "href": "https://halley.com/items/1"
+                        }
+                    ]
+                },
+                "code": "HR"
+            },
+            {
+                "_links": {
+                    "stepItems": [
+                        {
+                            "href": "https://halley.com/items/1"
+                        },
+                        {
+                            "href": "https://halley.com/items/2"
+                        },
+                        {
+                            "href": "https://halley.com/items/3"
+                        }
+                    ],
+                    "mainStepItem": {
+                        "href": "https://halley.com/items/1"
+                    }
+                },
+                "code": "IT"
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://halley.com/items"
+        }
+    }
+}

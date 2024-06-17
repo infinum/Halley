@@ -37,6 +37,15 @@ public extension HalleyKit {
         public static let links = "_links"
         public static let `self` = "self"
         public static let includeSeparator: Character = "."
+
+        public struct ToMany {
+            /// Leading keyword denoting the start of a "to many" include type
+            public static let leading = "["
+            /// Trailing keyword denoting the end of a "to many" include type
+            public static let trailing = "]"
+            /// CharacterSet of leading and trailing keywords
+            public static let characterSet = CharacterSet(charactersIn: [leading, trailing].joined())
+        }
     }
 }
 
