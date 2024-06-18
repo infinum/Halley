@@ -18,12 +18,16 @@ extension JSONResult {
 
 extension Collection where Element == JSONResult {
 
-    /// Collects all responses and joins them as a single array. In case if any
-    /// of responses has error, it will return .failure
-    /// - Returns: `.success` if all responses are successful, `.failure` if any of responses have failed
-    func collect() -> JSONResult {
+    /// Collects all responses and joins them as a single array. Depending on the `options` property
+    /// `failWhenAnyNestedRequestErrors`, method will return a success or failure.
+    ///
+    /// - Returns: `.success` if all responses are successful, `.failure` if any response
+    /// has failed and the `failWhenAnyNestedRequestErrors` property is set to `true`
+    func collect(options: HalleyKit.Options) -> JSONResult {
         do {
-            let joined = try map { try $0.get() }
+            let joined = try compactMap {
+                options.failWhenAnyNestedRequestErrors ? try $0.get() : try? $0.get()
+            }
             return .success(joined)
         } catch let error {
             return .failure(error)
