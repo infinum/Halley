@@ -7,9 +7,12 @@ struct HalleyLinksMemberGenerator {
     let isPublic: Bool
 
     func generate() -> DeclSyntax {
-        return """
-        \(isPublic ? "public " : "")let \(raw: linksVariableName): Halley.Links?
-        """
+        let modifiers = DeclModifierListSyntax {
+            if isPublic {
+                DeclModifierListSyntax { DeclModifierSyntax(name: .keyword(.public)) }
+            }
+        }
+        return DeclSyntax("\(modifiers) let \(raw: linksVariableName): Halley.Links?")
     }
 
     func property() -> HalleyPropertyDecl {

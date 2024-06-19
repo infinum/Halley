@@ -1,4 +1,3 @@
-#if canImport(SwiftCompilerPlugin)
 import SwiftSyntaxMacros
 import SwiftCompilerPlugin
 
@@ -9,4 +8,3 @@ struct HalleyModelMacroPlugin: CompilerPlugin {
         HalleyLinkMacro.self
     ]
 }
-#endif

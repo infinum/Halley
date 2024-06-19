@@ -7,21 +7,21 @@ struct HalleyCodingKeysGenerator {
     let isPublic: Bool
 
     func generate() -> EnumDeclSyntax {
-        EnumDeclSyntax(
-            modifiers: isPublic ? ModifierListSyntax { DeclModifierSyntax(name: .keyword(.public)) } : [],
-            identifier: .identifier("CodingKeys"),
-            inheritanceClause: TypeInheritanceClauseSyntax {
-                InheritedTypeSyntax(typeName: TypeSyntax(stringLiteral: "String"))
-                InheritedTypeSyntax(typeName: TypeSyntax(stringLiteral: "CodingKey"))
-                InheritedTypeSyntax(typeName: TypeSyntax(stringLiteral: "IncludeKey"))
+        return EnumDeclSyntax(
+            modifiers: isPublic ? DeclModifierListSyntax { DeclModifierSyntax(name: .keyword(.public)) } : [],
+            name: "CodingKeys",
+            inheritanceClause: InheritanceClauseSyntax {
+                InheritedTypeSyntax(type: TypeSyntax(stringLiteral: "String"))
+                InheritedTypeSyntax(type: TypeSyntax(stringLiteral: "CodingKey"))
+                InheritedTypeSyntax(type: TypeSyntax(stringLiteral: "IncludeKey"))
             }
         ) {
             // Some properties can be skipped via @HalleySkip attribute
             let availableEnumCases = properties.compactMap { $0.generateEnumCase() }
-            return MemberDeclListSyntax(
+            return MemberBlockItemListSyntax(
                 availableEnumCases
                     .map {
-                        MemberDeclListItemSyntax(
+                        MemberBlockItemSyntax(
                             decl: EnumCaseDeclSyntax(
                                 elements: EnumCaseElementListSyntax(arrayLiteral: $0)
                             )

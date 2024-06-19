@@ -11,7 +11,7 @@ final class CodingKeysMacroTests: XCTestCase {
         "HalleyLink": HalleyLinkMacro.self
     ]
 
-    func testOptionAll() throws {
+    func testInternalStruct() throws {
         assertMacroExpansion(
             """
             protocol IncludeKey {
@@ -32,13 +32,54 @@ final class CodingKeysMacroTests: XCTestCase {
                 let hogeHoge: String
                 var myValue: String
                 let skippyValue: String? = ""
+            
                 let _links: Halley.Links?
+
                 enum CodingKeys: String, CodingKey, IncludeKey {
                     case hogeHoge = "hoges_link"
                     case myValue
                     case _links
                 }
             }
+
+            extension Hoge: HalleyCodable {
+            }
+            """,
+            macros: macros
+        )
+    }
+
+    func testPublicStruct() throws {
+        assertMacroExpansion(
+            """
+            protocol IncludeKey {
+            }
+            @HalleyModel
+            public struct Hoge {
+                @HalleyLink("hoges_link")
+                let hogeHoge: String
+                var myValue: String
+                @HalleyLink(nil)
+                let skippyValue: String? = ""
+            }
+            """,
+            expandedSource: """
+            protocol IncludeKey {
+            }
+            public struct Hoge {
+                let hogeHoge: String
+                var myValue: String
+                let skippyValue: String? = ""
+
+                public let _links: Halley.Links?
+
+                public enum CodingKeys: String, CodingKey, IncludeKey {
+                    case hogeHoge = "hoges_link"
+                    case myValue
+                    case _links
+                }
+            }
+
             extension Hoge: HalleyCodable {
             }
             """,
