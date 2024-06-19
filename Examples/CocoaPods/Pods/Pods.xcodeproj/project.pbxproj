@@ -75,7 +75,7 @@
 		07BCCFB1BF05E2F77FBEDD84653E35B4 /* DemandBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DemandBuffer.swift; sourceTree = "<group>"; };
 		09013C1C68665AB1ED8E9A4744F842A7 /* Links.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		094F6BDE98A2FD1FE9FF2E0D250EB1A2 /* IncludeKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IncludeKey.swift; sourceTree = "<group>"; };
-		0FE04811336C2A53A5A446DE7E608B87 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		0FE04811336C2A53A5A446DE7E608B87 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		107E285ECF165C1F81E71716F284AB36 /* Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
 		147D219B120AA9DA17349C6242EB15E4 /* LinkResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkResolver.swift; sourceTree = "<group>"; };
 		1C72B1A6390627CD973B2846E900B0BA /* ZipMany.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZipMany.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		35948331D02AE4729EB929F8BFC99588 /* Pods-HalleyCocoaPodExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HalleyCocoaPodExample-umbrella.h"; sourceTree = "<group>"; };
 		3892A711DDCFE0F34292BC7EF0FDE355 /* RequesterQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequesterQueue.swift; sourceTree = "<group>"; };
 		38C9734A457598BED1ABC75B6DB9D4B2 /* PaginationPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationPage.swift; sourceTree = "<group>"; };
-		3C09D0C6F49B41A84A64D477C96AA7B3 /* Halley.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Halley.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3C09D0C6F49B41A84A64D477C96AA7B3 /* Halley.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Halley.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3F638E6D3676E4BF83F8B611041E890A /* DefaultTemplateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultTemplateHandler.swift; sourceTree = "<group>"; };
 		4246A916B1F5DA56E71C6C85AD8B97AA /* InMemoryCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
 		457AA72E5608619A101A3A31EA132166 /* Halley */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Halley; path = Halley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,7 +112,7 @@
 		8A964F106FEE336EAD0770B6A59F921E /* TemplateLinkResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateLinkResolver.swift; sourceTree = "<group>"; };
 		8AAE0D4D8248B79CB7DCFFA1D9B74F6C /* ReplaySubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaySubject.swift; sourceTree = "<group>"; };
 		8CE51FC16EE674C6AF62C48A72BB7DBF /* RequestOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestOperation.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; };
 		9FA73EE21D0C2293190B9C3DCED953BF /* RequesterInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequesterInterface.swift; sourceTree = "<group>"; };
 		A112DC6370656DDE1CB26756835F6636 /* Halley-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Halley-prefix.pch"; sourceTree = "<group>"; };
 		A619F9C0EE12C7E2175B72FF4649AA95 /* ParsedLink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParsedLink.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		B303D277F9D27CBD55ACB919C73A921C /* Pods-HalleyCocoaPodExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HalleyCocoaPodExample"; path = Pods_HalleyCocoaPodExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DB50BC0CB3FB0F35A3D6A7F4B7055D /* Result+TryMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Result+TryMap.swift"; sourceTree = "<group>"; };
 		BC8846AB80F7E724E8EE7A4ECCA9CCD8 /* IncludesResultBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IncludesResultBuilder.swift; sourceTree = "<group>"; };
-		BD0A7C96603AD52421D5DFCB7BF87188 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BD0A7C96603AD52421D5DFCB7BF87188 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C964F0103D3B27586DFC7AE9C5CF4B08 /* HalleyURLConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HalleyURLConvertible.swift; sourceTree = "<group>"; };
 		D3B84E4F32F38C551545D7672063D4FB /* ToManyIncludeKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToManyIncludeKey.swift; sourceTree = "<group>"; };
 		E11896D9F1AE9DA24865C15DCAC95AD2 /* Pods-HalleyCocoaPodExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HalleyCocoaPodExample-Info.plist"; sourceTree = "<group>"; };
@@ -189,7 +189,6 @@
 				30C34CF575E926688EABF89209481B04 /* Internal */,
 				5F6C1AC70ECA45FE5E7F062292A3298D /* Links */,
 			);
-			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -199,7 +198,6 @@
 				548E8C99E4C68AD1B19D9FDD02D0B8F8 /* PageMetadata.swift */,
 				38C9734A457598BED1ABC75B6DB9D4B2 /* PaginationPage.swift */,
 			);
-			name = Pagination;
 			path = Pagination;
 			sourceTree = "<group>";
 		};
@@ -210,7 +208,6 @@
 				48462BDAEF2DF3D63AE813CA2CDFB215 /* Relationship.swift */,
 				23F02415FA326919F81464B66027997C /* ResourceContainer.swift */,
 			);
-			name = Internal;
 			path = Internal;
 			sourceTree = "<group>";
 		};
@@ -234,7 +231,6 @@
 				B9DB50BC0CB3FB0F35A3D6A7F4B7055D /* Result+TryMap.swift */,
 				A3AAFBA7C4EFCCD4F8BC12B17F739198 /* Combine */,
 			);
-			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -259,7 +255,6 @@
 				50DE8816ED19E6ED3B0A69F8915FBB64 /* Links+Helpers.swift */,
 				A619F9C0EE12C7E2175B72FF4649AA95 /* ParsedLink.swift */,
 			);
-			name = Links;
 			path = Links;
 			sourceTree = "<group>";
 		};
@@ -281,7 +276,6 @@
 			children = (
 				A707E8A6DAD8E14B59FB55D1A4D4F83E /* Traverser.swift */,
 			);
-			name = Traverser;
 			path = Traverser;
 			sourceTree = "<group>";
 		};
@@ -303,7 +297,6 @@
 				5D312FBCE05EB72FAB7A5AD732736A2D /* ShareReplay.swift */,
 				1C72B1A6390627CD973B2846E900B0BA /* ZipMany.swift */,
 			);
-			name = Combine;
 			path = Combine;
 			sourceTree = "<group>";
 		};
@@ -324,7 +317,6 @@
 				9FA73EE21D0C2293190B9C3DCED953BF /* RequesterInterface.swift */,
 				6D0AC6DDAC6BC011313A84BD2CCD84FE /* ResourceManager.swift */,
 			);
-			name = Public;
 			path = Public;
 			sourceTree = "<group>";
 		};
@@ -393,7 +385,6 @@
 				BC8846AB80F7E724E8EE7A4ECCA9CCD8 /* IncludesResultBuilder.swift */,
 				D3B84E4F32F38C551545D7672063D4FB /* ToManyIncludeKey.swift */,
 			);
-			name = Includes;
 			path = Includes;
 			sourceTree = "<group>";
 		};
@@ -404,7 +395,6 @@
 				3892A711DDCFE0F34292BC7EF0FDE355 /* RequesterQueue.swift */,
 				8CE51FC16EE674C6AF62C48A72BB7DBF /* RequestOperation.swift */,
 			);
-			name = Queue;
 			path = Queue;
 			sourceTree = "<group>";
 		};
