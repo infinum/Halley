@@ -8,38 +8,79 @@ import SwiftSyntaxMacrosTestSupport
 final class CodingKeysMacroTests: XCTestCase {
     let macros: [String: Macro.Type] = [
         "HalleyModel": HalleyModelMacro.self,
-        "HalleyLink": HalleyLinkMacro.self
+        "HalleyCodingKey": HalleyCodingKeyMacro.self
     ]
 
-    func testOptionAll() throws {
+    func testInternalStruct() throws {
         assertMacroExpansion(
             """
             protocol IncludeKey {
             }
             @HalleyModel
-            struct Hoge {
-                @HalleyLink("hoges_link")
-                let hogeHoge: String
+            struct Model {
+                @HalleyCodingKey("test_value")
+                let testValue: String
                 var myValue: String
-                @HalleyLink(nil)
-                let skippyValue: String? = ""
+                @HalleyCodingKey(nil)
+                let skippedValue: String? = ""
             }
             """,
             expandedSource: """
             protocol IncludeKey {
             }
-            struct Hoge {
-                let hogeHoge: String
+            struct Model {
+                let testValue: String
                 var myValue: String
-                let skippyValue: String? = ""
+                let skippedValue: String? = ""
+
                 let _links: Halley.Links?
+
                 enum CodingKeys: String, CodingKey, IncludeKey {
-                    case hogeHoge = "hoges_link"
+                    case testValue = "test_value"
                     case myValue
                     case _links
                 }
             }
-            extension Hoge: HalleyCodable {
+
+            extension Model: HalleyCodable {
+            }
+            """,
+            macros: macros
+        )
+    }
+
+    func testPublicStruct() throws {
+        assertMacroExpansion(
+            """
+            protocol IncludeKey {
+            }
+            @HalleyModel
+            public struct Model {
+                @HalleyCodingKey("test_value")
+                let testValue: String
+                var myValue: String
+                @HalleyCodingKey(nil)
+                let skippedValue: String? = ""
+            }
+            """,
+            expandedSource: """
+            protocol IncludeKey {
+            }
+            public struct Model {
+                let testValue: String
+                var myValue: String
+                let skippedValue: String? = ""
+
+                public let _links: Halley.Links?
+
+                public enum CodingKeys: String, CodingKey, IncludeKey {
+                    case testValue = "test_value"
+                    case myValue
+                    case _links
+                }
+            }
+
+            extension Model: HalleyCodable {
             }
             """,
             macros: macros

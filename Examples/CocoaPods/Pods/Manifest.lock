@@ -1,16 +1,32 @@
 PODS:
-  - Halley (1.8.0)
+  - Halley (1.8.2)
+  - HalleyMacro (1.8.2):
+    - Halley
 
 DEPENDENCIES:
-  - Halley (from `../..`)
+  - "Halley (from `git@github.com:infinum/Halley.git`, branch `feature/swift-macros`)"
+  - "HalleyMacro (from `git@github.com:infinum/Halley.git`, branch `feature/swift-macros`)"
 
 EXTERNAL SOURCES:
   Halley:
-    :path: "../.."
+    :branch: feature/swift-macros
+    :git: "git@github.com:infinum/Halley.git"
+  HalleyMacro:
+    :branch: feature/swift-macros
+    :git: "git@github.com:infinum/Halley.git"
+
+CHECKOUT OPTIONS:
+  Halley:
+    :commit: 9b5b105186339679d50e057a6aa3c5cfe86eebc3
+    :git: "git@github.com:infinum/Halley.git"
+  HalleyMacro:
+    :commit: 9b5b105186339679d50e057a6aa3c5cfe86eebc3
+    :git: "git@github.com:infinum/Halley.git"
 
 SPEC CHECKSUMS:
-  Halley: 0f42922c78373327e738776ab3dca281684f8984
+  Halley: 9db0dec83dfb0ffa44587b8da574e4c96d2e7b6b
+  HalleyMacro: 99dc8b6fa4926c8c09f5a4ebb2fb92cea5dbbcd5
 
-PODFILE CHECKSUM: 201a0e8f4024b5de51127a9f261edde119950b79
+PODFILE CHECKSUM: 474115819e0bf6f1096a6eeea657b013511529bc
 
 COCOAPODS: 1.15.2

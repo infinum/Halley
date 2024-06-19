@@ -21,14 +21,14 @@ struct HalleyPropertyDecl {
         switch linkType {
         case .custom(let customLinkValue):
             return EnumCaseElementSyntax(
-                identifier: .identifier(name),
+                name: .identifier(name),
                 rawValue: InitializerClauseSyntax(
                     equal: .equalToken(),
                     value: StringLiteralExprSyntax(content: customLinkValue)
                 )
             )
         case .`default`:
-            return EnumCaseElementSyntax(identifier: .identifier(name))
+            return EnumCaseElementSyntax(name: .identifier(name))
         case .skip:
             return nil
         }

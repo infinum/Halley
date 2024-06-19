@@ -6,15 +6,16 @@ import CompilerPluginSupport
 let package = Package(
     name: "Halley",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v14),
         .macOS(.v10_15),
     ],
     products: [
         .library(name: "Halley", targets: ["Halley"]),
         .library(name: "HalleyMacro", targets: ["HalleyMacro"]),
+        .executable(name: "HalleyMacroClient", targets: ["HalleyMacroClient"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git", branch: "main"),
+        .package(url: "https://github.com/apple/swift-syntax.git", "509.1.0"..<"511.0.0"),
     ],
     targets: [
         .target(name: "Halley", path: "Halley"),
@@ -27,7 +28,8 @@ let package = Package(
         .target(
             name: "HalleyMacro",
             dependencies: [
-                "HalleyMacroPlugin"
+                "HalleyMacroPlugin",
+                "Halley"
             ],
             path: "Macro"
         ),
@@ -41,6 +43,11 @@ let package = Package(
                 .product(name: "SwiftParserDiagnostics", package: "swift-syntax"),
             ],
             path: "MacroPlugin"
+        ),
+        .executableTarget(
+            name: "HalleyMacroClient", 
+            dependencies: ["HalleyMacro"],
+            path: "MacroClient"
         ),
         .testTarget(
             name: "HalleyMacroTests",

@@ -1,0 +1,42 @@
+{
+  "name": "HalleyMacro",
+  "version": "1.8.2",
+  "summary": "Halley Macro Plugin",
+  "description": "Macro plugin for Halley. Generates HalleyCodable conformance and allows changing the Coding Key on the property.",
+  "homepage": "https://github.com/Infinum/Halley",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Infinum": "ios@infinum.hr",
+    "Filip Gulan": "filip.gulan@infinum.com",
+    "Zoran Turk": "zoran.turk@infinum.com"
+  },
+  "source": {
+    "git": "https://github.com/infinum/Halley.git",
+    "tag": "1.8.2"
+  },
+  "platforms": {
+    "ios": "14.0"
+  },
+  "swift_versions": "5.10",
+  "dependencies": {
+    "Halley": [
+
+    ]
+  },
+  "source_files": [
+    "Macro/**/*"
+  ],
+  "preserve_paths": [
+    "macros/HalleyMacroPlugin"
+  ],
+  "pod_target_xcconfig": {
+    "OTHER_SWIFT_FLAGS": "-load-plugin-executable ${PODS_ROOT}/HalleyMacro/macros/HalleyMacroPlugin#HalleyMacroPlugin"
+  },
+  "user_target_xcconfig": {
+    "OTHER_SWIFT_FLAGS": "-load-plugin-executable ${PODS_ROOT}/HalleyMacro/macros/HalleyMacroPlugin#HalleyMacroPlugin"
+  },
+  "swift_version": "5.10"
+}
