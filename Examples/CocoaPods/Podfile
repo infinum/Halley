@@ -6,9 +6,9 @@ workspace '../../Halley.xcworkspace'
 
 
 target 'HalleyCocoaPodExample' do
-  
+
   # Pods for CocoapodsExample
-  pod 'Halley', :path => '../..'
+  pod 'Halley/Macro', :path => '../..'
 
 end
 

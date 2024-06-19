@@ -1,16 +1,18 @@
 PODS:
-  - Halley (1.8.0)
+  - Halley/Core (1.8.0)
+  - Halley/Macro (1.8.0):
+    - Halley/Core
 
 DEPENDENCIES:
-  - Halley (from `../..`)
+  - Halley/Macro (from `../..`)
 
 EXTERNAL SOURCES:
   Halley:
     :path: "../.."
 
 SPEC CHECKSUMS:
-  Halley: 0f42922c78373327e738776ab3dca281684f8984
+  Halley: dcad83951bf79548d5f39fe5620131da72a68615
 
-PODFILE CHECKSUM: 201a0e8f4024b5de51127a9f261edde119950b79
+PODFILE CHECKSUM: 76feb09771c8c2c0612794df414dddd352bf1712
 
 COCOAPODS: 1.15.2

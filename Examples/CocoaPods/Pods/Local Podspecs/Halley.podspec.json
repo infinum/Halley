@@ -20,11 +20,36 @@
   "platforms": {
     "ios": "13.0"
   },
-  "swift_versions": "5.0",
-  "source_files": "Halley/**/*",
-  "frameworks": [
-    "Foundation",
-    "Combine"
+  "swift_versions": "5.9",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "Halley/**/*",
+      "frameworks": [
+        "Foundation",
+        "Combine"
+      ]
+    },
+    {
+      "name": "Macro",
+      "dependencies": {
+        "Halley/Core": [
+
+        ]
+      },
+      "source_files": [
+        "Macro/Classes/**/*"
+      ],
+      "preserve_paths": [
+        "macros/HalleyMacroPlugin"
+      ],
+      "pod_target_xcconfig": {
+        "OTHER_SWIFT_FLAGS": "-load-plugin-executable ${PODS_ROOT}/HalleyMacro/macros/HalleyMacroPlugin#HalleyMacroPlugin"
+      },
+      "user_target_xcconfig": {
+        "OTHER_SWIFT_FLAGS": "-load-plugin-executable ${PODS_ROOT}/HalleyMacro/macros/HalleyMacroPlugin#HalleyMacroPlugin"
+      }
+    }
   ],
-  "swift_version": "5.0"
+  "swift_version": "5.9"
 }
