@@ -1,0 +1,38 @@
+{
+    "_embedded": {
+        "item": [
+            {
+                "type": "PREPARATION",
+                "description": "First item",
+                "_links": {
+                    "self": {
+                        "href": "https://halley.com/items/1"
+                    }
+                }
+            },
+            {
+                "type": "PREPARATION",
+                "description": "Second item",
+                "_links": {
+                    "self": {
+                        "href": "https://halley.com/items/2"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://halley.com/items"
+        },
+        "item": [
+            {
+                "href": "https://halley.com/items/1"
+            },
+            {
+                "href": "https://halley.com/items/2"
+            }
+        ]
+    }
+}
+

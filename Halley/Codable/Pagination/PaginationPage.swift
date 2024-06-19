@@ -6,7 +6,13 @@ public class PaginationPage<T: Codable>: Codable {
 
     public let resources: [T]?
     public let metadata: PageMetadata
-    public let _links: PageLinks
+    public let _links: Links?
+
+    public var firstPage: Link? { _links?.link(for: "first") }
+    public var lastPage: Link? { _links?.link(for: "last") }
+    public var nextPage: Link? { _links?.link(for: "next") }
+    public var previousPage: Link? { _links?.link(for: "prev") }
+    public var items: [Link]? { _links?.links(for: "item") }
 
     public enum CodingKeys: String, CodingKey {
         case resources = "item"
@@ -14,14 +20,14 @@ public class PaginationPage<T: Codable>: Codable {
         case _links
     }
 
-    public init(links: PageLinks, resources: [T]?, metadata: PageMetadata) {
+    public init(links: Links?, resources: [T]?, metadata: PageMetadata) {
         _links = links
         self.resources = resources
         self.metadata = metadata
     }
 
     public static func empty() -> PaginationPage {
-        return PaginationPage(links: .empty(), resources: [], metadata: .empty())
+        return PaginationPage(links: nil, resources: [], metadata: .empty())
     }
 
     public func mapResources<New>(

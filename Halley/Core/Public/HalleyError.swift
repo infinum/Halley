@@ -24,5 +24,8 @@ public extension HalleyKit {
         case cantResolveURLFromLink(link: Link)
         /// Thrown when it is not possible to resolve URL for given string
         case cantResolveURLFromString(string: String?)
+        /// Thrown when the parsing type doesn't match received link - e.g. client expects `toOne`
+        /// but the response contains array of links
+        case unsupportedLinkType(relationship: String, link: ParsedLink)
     }
 }

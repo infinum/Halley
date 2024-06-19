@@ -1,10 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = 'Halley'
-  s.version          = '1.3.0'
-  s.summary          = 'A short description of Halley.'
-
+  s.version          = '1.8.0'
+  s.summary          = 'Lightweight JSON HAL parser and traverser.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Halley provides a simple way on iOS to parse and traverse models according to JSON Hypertext Application Language specification also known just as HAL.
                        DESC
 
   s.homepage         = 'https://github.com/Infinum/Halley'
