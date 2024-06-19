@@ -14,24 +14,6 @@ Pod::Spec.new do |s|
   s.platform = :ios
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.9'
-
-  s.subspec 'Core' do |ss|
-    ss.source_files = 'Halley/**/*'
-    ss.frameworks = 'Foundation', 'Combine'
-  end
-
-  s.subspec 'Macro' do |ss|
-    ss.dependency 'Halley/Core'
-
-    ss.source_files = ['Macro/**/*']
-    ss.preserve_paths = ["macros/HalleyMacroPlugin"]
-
-    ss.pod_target_xcconfig = {
-      'OTHER_SWIFT_FLAGS' => '-load-plugin-executable ${PODS_ROOT}/Halley/macros/HalleyMacroPlugin#HalleyMacroPlugin'
-    }
-    ss.user_target_xcconfig = {
-      'OTHER_SWIFT_FLAGS' => '-load-plugin-executable ${PODS_ROOT}/Halley/macros/HalleyMacroPlugin#HalleyMacroPlugin'
-    }
-  end
-
+  s.source_files = 'Halley/**/*'
+  s.frameworks = 'Foundation', 'Combine'
 end
