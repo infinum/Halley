@@ -1,11 +1,11 @@
 import SwiftSyntax
 import SwiftSyntaxMacros
 
-public struct HalleyLinkMacro: MemberMacro {
+public struct HalleyLinkMacro: PeerMacro {
 
     public static func expansion(
         of node: AttributeSyntax,
-        providingMembersOf declaration: some DeclGroupSyntax,
+        providingPeersOf declaration: some DeclSyntaxProtocol,
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
         // Does nothing, used only to decorate members with data

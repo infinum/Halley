@@ -12,6 +12,7 @@ let package = Package(
     products: [
         .library(name: "Halley", targets: ["Halley"]),
         .library(name: "HalleyMacro", targets: ["HalleyMacro"]),
+        .executable(name: "HalleyMacroClient", targets: ["HalleyMacroClient"]),
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-syntax.git", branch: "main"),
@@ -27,7 +28,8 @@ let package = Package(
         .target(
             name: "HalleyMacro",
             dependencies: [
-                "HalleyMacroPlugin"
+                "HalleyMacroPlugin",
+                "Halley"
             ],
             path: "Macro"
         ),
@@ -41,6 +43,11 @@ let package = Package(
                 .product(name: "SwiftParserDiagnostics", package: "swift-syntax"),
             ],
             path: "MacroPlugin"
+        ),
+        .executableTarget(
+            name: "HalleyMacroClient", 
+            dependencies: ["HalleyMacro"],
+            path: "MacroClient"
         ),
         .testTarget(
             name: "HalleyMacroTests",
