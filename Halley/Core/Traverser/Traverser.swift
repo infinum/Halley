@@ -359,7 +359,7 @@ private extension Traverser {
                 )
             }
             .zip()
-            .map { $0.collect() }
+            .map { $0.collect(options: options) }
             .eraseToAnyPublisher()
     }
 
@@ -390,7 +390,7 @@ private extension Traverser {
 
         return requests
             .zip()
-            .map { $0.collect() }
+            .map { $0.collect(options: options) }
             .eraseToAnyPublisher()
     }
 }
@@ -576,7 +576,7 @@ private extension Traverser {
             }
             return singleResourceRequests
                 .zip()
-                .map { $0.map(\.result).collect() }
+                .map { $0.map(\.result).collect(options: options) }
                 .map { Relationship.Response(relationship: relOptions.relationship, result: $0) }
                 .eraseToAnyPublisher()
         case (.toOne, .array(let links)):
