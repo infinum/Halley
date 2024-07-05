@@ -1,6 +1,6 @@
 {
   "name": "Halley",
-  "version": "1.8.0",
+  "version": "1.8.2",
   "summary": "Lightweight JSON HAL parser and traverser.",
   "description": "Halley provides a simple way on iOS to parse and traverse models according to JSON Hypertext Application Language specification also known just as HAL.",
   "homepage": "https://github.com/Infinum/Halley",
@@ -15,16 +15,16 @@
   },
   "source": {
     "git": "https://github.com/infinum/Halley.git",
-    "tag": "1.8.0"
+    "tag": "1.8.2"
   },
   "platforms": {
-    "ios": "13.0"
+    "ios": "14.0"
   },
-  "swift_versions": "5.0",
+  "swift_versions": "5.10",
   "source_files": "Halley/**/*",
   "frameworks": [
     "Foundation",
     "Combine"
   ],
-  "swift_version": "5.0"
+  "swift_version": "5.10"
 }
