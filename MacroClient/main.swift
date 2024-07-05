@@ -23,23 +23,21 @@ struct Model {
 
 extension Model: IncludableType {
 
-    enum IncludeType {
+    enum IncludeType: IncludeTypeInterface {
         case minimum
         case secondaryInfo
-    }
-}
+        
+        typealias IncludeCodingKey = Model.CodingKeys
 
-extension Model.IncludeType: IncludeTypeInterface {
-    typealias IncludeCodingKey = Model.CodingKeys
-
-    @IncludesBuilder<IncludeCodingKey>
-    func prepareIncludes() -> [IncludeField] {
-        switch self {
-        case .minimum:
-            ToOne(.primaryInfo)
-        case .secondaryInfo:
-            ToOne(.primaryInfo)
-            ToOne(.secondaryInfo)
+        @IncludesBuilder<IncludeCodingKey>
+        func prepareIncludes() -> [IncludeField] {
+            switch self {
+            case .minimum:
+                ToOne(.primaryInfo)
+            case .secondaryInfo:
+                ToOne(.primaryInfo)
+                ToOne(.secondaryInfo)
+            }
         }
     }
 }

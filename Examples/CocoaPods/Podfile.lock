@@ -17,10 +17,10 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Halley:
-    :commit: 9b5b105186339679d50e057a6aa3c5cfe86eebc3
+    :commit: f12af2c8abfa36eb9a75d061d7ef90ba4d253b15
     :git: "git@github.com:infinum/Halley.git"
   HalleyMacro:
-    :commit: 9b5b105186339679d50e057a6aa3c5cfe86eebc3
+    :commit: f12af2c8abfa36eb9a75d061d7ef90ba4d253b15
     :git: "git@github.com:infinum/Halley.git"
 
 SPEC CHECKSUMS:

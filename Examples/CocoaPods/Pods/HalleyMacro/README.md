@@ -15,7 +15,7 @@ Halley provides a simple way on iOS to parse and traverse models according to [J
 
 ### Requirements
 
-- iOS 13
+- iOS 14
 - Swift 5.0
 
 There are several ways to include _Halley_ in your project, depending on your use case.
@@ -230,6 +230,99 @@ resourceManager
         // Parsed and traversed contact dict
     }
 ```
+
+## Macro
+
+Halley includes a macro plugin that automatically adds conformance to `HalleyCodable`, synthesizes the `_links` property, generates the `CodingKeys` enum, and allows easy modification of `CodingKey` values for specific properties or complete exclusion from encoding/decoding.
+
+### Installation
+
+```ruby
+pod 'HalleyMacro'
+```
+
+### Usage
+
+```swift
+@HalleyModel
+struct Info {
+    let text: String
+}
+
+@HalleyModel
+struct Model {
+    @HalleyCodingKey("test_value")
+    let testValue: String
+    var myValue: String
+
+    @HalleyCodingKey("my_info")
+    let primaryInfo: Info?
+    @HalleyCodingKey("secondary_info")
+    let secondaryInfo: Info?
+
+    @HalleyCodingKey(nil)
+    let skippedValue: String? = ""
+}
+
+extension Model: IncludableType {
+
+    enum IncludeType: IncludeTypeInterface {
+        case minimum
+        case secondaryInfo
+
+        typealias IncludeCodingKey = Model.CodingKeys
+
+        @IncludesBuilder<IncludeCodingKey>
+        func prepareIncludes() -> [IncludeField] {
+            switch self {
+            case .minimum:
+                ToOne(.primaryInfo)
+            case .secondaryInfo:
+                ToOne(.primaryInfo)
+                ToOne(.secondaryInfo)
+            }
+        }
+    }
+}
+```
+
+### Compiler bug
+
+If the model conforms to `IncludableType` and uses macro for model definition, currently it is not possible to declare `IncludeTypeInterface` conformance to `IncludeType` in the extension. Follow the example above for correct usage. This is a compiler bug on the Swift side:
+
+```swift
+// Won't work!
+// Error message: Circular reference resolving attached macro 'HalleyModel'
+
+extension Model: IncludableType {
+
+    enum IncludeType {
+        case minimum
+        case secondaryInfo
+    }
+}
+
+extension Model.IncludeType: IncludeTypeInterface {
+    typealias IncludeCodingKey = Model.CodingKeys
+
+    @IncludesBuilder<IncludeCodingKey>
+    func prepareIncludes() -> [IncludeField] {
+        switch self {
+        case .minimum:
+            ToOne(.primaryInfo)
+        case .secondaryInfo:
+            ToOne(.primaryInfo)
+            ToOne(.secondaryInfo)
+        }
+    }
+}
+```
+
+### Development and deployment
+
+To build the macro locally, just run the `build_macro.sh` script which will build the macro and copy the executable to `macros` folder.
+
+Match the Halley and HalleyMacro Podspec versions before publishing.
 
 ## Author
 
