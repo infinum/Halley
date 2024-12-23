@@ -129,16 +129,22 @@ private extension Traverser {
             )
         }
 
+        var responseModel = resource.parameters
+        // Remove parameters for relationships that are not included
+        // eg. remove embedded relationship that we do not include
+        resource._links?.relationships
+            .filter { rel in !relationshipsToFetch.contains(where: { $0.relationship == rel.key }) }
+            .forEach { responseModel.removeValue(forKey: $0.key) }
+
         // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
         // and ends whole pipeline
         guard requests.isEmpty == false else {
-            return .success(resource.parameters)
+            return .success(responseModel)
         }
 
         return requests
             .zip()
             .map { responses -> JSONResult in
-                var responseModel = resource.parameters
                 for response in responses {
                     switch response.result {
                     case .success(let value):
