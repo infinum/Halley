@@ -3,7 +3,7 @@ import XCTest
 
 final class CollectionTests: XCTestCase {
 
-    func testFetchingSingleCollectionWithMultipleLinks() throws {
+    func testFetchingSingleCollectionWithMultipleLinks() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
             for: StepItemResponse.self,
@@ -14,13 +14,13 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
+        let response = try await awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
         XCTAssertEqual(response[0].stepItems?.count, 3)
         XCTAssertEqual(response[1].stepItems?.count, 2)
         XCTAssertEqual(response[2].stepItems?.count, 1)
     }
 
-    func testFetchingSingleCollectionWithSingleLink() throws {
+    func testFetchingSingleCollectionWithSingleLink() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
             for: StepItemResponse.self,
@@ -31,11 +31,11 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
+        let response = try await awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
         XCTAssertEqual(response[3].stepItems?.count, 2)
     }
 
-    func testEmptyLinksParsing() throws {
+    func testEmptyLinksParsing() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
             for: StepItemResponse.self,
@@ -46,11 +46,11 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
+        let response = try await awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
         XCTAssertNil(response[4].stepItems)
     }
 
-    func testFetchingSingleResourceWithArrayOfOneLink() throws {
+    func testFetchingSingleResourceWithArrayOfOneLink() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
             for: StepItemResponse.self,
@@ -61,11 +61,11 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
+        let response = try await awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
         XCTAssertNotNil(response[5].mainStepItem)
     }
 
-    func testFetchingSingleResourceWithSingleLink() throws {
+    func testFetchingSingleResourceWithSingleLink() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
             for: StepItemResponse.self,
@@ -76,7 +76,9 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
+        let response = try await awaitPublisher(
+            fetcher.resourceCollection(ofType: StepItemResponse.self)
+        )
         XCTAssertNotNil(response[6].mainStepItem)
     }
 }

@@ -11,11 +11,12 @@ class HalleyMockRequester: RequesterInterface {
 
     func requestResource(
         at url: URL,
-        completion: @escaping (Result<Data, Error>) -> Void
+        completion: sending @escaping (Result<Data, Error>) -> Void
     ) -> RequestContainerInterface {
         let path = url.absoluteString
+        let registeredMocks = registeredMocks
         // Simulate API call
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.main.async {
             do {
                 let mock = try registeredMocks[path]
                     .orThrow(HalleyTestsError.conditionFailed("Unbable to find a mock for \(path)"))
