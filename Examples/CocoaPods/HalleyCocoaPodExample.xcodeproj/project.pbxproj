@@ -88,7 +88,6 @@
 				F15CFA8BE5C7C12B13EB1D09 /* Pods-HalleyCocoaPodExample.debug.xcconfig */,
 				91B8932C765CCA74B2BBE9E4 /* Pods-HalleyCocoaPodExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -372,7 +371,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.infinum.HalleyCocoaPodExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -400,7 +399,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.infinum.HalleyCocoaPodExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
