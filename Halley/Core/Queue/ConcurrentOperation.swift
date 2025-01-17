@@ -9,7 +9,7 @@ extension NSLocking {
     }
 }
 
-class ConcurrentOperation: Operation {
+class ConcurrentOperation: Operation, @unchecked Sendable {
 
     // - State Keys -
     private let _isExecutingKey = "isExecuting"
