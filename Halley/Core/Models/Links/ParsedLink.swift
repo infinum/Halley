@@ -1,6 +1,6 @@
 import Foundation
 
-public enum ParsedLink {
+public enum ParsedLink: Sendable {
     case object(Link)
     case array([Link])
 

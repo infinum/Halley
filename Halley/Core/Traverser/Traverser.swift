@@ -202,7 +202,7 @@ private extension Traverser {
             .flatMap { $0 as? Parameters }
             .flatMap(ResourceContainer.init)
         guard let embeddedResource else {
-            throw HalleyKit.Error.relationshipNotFound(data: resource)
+            throw HalleyKit.Error.relationshipNotFound
         }
         return
             try fetchSingleResourceLinkedResources(
@@ -264,7 +264,7 @@ private extension Traverser {
                 .map { Relationship.Response(relationship: linkElement.relationship, result: $0) }
                 .eraseToAnyPublisher()
         } else {
-            throw HalleyKit.Error.relationshipNotFound(data: resource)
+            throw HalleyKit.Error.relationshipNotFound
         }
     }
 }

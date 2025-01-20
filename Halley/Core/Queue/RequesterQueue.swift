@@ -5,7 +5,7 @@ typealias JSONCache = Cache<URL, AnyPublisher<JSONResponse, Never>>
 
 // Shared Queue for all network request
 
-class RequesterQueue {
+final class RequesterQueue: Sendable {
 
     // MARK: - Singleton
 

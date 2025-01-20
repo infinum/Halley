@@ -6,9 +6,9 @@ extension XCTestCase {
     func awaitPublisher<T: Publisher>(
         _ publisher: T,
         timeout: TimeInterval = 2,
-        file: StaticString = #file,
+        file: StaticString = #filePath,
         line: UInt = #line
-    ) throws -> T.Output {
+    ) async throws -> T.Output {
         // This time, we use Swift's Result type to keep track
         // of the result of our Combine pipeline:
         var result: Result<T.Output, Error>?
@@ -34,7 +34,11 @@ extension XCTestCase {
         // created at the top of our test, and once done, we
         // also cancel our cancellable to avoid getting any
         // unused variable warnings:
-        waitForExpectations(timeout: timeout)
+
+        await fulfillment(
+            of: [expectation],
+            timeout: timeout
+        )
         cancellable.cancel()
 
         // Here we pass the original file and line number that
