@@ -4,15 +4,15 @@ import Combine
 extension JSONResult {
 
     var asDictionary: Result<Parameters, Error> {
-        tryMap { try $0 as? Parameters ?? throwHalleyError(.notDictionary(data: $0)) }
+        tryMap { try $0 as? Parameters ?? throwHalleyError(.notDictionary) }
     }
 
     var asArray: Result<[Any], Error> {
-        tryMap { try $0 as? [Any] ?? throwHalleyError(.notArray(data: $0)) }
+        tryMap { try $0 as? [Any] ?? throwHalleyError(.notArray) }
     }
 
     var asArrayOfDictionaries: Result<[Parameters], Error> {
-        tryMap { try $0 as? [Parameters] ?? throwHalleyError(.notArrayOfDictionaries(data: $0)) }
+        tryMap { try $0 as? [Parameters] ?? throwHalleyError(.notArrayOfDictionaries) }
     }
 }
 

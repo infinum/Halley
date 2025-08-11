@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Link: Codable {
+public struct Link: Sendable, Codable {
     public let href: String
     public let templated: Bool?
     public let type: String?

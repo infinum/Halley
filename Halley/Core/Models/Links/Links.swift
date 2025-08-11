@@ -1,12 +1,12 @@
 import Foundation
 
-public struct Links: Codable {
+public struct Links: Codable, Sendable {
 
     // MARK: - Public properties
 
     public typealias EmbeddedLinks = [String: [Link]]
 
-    public static var empty = Links(relationships: [:])
+    public static let empty = Links(relationships: [:])
 
     public let relationships: EmbeddedLinks
     // Similar to `relationships` but keeps the information whether the parsed link for

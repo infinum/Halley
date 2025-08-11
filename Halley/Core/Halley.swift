@@ -6,7 +6,7 @@ public enum HalleyKit { }
 public extension HalleyKit {
 
     /// `HalleyKit.Options` is a set of options affecting the decoding and traversing of a HAL response.
-    struct Options {
+    struct Options: Sendable {
 
         public static let `default` = Options()
 

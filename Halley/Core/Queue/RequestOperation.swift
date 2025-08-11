@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class HALRequestOperation: ConcurrentOperation {
+class HALRequestOperation: ConcurrentOperation, @unchecked Sendable {
 
     typealias CompletionHanlder = (Result<Data, Error>) -> Void
 
