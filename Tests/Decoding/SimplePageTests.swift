@@ -4,13 +4,13 @@ final class SimplePageTests: XCTestCase {
 
     func testPageDecoding() async throws {
         let fetcher = HalleyResourceFetcher(fromJson: "page_embedded_response")
-        let page = try await awaitPublisher(fetcher.resourcePage(ofType: StepItem.self))
+        let page = try await fetcher.resourcePage(ofType: StepItem.self).values.single()
         XCTAssertEqual(page.resources?.count, 3)
     }
 
     func testPagePreserveOrdering() async throws {
         let fetcher = HalleyResourceFetcher(fromJson: "page_embedded_response")
-        let page = try await awaitPublisher(fetcher.resourcePage(ofType: StepItem.self))
+        let page = try await fetcher.resourcePage(ofType: StepItem.self).values.single()
         XCTAssertEqual(page.resources?.count, 3)
         XCTAssertEqual(page.resources?[0].description, "First item")
         XCTAssertEqual(page.resources?[1].description, "Second item")
@@ -25,7 +25,7 @@ final class SimplePageTests: XCTestCase {
                 .adding(url: "https://halley.com/items/2", for: .init(jsonName: "step_item_2"))
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
         )
-        let page = try await awaitPublisher(fetcher.resourcePage(ofType: StepItem.self))
+        let page = try await fetcher.resourcePage(ofType: StepItem.self).values.single()
         XCTAssertEqual(page.resources?.count, 3)
     }
 }

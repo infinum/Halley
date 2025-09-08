@@ -11,7 +11,7 @@ final class SingleResourceWithEmbeddedPage: XCTestCase {
                 .adding(url: "http://example.org/api/user/mac_nibblet/contacts", for: .init(jsonName: "antoine_contacts"))
                 .adding(url: "http://example.org/api/user/mac_nibblet/website", for: .init(jsonName: "antoine_website"))
         )
-        let person = try await awaitPublisher(fetcher.resource(ofType: Contact.self))
+        let person = try await fetcher.resource(ofType: Contact.self).values.single()
         XCTAssertNotNil(person.contacts)
         XCTAssertNotNil(person.website)
         XCTAssertEqual(person.contacts?.first?.contacts?.count, 2)

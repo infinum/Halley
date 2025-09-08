@@ -14,7 +14,7 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try await awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
+        let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
         XCTAssertEqual(response[0].stepItems?.count, 3)
         XCTAssertEqual(response[1].stepItems?.count, 2)
         XCTAssertEqual(response[2].stepItems?.count, 1)
@@ -31,7 +31,7 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try await awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
+        let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
         XCTAssertEqual(response[3].stepItems?.count, 2)
     }
 
@@ -46,7 +46,7 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try await awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
+        let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
         XCTAssertNil(response[4].stepItems)
     }
 
@@ -61,7 +61,7 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try await awaitPublisher(fetcher.resourceCollection(ofType: StepItemResponse.self))
+        let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
         XCTAssertNotNil(response[5].mainStepItem)
     }
 
@@ -76,9 +76,7 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/items/3", for: .init(jsonName: "step_item_3"))
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
-        let response = try await awaitPublisher(
-            fetcher.resourceCollection(ofType: StepItemResponse.self)
-        )
+        let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
         XCTAssertNotNil(response[6].mainStepItem)
     }
 }
