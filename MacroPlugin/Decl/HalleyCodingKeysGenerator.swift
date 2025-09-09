@@ -16,7 +16,7 @@ struct HalleyCodingKeysGenerator {
                 InheritedTypeSyntax(type: TypeSyntax(stringLiteral: "IncludeKey"))
             }
         ) {
-            // Some properties can be skipped via @HalleySkip attribute
+            // Some properties can be skipped via @HalleyCodingKey(nil) attribute
             let availableEnumCases = properties.compactMap { $0.generateEnumCase() }
             return MemberBlockItemListSyntax(
                 availableEnumCases

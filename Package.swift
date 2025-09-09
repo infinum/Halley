@@ -18,7 +18,7 @@ let package = Package(
         .executable(name: "HalleyMacroClient", targets: ["HalleyMacroClient"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-syntax.git", "509.1.0"..<"511.0.0"),
+        .package(url: "https://github.com/apple/swift-syntax.git", "601.0.0"..<"602.0.0"),
     ],
     targets: [
         .target(name: "Halley", path: "Halley"),

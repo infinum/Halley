@@ -7,6 +7,7 @@ public struct HalleyModelMacro: MemberMacro {
     public static func expansion<Declaration: DeclGroupSyntax, Context: MacroExpansionContext>(
         of node: AttributeSyntax,
         providingMembersOf declaration: Declaration,
+        conformingTo protocols: [TypeSyntax],
         in context: Context
     ) throws -> [DeclSyntax] {
         // Halley models can only be either class, struct or actor - it makes no sense to have
@@ -69,8 +70,9 @@ private extension HalleyModelMacro {
         from variable: VariableDeclSyntax,
         in context: Context
     ) -> HalleyPropertyDecl.LinkType {
-        // If there is no HalleyLunk attribute, use default Codable CodingKey value
+        // If there is no defined HalleyCodingKey attribute, use default Codable CodingKey value
         guard variable.attributes.isEmpty == false else { return .`default` }
+
         // Extract only HalleyCodingKey attribute
         let linkAttribute = variable
             .attributes
@@ -89,7 +91,9 @@ private extension HalleyModelMacro {
             return .`default`
         }
 
-        // Passed attribute is a String literal
+        // Passed attribute is a String literal which represents CodingKey. In case
+        // of a `nil` value we omit that variable from CodingKeys, thus skipping it from
+        // parsing process.
         if
             let linkLiteral = firstElement.as(StringLiteralExprSyntax.self),
             let linkKey = linkLiteral.representedLiteralValue
@@ -122,6 +126,7 @@ extension HalleyModelMacro: ExtensionMacro {
 }
 
 extension DeclGroupSyntax {
+
     var publicModifier: DeclModifierSyntax? {
         self.modifiers.first { modifier in
             modifier.tokens(viewMode: .all).contains { token in

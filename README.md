@@ -284,36 +284,6 @@ struct Model {
 
 extension Model: IncludableType {
 
-    enum IncludeType: IncludeTypeInterface {
-        case minimum
-        case secondaryInfo
-
-        typealias IncludeCodingKey = Model.CodingKeys
-
-        @IncludesBuilder<IncludeCodingKey>
-        func prepareIncludes() -> [IncludeField] {
-            switch self {
-            case .minimum:
-                ToOne(.primaryInfo)
-            case .secondaryInfo:
-                ToOne(.primaryInfo)
-                ToOne(.secondaryInfo)
-            }
-        }
-    }
-}
-```
-
-### Compiler bug
-
-If the model conforms to `IncludableType` and uses macro for model definition, currently it is not possible to declare `IncludeTypeInterface` conformance to `IncludeType` in the extension. Follow the example above for correct usage. This is a compiler bug on the Swift side:
-
-```swift
-// Won't work!
-// Error message: Circular reference resolving attached macro 'HalleyModel'
-
-extension Model: IncludableType {
-
     enum IncludeType {
         case minimum
         case secondaryInfo
