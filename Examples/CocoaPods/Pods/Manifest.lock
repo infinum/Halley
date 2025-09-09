@@ -1,6 +1,6 @@
 PODS:
-  - Halley (1.8.2)
-  - HalleyMacro (1.8.2):
+  - Halley (2.0.0)
+  - HalleyMacro (2.0.0):
     - Halley
 
 DEPENDENCIES:
@@ -17,16 +17,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Halley:
-    :commit: f12af2c8abfa36eb9a75d061d7ef90ba4d253b15
+    :commit: 5724b215ef12e5e8c2fe1560bed446dd6bdba560
     :git: "git@github.com:infinum/Halley.git"
   HalleyMacro:
-    :commit: f12af2c8abfa36eb9a75d061d7ef90ba4d253b15
+    :commit: 5724b215ef12e5e8c2fe1560bed446dd6bdba560
     :git: "git@github.com:infinum/Halley.git"
 
 SPEC CHECKSUMS:
-  Halley: 9db0dec83dfb0ffa44587b8da574e4c96d2e7b6b
-  HalleyMacro: 99dc8b6fa4926c8c09f5a4ebb2fb92cea5dbbcd5
+  Halley: 07ece7afa85656ef93749a76bb4617982bcf4b3c
+  HalleyMacro: 28f1a5269be214e9dcaa7e157b868aaa7b1ee473
 
-PODFILE CHECKSUM: 474115819e0bf6f1096a6eeea657b013511529bc
+PODFILE CHECKSUM: 77e49e1518c0c5f18982768d7a38cf9ad2f5c441
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2

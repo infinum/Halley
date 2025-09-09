@@ -1,6 +1,6 @@
 {
   "name": "HalleyMacro",
-  "version": "1.8.2",
+  "version": "2.0.0",
   "summary": "Halley Macro Plugin",
   "description": "Macro plugin for Halley. Generates HalleyCodable conformance and allows changing the Coding Key on the property.",
   "homepage": "https://github.com/Infinum/Halley",
@@ -15,12 +15,12 @@
   },
   "source": {
     "git": "https://github.com/infinum/Halley.git",
-    "tag": "1.8.2"
+    "tag": "2.0.0"
   },
   "platforms": {
-    "ios": "14.0"
+    "ios": "15.0"
   },
-  "swift_versions": "5.10",
+  "swift_versions": "6.0",
   "dependencies": {
     "Halley": [
 
@@ -38,5 +38,5 @@
   "user_target_xcconfig": {
     "OTHER_SWIFT_FLAGS": "-load-plugin-executable ${PODS_ROOT}/HalleyMacro/macros/HalleyMacroPlugin#HalleyMacroPlugin"
   },
-  "swift_version": "5.10"
+  "swift_version": "6.0"
 }

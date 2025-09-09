@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  HalleySPMExample
-//
-//  Created by Filip Gulan on 16.05.2023..
-//
-
 import UIKit
 import Halley
 import HalleyMacro

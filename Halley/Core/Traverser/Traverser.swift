@@ -129,16 +129,22 @@ private extension Traverser {
             )
         }
 
+        var responseModel = resource.parameters
+        // Remove parameters for relationships that are not included
+        // eg. remove embedded relationship that we do not include
+        resource._links?.relationships
+            .filter { rel in !relationshipsToFetch.contains(where: { $0.relationship == rel.key }) }
+            .forEach { responseModel.removeValue(forKey: $0.key) }
+
         // Ensure .zip() doesn't end up with Empty Publisher which produces no elements
         // and ends whole pipeline
         guard requests.isEmpty == false else {
-            return .success(resource.parameters)
+            return .success(responseModel)
         }
 
         return requests
             .zip()
             .map { responses -> JSONResult in
-                var responseModel = resource.parameters
                 for response in responses {
                     switch response.result {
                     case .success(let value):
@@ -196,7 +202,7 @@ private extension Traverser {
             .flatMap { $0 as? Parameters }
             .flatMap(ResourceContainer.init)
         guard let embeddedResource else {
-            throw HalleyKit.Error.relationshipNotFound(data: resource)
+            throw HalleyKit.Error.relationshipNotFound
         }
         return
             try fetchSingleResourceLinkedResources(
@@ -258,7 +264,7 @@ private extension Traverser {
                 .map { Relationship.Response(relationship: linkElement.relationship, result: $0) }
                 .eraseToAnyPublisher()
         } else {
-            throw HalleyKit.Error.relationshipNotFound(data: resource)
+            throw HalleyKit.Error.relationshipNotFound
         }
     }
 }

@@ -9,14 +9,29 @@
     <img src="img/halley-logo.png" width="300" max-width="50%" alt="Halley"/>
 </p>
 
+
+## Description
+
 Halley provides a simple way on iOS to parse and traverse models according to [JSON Hypertext Application Language specification](https://datatracker.ietf.org/doc/html/draft-kelly-json-hal) also known just as HAL.
 
-## Getting started
 
-### Requirements
+## Table of contents
+
+* [Requirements](#requirements)
+* [Getting started](#getting-started)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [License](#license)
+* [Credits](#credits)
+
+
+## Requirements
 
 - iOS 14
 - Swift 5.0
+
+
+## Getting started
 
 There are several ways to include _Halley_ in your project, depending on your use case.
 
@@ -37,7 +52,10 @@ dependencies: [
 ]
 ```
 
-## Model
+
+## Usage
+
+### Model
 
 A typical HAL model class prepared for _Halley_ consists of several parts.
 
@@ -113,7 +131,7 @@ To support type-safe traversing and building pre-computed traversing paths (incl
 
 Supported include types: `ToOne`, `ToMany`, and `Nested`. `Nested` is used in case one needs to fetch nested relationships of an already nested relationship.
 
-## Traversing
+### Traversing
 
 *Halley* is heavily extensible when it comes to fetching the data and traversing. The client needs to implement/conform to `RequesterInterface` which will provide the implementation for fetching the specific resource from the given link. For example, with network requests and Alamofire:
 
@@ -177,7 +195,7 @@ DefaultTemplateHandler
 // https://www.example.com/contact/1/website?country_key=US
 ```
 
-## Manual traversing
+### Manual traversing
 
 The client can opt-out from using Codable and type-safe parsing and use simplified methods on `ResourceManager`
 
@@ -324,7 +342,34 @@ To build the macro locally, just run the `build_macro.sh` script which will buil
 
 Match the Halley and HalleyMacro Podspec versions before publishing.
 
-## Author
+## Contributing
+
+We believe that the community can help us improve and build better a product.
+Please refer to our [contributing guide](CONTRIBUTING.md) to learn about the types of contributions we accept and the process for submitting them.
+
+To ensure that our community remains respectful and professional, we defined a [code of conduct](CODE_OF_CONDUCT.md) <!-- and [coding standards](<link>) --> that we expect all contributors to follow.
+
+We appreciate your interest and look forward to your contributions.
+
+## License
+
+```text
+Copyright 2024 Infinum
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+## Credits
 
 * Filip Gulan - filip.gulan@infinum.com
 * Zoran Turk - zoran.turk@infinum.com
@@ -339,7 +384,3 @@ Maintained and sponsored by [Infinum](http://www.infinum.com).
     </picture>
   </a>
 </p>
-
-## License
-
-Halley is available under the MIT license. See the LICENSE file for more info.

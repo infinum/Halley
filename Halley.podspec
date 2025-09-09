@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Halley'
-  s.version          = '1.8.2'
+  s.version          = '2.0.0'
   s.summary          = 'Lightweight JSON HAL parser and traverser.'
   s.description      = <<-DESC
   Halley provides a simple way on iOS to parse and traverse models according to JSON Hypertext Application Language specification also known just as HAL.
@@ -12,8 +12,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/infinum/Halley.git', :tag => s.version.to_s }
 
   s.platform = :ios
-  s.ios.deployment_target = '14.0'
-  s.swift_version = '5.10'
+  s.ios.deployment_target = '15.0'
+  s.swift_version = '6.0'
   s.source_files = 'Halley/**/*'
   s.frameworks = 'Foundation', 'Combine'
 end
