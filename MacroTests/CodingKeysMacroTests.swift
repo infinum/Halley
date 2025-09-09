@@ -57,8 +57,9 @@ final class CodingKeysMacroTests: XCTestCase {
             @HalleyModel
             public struct Model {
                 @HalleyCodingKey("test_value")
-                let testValue: String
-                var myValue: String
+                public let testValue: String
+                public var myValue: String
+                var internalValue: String
                 @HalleyCodingKey(nil)
                 let skippedValue: String? = ""
             }
@@ -67,8 +68,9 @@ final class CodingKeysMacroTests: XCTestCase {
             protocol IncludeKey {
             }
             public struct Model {
-                let testValue: String
-                var myValue: String
+                public let testValue: String
+                public var myValue: String
+                var internalValue: String
                 let skippedValue: String? = ""
 
                 public let _links: Halley.Links?
@@ -76,6 +78,7 @@ final class CodingKeysMacroTests: XCTestCase {
                 public enum CodingKeys: String, CodingKey, IncludeKey {
                     case testValue = "test_value"
                     case myValue
+                    case internalValue
                     case _links
                 }
             }
