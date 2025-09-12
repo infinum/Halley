@@ -18,5 +18,8 @@ jobs:
     - name: Select Xcode
       run: sudo xcode-select -s /Applications/Xcode_16.4.app
     
+    - name: Set defaults for Package prebuilts
+      run: sudo defaults write com.apple.dt.Xcode IDEPackageEnablePrebuilts YES
+    
     - name: Run tests
-      run: swift test
+      run: swift test --enable-experimental-prebuilts
