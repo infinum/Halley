@@ -20,6 +20,9 @@ jobs:
     
     - name: Set defaults for Package prebuilts
       run: sudo defaults write com.apple.dt.Xcode IDEPackageEnablePrebuilts YES
+      
+    - name: Build
+      run: swift build --enable-experimental-prebuilts
     
     - name: Run tests
       run: swift test --enable-experimental-prebuilts
