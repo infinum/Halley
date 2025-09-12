@@ -1,8 +1,8 @@
-import XCTest
-@testable import Halley
+import Testing
 
-final class CollectionTests: XCTestCase {
+final class CollectionTests {
 
+    @Test("Fetching single collection with multiple links")
     func testFetchingSingleCollectionWithMultipleLinks() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
@@ -15,11 +15,12 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
         let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
-        XCTAssertEqual(response[0].stepItems?.count, 3)
-        XCTAssertEqual(response[1].stepItems?.count, 2)
-        XCTAssertEqual(response[2].stepItems?.count, 1)
+        #expect(response[0].stepItems?.count == 3)
+        #expect(response[1].stepItems?.count == 2)
+        #expect(response[2].stepItems?.count == 1)
     }
 
+    @Test("Fetching single collection with single link")
     func testFetchingSingleCollectionWithSingleLink() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
@@ -32,9 +33,10 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
         let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
-        XCTAssertEqual(response[3].stepItems?.count, 2)
+        #expect(response[3].stepItems?.count == 2)
     }
 
+    @Test("Empty links parsing")
     func testEmptyLinksParsing() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
@@ -47,9 +49,10 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
         let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
-        XCTAssertNil(response[4].stepItems)
+        #expect(response[4].stepItems == nil)
     }
 
+    @Test("Fetching single resource with array of one link")
     func testFetchingSingleResourceWithArrayOfOneLink() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
@@ -62,9 +65,10 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
         let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
-        XCTAssertNotNil(response[5].mainStepItem)
+        #expect(response[5].mainStepItem != nil)
     }
 
+    @Test("Fetching single resource with a single link")
     func testFetchingSingleResourceWithSingleLink() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "collection_separate_links",
@@ -77,6 +81,6 @@ final class CollectionTests: XCTestCase {
                 .adding(url: "https://halley.com/step_items", for: .init(jsonName: "step_items"))
         )
         let response = try await fetcher.resourceCollection(ofType: StepItemResponse.self).values.single()
-        XCTAssertNotNil(response[6].mainStepItem)
+        #expect(response[6].mainStepItem != nil)
     }
 }

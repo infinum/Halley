@@ -1,8 +1,9 @@
-import XCTest
+import Testing
 @testable import Halley
 
-final class NestedRelationshipSingleResourceTests: XCTestCase {
+final class NestedRelationshipSingleResourceTests {
 
+    @Test("Decoding without embedded relationships")
     func testDecodingWithoutEmbeddedRelationships() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "single_resource_without_embedded",
@@ -14,10 +15,11 @@ final class NestedRelationshipSingleResourceTests: XCTestCase {
         )
         let person = try await fetcher.resource(ofType: Contact.self).values.single()
 
-        XCTAssertNotNil(person.contacts)
-        XCTAssertNotNil(person.website)
+        #expect(person.contacts != nil)
+        #expect(person.website != nil)
     }
 
+    @Test("Decoding without embedded relationships (partial)")
     func testDecodingWithoutEmbeddedRelationshipsPartial() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "single_resource_without_embedded",
@@ -27,10 +29,11 @@ final class NestedRelationshipSingleResourceTests: XCTestCase {
                 .adding(url: "http://example.org/api/user/matthew/contacts", for: .init(jsonName: "matthew_contacts"))
         )
         let person = try await fetcher.resource(ofType: Contact.self).values.single()
-        XCTAssertNotNil(person.contacts)
-        XCTAssertNil(person.website)
+        #expect(person.contacts != nil)
+        #expect(person.website == nil)
     }
 
+    @Test("Decoding fetching nested relationship of a relationship")
     func testDecodingFetchingNestedRelationshipOfARelationship() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "single_resource_without_embedded",
@@ -42,11 +45,12 @@ final class NestedRelationshipSingleResourceTests: XCTestCase {
                 .adding(url: "http://example.org/api/user/mac_nibblet/contacts", for: .init(jsonName: "antoine_contacts"))
         )
         let person = try await fetcher.resource(ofType: Contact.self).values.single()
-        XCTAssertNotNil(person.contacts)
-        XCTAssertNil(person.website)
-        XCTAssertEqual(person.contacts?.first?.contacts?.count, 2)
+        #expect(person.contacts != nil)
+        #expect(person.website == nil)
+        #expect(person.contacts?.first?.contacts?.count == 2)
     }
 
+    @Test("Decoding fetching nested relationships of embedded relationships")
     func testDecodingFetchingNestedRelationshipOfEmbeddedRelationship() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "simple_single_resource",
@@ -57,12 +61,13 @@ final class NestedRelationshipSingleResourceTests: XCTestCase {
                 .adding(url: "http://example.org/api/user/mac_nibblet/website", for: .init(jsonName: "antoine_website"))
         )
         let person = try await fetcher.resource(ofType: Contact.self).values.single()
-        XCTAssertNotNil(person.contacts)
-        XCTAssertNotNil(person.website)
-        XCTAssertEqual(person.contacts?.first?.contacts?.count, 2)
-        XCTAssertNotNil(person.contacts?.first?.website)
+        #expect(person.contacts != nil)
+        #expect(person.website != nil)
+        #expect(person.contacts?.first?.contacts?.count == 2)
+        #expect(person.contacts?.first?.website != nil)
     }
 
+    @Test("Decoding returns error when fetching nested relationship fails")
     func testDecodingReturnsErrorWhenFetchingNestedRelationshipFails() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "single_resource_without_embedded",
@@ -76,9 +81,10 @@ final class NestedRelationshipSingleResourceTests: XCTestCase {
 
         /// We are expecting an error here since `ResoureFetcher` `includeType` is `full` and
         /// we did not provide URL for  `website` resource in  `registeredMocks`.
-        XCTAssertNil(result)
+        #expect(result == nil)
     }
 
+    @Test("Decoding does return success when fetching nested relationship fails")
     func testDecodingDoesReturnsSuccessWhenFetchingNestedRelationshipFails() async throws {
         let fetcher = HalleyResourceFetcher(
             fromJson: "single_resource_without_embedded",
@@ -88,13 +94,14 @@ final class NestedRelationshipSingleResourceTests: XCTestCase {
                 .adding(url: "http://example.org/api/user/matthew/contacts", for: .init(jsonName: "matthew_contacts"))
         )
 
-        let options = HalleyKit.Options(failWhenAnyNestedRequestErrors: false)
-
-        let result = try await fetcher.resource(ofType: Contact.self, options: options).values.single()
+        let result = try await fetcher.resource(
+            ofType: Contact.self,
+            options: .init(failWhenAnyNestedRequestErrors: false)
+        ).values.single()
 
         /// We are not expecting an error here even though `ResoureFetcher` `includeType` is `full` and
         /// we did not provide URL for  `website` resource in  `registeredMocks`
         /// because the provided `options` parameter has `failWhenAnyNestedRequestErrors` set to `false`.
-        XCTAssertNoThrow(result)
+        #expect(result.website == nil)
     }
 }
