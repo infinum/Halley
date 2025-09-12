@@ -1,6 +1,6 @@
 import Foundation
 
-public class DefaultTemplateHandler: TemplateHandler {
+final public class DefaultTemplateHandler: TemplateHandler, @unchecked Sendable {
 
     // MARK: - Singleton
 
@@ -8,9 +8,13 @@ public class DefaultTemplateHandler: TemplateHandler {
 
     // MARK: - Properties
 
+    private let lock = NSLock()
+
     public private(set) var templateValues: [String: () -> String?] = [:]
     public var expandedValues: [String: String] {
-        templateValues.compactMapValues { $0() }
+        lock.safe {
+            templateValues.compactMapValues { $0() }
+        }
     }
 
     private init() {
@@ -26,10 +30,14 @@ public class DefaultTemplateHandler: TemplateHandler {
     // MARK: - Interface
 
     public func updateTemplate(for key: String, value: @escaping () -> String?) {
-        templateValues.updateValue(value, forKey: key)
+        lock.safe {
+            templateValues.updateValue(value, forKey: key)
+        }
     }
 
     public func removeTemplate(for key: String) {
-        templateValues.removeValue(forKey: key)
+        lock.safe {
+            templateValues.removeValue(forKey: key)
+        }
     }
 }

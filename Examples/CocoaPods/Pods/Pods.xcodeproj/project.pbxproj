@@ -7,60 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04C226070CE4DDC7DDC40061D1442D36 /* HalleyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F08A3BA69C242A8F9B85312D74746C /* HalleyError.swift */; };
-		18E82F2E02D3839FA4D47F8A7FBD24A4 /* IncludesResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8846AB80F7E724E8EE7A4ECCA9CCD8 /* IncludesResultBuilder.swift */; };
-		19F0128A1FC674CED37F5FC20FB19605 /* LinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D219B120AA9DA17349C6242EB15E4 /* LinkResolver.swift */; };
-		1EDE3744EC7A9D31FCAF960E84F05625 /* OverridingTemplateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845F1CC4E3F45B084E259FC035CC5E1 /* OverridingTemplateHandler.swift */; };
-		23BE58B4D315638656B83C917E7FAF0A /* PageMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548E8C99E4C68AD1B19D9FDD02D0B8F8 /* PageMetadata.swift */; };
-		23F24C3FE01BA1BED985348EE52F8E4C /* Halley-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58573875BC6F11698287860C57ED99D9 /* Halley-dummy.m */; };
-		246743317B358A969F758F3C767C126B /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48462BDAEF2DF3D63AE813CA2CDFB215 /* Relationship.swift */; };
-		2EBB5E6C3216F0928E57D8DA696895E3 /* ReplaySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE0D4D8248B79CB7DCFFA1D9B74F6C /* ReplaySubject.swift */; };
-		3247DB98C022FD0F4C1E829D67EB6A2D /* Includes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836CE00F1B66EB54783F968A6EA714AE /* Includes.swift */; };
-		359735CA15BB5CE5A4F1DE08FC739C89 /* Pods-HalleyCocoaPodExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 35948331D02AE4729EB929F8BFC99588 /* Pods-HalleyCocoaPodExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		379D3DDBAD884B6FA40183895201285C /* Links+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE8816ED19E6ED3B0A69F8915FBB64 /* Links+Helpers.swift */; };
-		4B05FC1791CD8D90C93E1F6FE16D9AE9 /* RequesterQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3892A711DDCFE0F34292BC7EF0FDE355 /* RequesterQueue.swift */; };
-		4E24A104CF10066ACF754BF7B5CABB2D /* Link+URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB9B7F0EFA93E201D3A2781884F2BC /* Link+URITemplate.swift */; };
-		501806C66CB5627E7FFEC26CC79C491E /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4246A916B1F5DA56E71C6C85AD8B97AA /* InMemoryCache.swift */; };
-		5163C3FCE6361F2B3DE3CFBE7EC516FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */; };
-		55B03D20C48702D765B71DAB82E732BD /* Halley+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E79740993585DEB34D50EC3D50CDF10 /* Halley+Codable.swift */; };
-		57C83E583B3366667E6A747331108555 /* Result+TryMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB50BC0CB3FB0F35A3D6A7F4B7055D /* Result+TryMap.swift */; };
-		57FBDAB0E56EB747C0B7A095BD5349A4 /* ResourceManager+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D9B1CAD7D9309F715C8AEE61676E7 /* ResourceManager+Codable.swift */; };
-		5B1CE70E58DC883095F471E96BFD1F19 /* ToManyIncludeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B84E4F32F38C551545D7672063D4FB /* ToManyIncludeKey.swift */; };
-		5DF12920A47AC0F3C9D7E8EC17894E72 /* RequesterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA73EE21D0C2293190B9C3DCED953BF /* RequesterInterface.swift */; };
-		5EFEE63EDE31D31055A3E8AF5A95E08E /* AnyPublisher+JSONResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B460F20D7A3C60DE14C00745F7548CC /* AnyPublisher+JSONResult.swift */; };
-		67CE2582AD22B8ACFFAA48D9A4D6FA85 /* HaleyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9B84E51BFC6C2DD76033E6DCB6438 /* HaleyRequest.swift */; };
-		698440EE52F6867129553871B479BEE7 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7871FA41573F0D2FB6091BF04C00 /* Link.swift */; };
-		6C2322AA2F931EB04DA81207F2F60C79 /* RequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE51FC16EE674C6AF62C48A72BB7DBF /* RequestOperation.swift */; };
-		79F4830B1DC775AFE07A91D57CFB941C /* DefaultTemplateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F638E6D3676E4BF83F8B611041E890A /* DefaultTemplateHandler.swift */; };
-		7E5F6003B06D5DCAA0DC3E933757A30F /* DemandBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BCCFB1BF05E2F77FBEDD84653E35B4 /* DemandBuffer.swift */; };
-		8255C426961469B8E6F2CA0B6E615301 /* PaginationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9734A457598BED1ABC75B6DB9D4B2 /* PaginationPage.swift */; };
-		868C6B2172BA3C42836438F2248555B2 /* ResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0AC6DDAC6BC011313A84BD2CCD84FE /* ResourceManager.swift */; };
-		86ECFB3166C23922FB21AEB98467F6B5 /* HalleyURLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964F0103D3B27586DFC7AE9C5CF4B08 /* HalleyURLConvertible.swift */; };
-		8E259B2F41C39DC052EF8B51B600B228 /* IncludeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094F6BDE98A2FD1FE9FF2E0D250EB1A2 /* IncludeKey.swift */; };
-		95472D8934552353FB1E745CB25AFE37 /* ParsedLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619F9C0EE12C7E2175B72FF4649AA95 /* ParsedLink.swift */; };
-		9D4AFAB7B010E0B0C77169CE3CE315B3 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09013C1C68665AB1ED8E9A4744F842A7 /* Links.swift */; };
-		B417509E7A1399535C8AD5A0220B23C1 /* Traverser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707E8A6DAD8E14B59FB55D1A4D4F83E /* Traverser.swift */; };
-		BA5B12D48E3AAD22B166E9553C2B0489 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7375A81860FC8096B64A8F25B9DAFB77 /* Combine.framework */; };
-		BA7874933F6195728369F4BD39E94544 /* ShareReplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D312FBCE05EB72FAB7A5AD732736A2D /* ShareReplay.swift */; };
-		BC662BA8B2AC7BB78EFF0DC95FF04BC7 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB00752F2C34DD795578A5EA6502AAE7 /* ConcurrentOperation.swift */; };
-		C62A1324248DBB8DB4EA9D9EE1F4F152 /* Result+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F1E552BA56581972D26DC9AC60CE8 /* Result+Transform.swift */; };
-		CD26E99D6A3A9C7B8D849ECB0F1B1FB6 /* Pods-HalleyCocoaPodExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E3449E078272FC4C31C9F19AA91B1F /* Pods-HalleyCocoaPodExample-dummy.m */; };
-		CF6D859E069E1A38DE6221F583EB5CBF /* URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AB44AA2F18B7D4D64DD031E213A6C /* URITemplate.swift */; };
-		D26796829FD79283AD1BB994585F3CE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */; };
-		D2D0FBBB36DC26488D4253C6BF7DD738 /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107E285ECF165C1F81E71716F284AB36 /* Create.swift */; };
-		D9D7C86A789B4FA0A12A1B60C8F7A795 /* ResourceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F02415FA326919F81464B66027997C /* ResourceContainer.swift */; };
-		DBA958A0774930A757708F204E6A2936 /* ZipMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C72B1A6390627CD973B2846E900B0BA /* ZipMany.swift */; };
-		DC2D6F00593AFB5630D44CAE3138B22D /* TemplateLinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A964F106FEE336EAD0770B6A59F921E /* TemplateLinkResolver.swift */; };
-		DF3A291C9B843E02EF13D5E19AEABBA8 /* Error+Halley.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83B92A8DF0435E3B6256F791B3A5EBB /* Error+Halley.swift */; };
-		E5249AA2E912D5C4EEF7725C01B5383A /* Halley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6453AC2044A7C4CD50E8AE063F0CA /* Halley.swift */; };
-		F78E0E9F4C7FC615005318A6A44B64EF /* FieldQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D7999DFD3FF10B4A37B231B2368A9C /* FieldQueryItem.swift */; };
-		FB1627050C5B8F8FAEEBDAF93225BCF4 /* Halley-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBE6231F22D34F4AD9A49E916242AE13 /* Halley-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FC35638F22D722E575E6541E6F818CE6 /* Dictionary+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDAF237CFCC99059F78FF80CE4E3D2C /* Dictionary+Decoding.swift */; };
-		FE4CB35269185506C3D9180E30324ADF /* IncludeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBDA33E74EC2CD168A35FBC53022BC /* IncludeField.swift */; };
+		056888EDC3CBE34F8DC3C6A199160B99 /* Halley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C6453AC2044A7C4CD50E8AE063F0CA /* Halley.swift */; };
+		0B7A569B5C65AEB18E78322D7DAD1980 /* ToManyIncludeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B84E4F32F38C551545D7672063D4FB /* ToManyIncludeKey.swift */; };
+		15844C3426F73BA01A1EB7637CAC2CBE /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107E285ECF165C1F81E71716F284AB36 /* Create.swift */; };
+		1D22E290FFCD28A0485C5F7A981780C2 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB00752F2C34DD795578A5EA6502AAE7 /* ConcurrentOperation.swift */; };
+		1D2641DE3491CD02AC636CFFDE504CA2 /* Halley-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58573875BC6F11698287860C57ED99D9 /* Halley-dummy.m */; };
+		1D5E053E2E5DC37FDE91EADB677F491D /* HalleyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F08A3BA69C242A8F9B85312D74746C /* HalleyError.swift */; };
+		22B60BCDB372D78B55E255330A0E20BF /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09013C1C68665AB1ED8E9A4744F842A7 /* Links.swift */; };
+		2473A2DA8D7435C73ED0780F5BC9DC40 /* Result+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32F1E552BA56581972D26DC9AC60CE8 /* Result+Transform.swift */; };
+		2D432176999E2CF8182919F5B1C25EDE /* FieldQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D7999DFD3FF10B4A37B231B2368A9C /* FieldQueryItem.swift */; };
+		2FB37B22D00A3FB11B75441AD05A13B0 /* ReplaySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AAE0D4D8248B79CB7DCFFA1D9B74F6C /* ReplaySubject.swift */; };
+		31CDC34C27ED8DF40AC92F3DCA345ECA /* Halley-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBE6231F22D34F4AD9A49E916242AE13 /* Halley-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3281F765DC350BAAF6189FD1B01E7A60 /* Halley+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E79740993585DEB34D50EC3D50CDF10 /* Halley+Codable.swift */; };
+		346450C75EAE884B4844CD17F07D1B5A /* Pods-HalleyCocoaPodExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E3449E078272FC4C31C9F19AA91B1F /* Pods-HalleyCocoaPodExample-dummy.m */; };
+		3ACF697137D255A988EA89D2F2B359FA /* Pods-HalleyCocoaPodExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 35948331D02AE4729EB929F8BFC99588 /* Pods-HalleyCocoaPodExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B06EAD17119A9107E8934BCAC1B1031 /* IncludesResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8846AB80F7E724E8EE7A4ECCA9CCD8 /* IncludesResultBuilder.swift */; };
+		3E1ED6F43347F868B6ECA32771217077 /* IncludeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBDA33E74EC2CD168A35FBC53022BC /* IncludeField.swift */; };
+		3EBB6B611E2F369E998246126499A81E /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617C7871FA41573F0D2FB6091BF04C00 /* Link.swift */; };
+		56EA748CCDFE1EECA087D8FC979BDEEF /* PageMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548E8C99E4C68AD1B19D9FDD02D0B8F8 /* PageMetadata.swift */; };
+		7A06E7E75BB88442E1BD1B18D703E39E /* ResourceManager+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D9B1CAD7D9309F715C8AEE61676E7 /* ResourceManager+Codable.swift */; };
+		7BE72EE4A41DC10F5D799C76D22FC29C /* ResourceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F02415FA326919F81464B66027997C /* ResourceContainer.swift */; };
+		7DF1FDE91B18C3295297883AD397536B /* DefaultTemplateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F638E6D3676E4BF83F8B611041E890A /* DefaultTemplateHandler.swift */; };
+		819F7D35A54A9613579A29C0603BC721 /* Traverser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A707E8A6DAD8E14B59FB55D1A4D4F83E /* Traverser.swift */; };
+		83E8D7DF28EE3E8BF24768C84E210356 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97BC75F1893C31144A6A543BFCB60ED /* Foundation.framework */; };
+		86940B8E090FB10C66034F8CF5B7B081 /* Result+TryMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB50BC0CB3FB0F35A3D6A7F4B7055D /* Result+TryMap.swift */; };
+		89D033D7C2B4AC994FC32B9491654EF9 /* ParsedLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = A619F9C0EE12C7E2175B72FF4649AA95 /* ParsedLink.swift */; };
+		8BB1F4B3D28C515B46A339A2016B6BA9 /* RequesterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA73EE21D0C2293190B9C3DCED953BF /* RequesterInterface.swift */; };
+		91184CCC96E20B1170D8DD89CD4770CF /* HalleyURLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964F0103D3B27586DFC7AE9C5CF4B08 /* HalleyURLConvertible.swift */; };
+		932D50FF63A6D9415F81B3288D8AE61A /* Error+Halley.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83B92A8DF0435E3B6256F791B3A5EBB /* Error+Halley.swift */; };
+		938F266726286F95A1198B6BCF7F7F96 /* LinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147D219B120AA9DA17349C6242EB15E4 /* LinkResolver.swift */; };
+		968B7E2B80A9A2F79FB55DB6AB9BF5B1 /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48462BDAEF2DF3D63AE813CA2CDFB215 /* Relationship.swift */; };
+		9E01D905574BB02114D72E567CA56EA8 /* Includes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836CE00F1B66EB54783F968A6EA714AE /* Includes.swift */; };
+		9FB965248BDC148B3CF4CC864B6F39E0 /* InMemoryCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4246A916B1F5DA56E71C6C85AD8B97AA /* InMemoryCache.swift */; };
+		A11C1A1839FBD2D33F470BCA840F1E39 /* AnyPublisher+JSONResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B460F20D7A3C60DE14C00745F7548CC /* AnyPublisher+JSONResult.swift */; };
+		A21D708C84DFE15B1E074B865C595D7C /* Dictionary+Decoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDAF237CFCC99059F78FF80CE4E3D2C /* Dictionary+Decoding.swift */; };
+		A600EBEC5380569ABECB53FCE30BF735 /* RequesterQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3892A711DDCFE0F34292BC7EF0FDE355 /* RequesterQueue.swift */; };
+		ACAEEBD10B9D4CBDB81C812FDEA6EF6B /* Link+URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB9B7F0EFA93E201D3A2781884F2BC /* Link+URITemplate.swift */; };
+		AFB4F02924A2DD656C89321A7963673B /* OverridingTemplateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A845F1CC4E3F45B084E259FC035CC5E1 /* OverridingTemplateHandler.swift */; };
+		B15EEBAE1E8EE513967356DC78E11046 /* URITemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AB44AA2F18B7D4D64DD031E213A6C /* URITemplate.swift */; };
+		B8E3A5C0E4EB56FE896ACB1BCCD271BD /* Links+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE8816ED19E6ED3B0A69F8915FBB64 /* Links+Helpers.swift */; };
+		C5AD894635082BA340FB189B3B8864C7 /* ResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0AC6DDAC6BC011313A84BD2CCD84FE /* ResourceManager.swift */; };
+		C5F73366A97C3C84C62E560433D9A039 /* HaleyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC9B84E51BFC6C2DD76033E6DCB6438 /* HaleyRequest.swift */; };
+		D14E7584E9ADD0A3E3129D7236AF6F49 /* RequestOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE51FC16EE674C6AF62C48A72BB7DBF /* RequestOperation.swift */; };
+		D590789AE6A4875B6E16DD2BBAC13024 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97BC75F1893C31144A6A543BFCB60ED /* Foundation.framework */; };
+		D87409CCF0BAD8074928229EB9552D98 /* Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 017BD0EEF03FA0DF7D3CBDDB7D62C0F2 /* Combine.framework */; };
+		D9BD3816871A4E0D38E96E37D9D6D7D9 /* TemplateLinkResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A964F106FEE336EAD0770B6A59F921E /* TemplateLinkResolver.swift */; };
+		DB771D6E39241DD9CDC247341FE12F30 /* ZipMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C72B1A6390627CD973B2846E900B0BA /* ZipMany.swift */; };
+		EA7A1A8557404F5FF63F3796ED872093 /* ShareReplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D312FBCE05EB72FAB7A5AD732736A2D /* ShareReplay.swift */; };
+		ED9E539581A3A784968BAD20125692EA /* DemandBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BCCFB1BF05E2F77FBEDD84653E35B4 /* DemandBuffer.swift */; };
+		F2EF99E58EAE3A6F0DCC53E02B0FB0C6 /* PaginationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9734A457598BED1ABC75B6DB9D4B2 /* PaginationPage.swift */; };
+		F943A76290D4CF06E1246EA225C4366D /* IncludeKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094F6BDE98A2FD1FE9FF2E0D250EB1A2 /* IncludeKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		E08A442032953EB5D77CC20437DE5FAA /* PBXContainerItemProxy */ = {
+		4ECC01D68BD8F106ADFD1F66D1FCEFF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -71,11 +71,12 @@
 
 /* Begin PBXFileReference section */
 		0144C0D6B911634588AEA42B9F86C14B /* Pods-HalleyCocoaPodExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HalleyCocoaPodExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		017BD0EEF03FA0DF7D3CBDDB7D62C0F2 /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Combine.framework; sourceTree = DEVELOPER_DIR; };
 		0669B9C2AE6507D86D5DF3C0176A1FDD /* Halley.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Halley.release.xcconfig; sourceTree = "<group>"; };
 		07BCCFB1BF05E2F77FBEDD84653E35B4 /* DemandBuffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DemandBuffer.swift; sourceTree = "<group>"; };
 		09013C1C68665AB1ED8E9A4744F842A7 /* Links.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		094F6BDE98A2FD1FE9FF2E0D250EB1A2 /* IncludeKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IncludeKey.swift; sourceTree = "<group>"; };
-		0FE04811336C2A53A5A446DE7E608B87 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0FE04811336C2A53A5A446DE7E608B87 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		107E285ECF165C1F81E71716F284AB36 /* Create.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
 		147D219B120AA9DA17349C6242EB15E4 /* LinkResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinkResolver.swift; sourceTree = "<group>"; };
 		1C72B1A6390627CD973B2846E900B0BA /* ZipMany.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ZipMany.swift; sourceTree = "<group>"; };
@@ -87,7 +88,7 @@
 		35948331D02AE4729EB929F8BFC99588 /* Pods-HalleyCocoaPodExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HalleyCocoaPodExample-umbrella.h"; sourceTree = "<group>"; };
 		3892A711DDCFE0F34292BC7EF0FDE355 /* RequesterQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequesterQueue.swift; sourceTree = "<group>"; };
 		38C9734A457598BED1ABC75B6DB9D4B2 /* PaginationPage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaginationPage.swift; sourceTree = "<group>"; };
-		3C09D0C6F49B41A84A64D477C96AA7B3 /* Halley.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = Halley.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3C09D0C6F49B41A84A64D477C96AA7B3 /* Halley.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Halley.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3F638E6D3676E4BF83F8B611041E890A /* DefaultTemplateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultTemplateHandler.swift; sourceTree = "<group>"; };
 		4246A916B1F5DA56E71C6C85AD8B97AA /* InMemoryCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InMemoryCache.swift; sourceTree = "<group>"; };
 		457AA72E5608619A101A3A31EA132166 /* Halley */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Halley; path = Halley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +105,6 @@
 		5D312FBCE05EB72FAB7A5AD732736A2D /* ShareReplay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ShareReplay.swift; sourceTree = "<group>"; };
 		617C7871FA41573F0D2FB6091BF04C00 /* Link.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		6D0AC6DDAC6BC011313A84BD2CCD84FE /* ResourceManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResourceManager.swift; sourceTree = "<group>"; };
-		7375A81860FC8096B64A8F25B9DAFB77 /* Combine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Combine.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Combine.framework; sourceTree = DEVELOPER_DIR; };
 		7E79740993585DEB34D50EC3D50CDF10 /* Halley+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Halley+Codable.swift"; sourceTree = "<group>"; };
 		836CE00F1B66EB54783F968A6EA714AE /* Includes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Includes.swift; sourceTree = "<group>"; };
 		867AB44AA2F18B7D4D64DD031E213A6C /* URITemplate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = URITemplate.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		8A964F106FEE336EAD0770B6A59F921E /* TemplateLinkResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TemplateLinkResolver.swift; sourceTree = "<group>"; };
 		8AAE0D4D8248B79CB7DCFFA1D9B74F6C /* ReplaySubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaySubject.swift; sourceTree = "<group>"; };
 		8CE51FC16EE674C6AF62C48A72BB7DBF /* RequestOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequestOperation.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FA73EE21D0C2293190B9C3DCED953BF /* RequesterInterface.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RequesterInterface.swift; sourceTree = "<group>"; };
 		A112DC6370656DDE1CB26756835F6636 /* Halley-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Halley-prefix.pch"; sourceTree = "<group>"; };
 		A619F9C0EE12C7E2175B72FF4649AA95 /* ParsedLink.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ParsedLink.swift; sourceTree = "<group>"; };
@@ -121,11 +121,10 @@
 		A845F1CC4E3F45B084E259FC035CC5E1 /* OverridingTemplateHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OverridingTemplateHandler.swift; sourceTree = "<group>"; };
 		AEDAF237CFCC99059F78FF80CE4E3D2C /* Dictionary+Decoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dictionary+Decoding.swift"; sourceTree = "<group>"; };
 		B01D9B1CAD7D9309F715C8AEE61676E7 /* ResourceManager+Codable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "ResourceManager+Codable.swift"; sourceTree = "<group>"; };
-		B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B303D277F9D27CBD55ACB919C73A921C /* Pods-HalleyCocoaPodExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-HalleyCocoaPodExample"; path = Pods_HalleyCocoaPodExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9DB50BC0CB3FB0F35A3D6A7F4B7055D /* Result+TryMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Result+TryMap.swift"; sourceTree = "<group>"; };
 		BC8846AB80F7E724E8EE7A4ECCA9CCD8 /* IncludesResultBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = IncludesResultBuilder.swift; sourceTree = "<group>"; };
-		BD0A7C96603AD52421D5DFCB7BF87188 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BD0A7C96603AD52421D5DFCB7BF87188 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		C964F0103D3B27586DFC7AE9C5CF4B08 /* HalleyURLConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HalleyURLConvertible.swift; sourceTree = "<group>"; };
 		D3B84E4F32F38C551545D7672063D4FB /* ToManyIncludeKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ToManyIncludeKey.swift; sourceTree = "<group>"; };
 		E11896D9F1AE9DA24865C15DCAC95AD2 /* Pods-HalleyCocoaPodExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HalleyCocoaPodExample-Info.plist"; sourceTree = "<group>"; };
@@ -136,24 +135,25 @@
 		EBE6231F22D34F4AD9A49E916242AE13 /* Halley-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Halley-umbrella.h"; sourceTree = "<group>"; };
 		F6F08A3BA69C242A8F9B85312D74746C /* HalleyError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HalleyError.swift; sourceTree = "<group>"; };
 		F8AB9B7F0EFA93E201D3A2781884F2BC /* Link+URITemplate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Link+URITemplate.swift"; sourceTree = "<group>"; };
+		F97BC75F1893C31144A6A543BFCB60ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		FB00752F2C34DD795578A5EA6502AAE7 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6F4E8198A98854C79B24D8E33F5174E7 /* Frameworks */ = {
+		0C1D8E6B65782D6F4C1C1264F8B20240 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA5B12D48E3AAD22B166E9553C2B0489 /* Combine.framework in Frameworks */,
-				5163C3FCE6361F2B3DE3CFBE7EC516FE /* Foundation.framework in Frameworks */,
+				D87409CCF0BAD8074928229EB9552D98 /* Combine.framework in Frameworks */,
+				D590789AE6A4875B6E16DD2BBAC13024 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1A4C246D0119B99F6DC1900C2D7ED94 /* Frameworks */ = {
+		D818271EA4290EC93A5769DA1BFFE71C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D26796829FD79283AD1BB994585F3CE0 /* Foundation.framework in Frameworks */,
+				83E8D7DF28EE3E8BF24768C84E210356 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +163,7 @@
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AA581D828EDF08531495EFA1CB2616BC /* iOS */,
+				7235DC9C4B5A0A36F4989E8D99BE32B1 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,6 +189,7 @@
 				30C34CF575E926688EABF89209481B04 /* Internal */,
 				5F6C1AC70ECA45FE5E7F062292A3298D /* Links */,
 			);
+			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -198,6 +199,7 @@
 				548E8C99E4C68AD1B19D9FDD02D0B8F8 /* PageMetadata.swift */,
 				38C9734A457598BED1ABC75B6DB9D4B2 /* PaginationPage.swift */,
 			);
+			name = Pagination;
 			path = Pagination;
 			sourceTree = "<group>";
 		};
@@ -208,6 +210,7 @@
 				48462BDAEF2DF3D63AE813CA2CDFB215 /* Relationship.swift */,
 				23F02415FA326919F81464B66027997C /* ResourceContainer.swift */,
 			);
+			name = Internal;
 			path = Internal;
 			sourceTree = "<group>";
 		};
@@ -231,6 +234,7 @@
 				B9DB50BC0CB3FB0F35A3D6A7F4B7055D /* Result+TryMap.swift */,
 				A3AAFBA7C4EFCCD4F8BC12B17F739198 /* Combine */,
 			);
+			name = Utils;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -255,6 +259,7 @@
 				50DE8816ED19E6ED3B0A69F8915FBB64 /* Links+Helpers.swift */,
 				A619F9C0EE12C7E2175B72FF4649AA95 /* ParsedLink.swift */,
 			);
+			name = Links;
 			path = Links;
 			sourceTree = "<group>";
 		};
@@ -276,7 +281,17 @@
 			children = (
 				A707E8A6DAD8E14B59FB55D1A4D4F83E /* Traverser.swift */,
 			);
+			name = Traverser;
 			path = Traverser;
+			sourceTree = "<group>";
+		};
+		7235DC9C4B5A0A36F4989E8D99BE32B1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				017BD0EEF03FA0DF7D3CBDDB7D62C0F2 /* Combine.framework */,
+				F97BC75F1893C31144A6A543BFCB60ED /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		82F8D75CBE9BBF7992EA3E1AAFCF0504 /* Development Pods */ = {
@@ -297,16 +312,8 @@
 				5D312FBCE05EB72FAB7A5AD732736A2D /* ShareReplay.swift */,
 				1C72B1A6390627CD973B2846E900B0BA /* ZipMany.swift */,
 			);
+			name = Combine;
 			path = Combine;
-			sourceTree = "<group>";
-		};
-		AA581D828EDF08531495EFA1CB2616BC /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				7375A81860FC8096B64A8F25B9DAFB77 /* Combine.framework */,
-				B1BFA29B7CF8EFCA97967A11AF007609 /* Foundation.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		B158DA427371CF0B10B2E334928C843A /* Public */ = {
@@ -317,6 +324,7 @@
 				9FA73EE21D0C2293190B9C3DCED953BF /* RequesterInterface.swift */,
 				6D0AC6DDAC6BC011313A84BD2CCD84FE /* ResourceManager.swift */,
 			);
+			name = Public;
 			path = Public;
 			sourceTree = "<group>";
 		};
@@ -385,6 +393,7 @@
 				BC8846AB80F7E724E8EE7A4ECCA9CCD8 /* IncludesResultBuilder.swift */,
 				D3B84E4F32F38C551545D7672063D4FB /* ToManyIncludeKey.swift */,
 			);
+			name = Includes;
 			path = Includes;
 			sourceTree = "<group>";
 		};
@@ -395,6 +404,7 @@
 				3892A711DDCFE0F34292BC7EF0FDE355 /* RequesterQueue.swift */,
 				8CE51FC16EE674C6AF62C48A72BB7DBF /* RequestOperation.swift */,
 			);
+			name = Queue;
 			path = Queue;
 			sourceTree = "<group>";
 		};
@@ -418,19 +428,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A07E0F80ED49409D4D9A4A208BC0529B /* Headers */ = {
+		240580A38469BDB43D99F94998BF69A4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				359735CA15BB5CE5A4F1DE08FC739C89 /* Pods-HalleyCocoaPodExample-umbrella.h in Headers */,
+				3ACF697137D255A988EA89D2F2B359FA /* Pods-HalleyCocoaPodExample-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D3F850B74B0298F7CAF51F76BC823BF9 /* Headers */ = {
+		4C842B28F737926D651B95C6019093F4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB1627050C5B8F8FAEEBDAF93225BCF4 /* Halley-umbrella.h in Headers */,
+				31CDC34C27ED8DF40AC92F3DCA345ECA /* Halley-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,17 +449,17 @@
 /* Begin PBXNativeTarget section */
 		0181E2147CB65F9DFB89AFB3FD759D03 /* Pods-HalleyCocoaPodExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 454895A4B20EA78F263F11863E22DC17 /* Build configuration list for PBXNativeTarget "Pods-HalleyCocoaPodExample" */;
+			buildConfigurationList = 7D0CD7F2C7ED27D204B1B7FB2C5F5208 /* Build configuration list for PBXNativeTarget "Pods-HalleyCocoaPodExample" */;
 			buildPhases = (
-				A07E0F80ED49409D4D9A4A208BC0529B /* Headers */,
-				F8F5A76239CC8B235405B8A02D72E48D /* Sources */,
-				F1A4C246D0119B99F6DC1900C2D7ED94 /* Frameworks */,
-				4D88EE74D8435A01A656BA0857F0660F /* Resources */,
+				240580A38469BDB43D99F94998BF69A4 /* Headers */,
+				B8E98BF25DE584CAEE28721A3ACCF2F1 /* Sources */,
+				D818271EA4290EC93A5769DA1BFFE71C /* Frameworks */,
+				23AD008DE49176A3D47230C5F7FAA219 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CACF0C826EEE34B4950A1FF2C9218815 /* PBXTargetDependency */,
+				7168CF587630A26D170C9A463AAB3CFE /* PBXTargetDependency */,
 			);
 			name = "Pods-HalleyCocoaPodExample";
 			productName = Pods_HalleyCocoaPodExample;
@@ -458,12 +468,12 @@
 		};
 		98490E5339DC07CB01DD6E1C6C5D62EA /* Halley */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF0A0D98ABABEA813F55A92FDB4B21F6 /* Build configuration list for PBXNativeTarget "Halley" */;
+			buildConfigurationList = A8F135BA671892BD6E2027C6FB849EFE /* Build configuration list for PBXNativeTarget "Halley" */;
 			buildPhases = (
-				D3F850B74B0298F7CAF51F76BC823BF9 /* Headers */,
-				2A2175B499B08B0776B048E4D2C765B6 /* Sources */,
-				6F4E8198A98854C79B24D8E33F5174E7 /* Frameworks */,
-				1E25493A85C32340095D3214E5F72941 /* Resources */,
+				4C842B28F737926D651B95C6019093F4 /* Headers */,
+				4DAA55AE0423E956DE3AF7D89AD92A02 /* Sources */,
+				0C1D8E6B65782D6F4C1C1264F8B20240 /* Frameworks */,
+				62FC2A647CACDC175CFBC8B32DC597EB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -480,8 +490,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -492,6 +502,8 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = DFDADE1B0CEBE485D26BDF261A579F4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -503,14 +515,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1E25493A85C32340095D3214E5F72941 /* Resources */ = {
+		23AD008DE49176A3D47230C5F7FAA219 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D88EE74D8435A01A656BA0857F0660F /* Resources */ = {
+		62FC2A647CACDC175CFBC8B32DC597EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -520,78 +532,117 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2A2175B499B08B0776B048E4D2C765B6 /* Sources */ = {
+		4DAA55AE0423E956DE3AF7D89AD92A02 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EFEE63EDE31D31055A3E8AF5A95E08E /* AnyPublisher+JSONResult.swift in Sources */,
-				BC662BA8B2AC7BB78EFF0DC95FF04BC7 /* ConcurrentOperation.swift in Sources */,
-				D2D0FBBB36DC26488D4253C6BF7DD738 /* Create.swift in Sources */,
-				79F4830B1DC775AFE07A91D57CFB941C /* DefaultTemplateHandler.swift in Sources */,
-				7E5F6003B06D5DCAA0DC3E933757A30F /* DemandBuffer.swift in Sources */,
-				FC35638F22D722E575E6541E6F818CE6 /* Dictionary+Decoding.swift in Sources */,
-				DF3A291C9B843E02EF13D5E19AEABBA8 /* Error+Halley.swift in Sources */,
-				F78E0E9F4C7FC615005318A6A44B64EF /* FieldQueryItem.swift in Sources */,
-				67CE2582AD22B8ACFFAA48D9A4D6FA85 /* HaleyRequest.swift in Sources */,
-				E5249AA2E912D5C4EEF7725C01B5383A /* Halley.swift in Sources */,
-				55B03D20C48702D765B71DAB82E732BD /* Halley+Codable.swift in Sources */,
-				23F24C3FE01BA1BED985348EE52F8E4C /* Halley-dummy.m in Sources */,
-				04C226070CE4DDC7DDC40061D1442D36 /* HalleyError.swift in Sources */,
-				86ECFB3166C23922FB21AEB98467F6B5 /* HalleyURLConvertible.swift in Sources */,
-				FE4CB35269185506C3D9180E30324ADF /* IncludeField.swift in Sources */,
-				8E259B2F41C39DC052EF8B51B600B228 /* IncludeKey.swift in Sources */,
-				3247DB98C022FD0F4C1E829D67EB6A2D /* Includes.swift in Sources */,
-				18E82F2E02D3839FA4D47F8A7FBD24A4 /* IncludesResultBuilder.swift in Sources */,
-				501806C66CB5627E7FFEC26CC79C491E /* InMemoryCache.swift in Sources */,
-				698440EE52F6867129553871B479BEE7 /* Link.swift in Sources */,
-				4E24A104CF10066ACF754BF7B5CABB2D /* Link+URITemplate.swift in Sources */,
-				19F0128A1FC674CED37F5FC20FB19605 /* LinkResolver.swift in Sources */,
-				9D4AFAB7B010E0B0C77169CE3CE315B3 /* Links.swift in Sources */,
-				379D3DDBAD884B6FA40183895201285C /* Links+Helpers.swift in Sources */,
-				1EDE3744EC7A9D31FCAF960E84F05625 /* OverridingTemplateHandler.swift in Sources */,
-				23BE58B4D315638656B83C917E7FAF0A /* PageMetadata.swift in Sources */,
-				8255C426961469B8E6F2CA0B6E615301 /* PaginationPage.swift in Sources */,
-				95472D8934552353FB1E745CB25AFE37 /* ParsedLink.swift in Sources */,
-				246743317B358A969F758F3C767C126B /* Relationship.swift in Sources */,
-				2EBB5E6C3216F0928E57D8DA696895E3 /* ReplaySubject.swift in Sources */,
-				5DF12920A47AC0F3C9D7E8EC17894E72 /* RequesterInterface.swift in Sources */,
-				4B05FC1791CD8D90C93E1F6FE16D9AE9 /* RequesterQueue.swift in Sources */,
-				6C2322AA2F931EB04DA81207F2F60C79 /* RequestOperation.swift in Sources */,
-				D9D7C86A789B4FA0A12A1B60C8F7A795 /* ResourceContainer.swift in Sources */,
-				868C6B2172BA3C42836438F2248555B2 /* ResourceManager.swift in Sources */,
-				57FBDAB0E56EB747C0B7A095BD5349A4 /* ResourceManager+Codable.swift in Sources */,
-				C62A1324248DBB8DB4EA9D9EE1F4F152 /* Result+Transform.swift in Sources */,
-				57C83E583B3366667E6A747331108555 /* Result+TryMap.swift in Sources */,
-				BA7874933F6195728369F4BD39E94544 /* ShareReplay.swift in Sources */,
-				DC2D6F00593AFB5630D44CAE3138B22D /* TemplateLinkResolver.swift in Sources */,
-				5B1CE70E58DC883095F471E96BFD1F19 /* ToManyIncludeKey.swift in Sources */,
-				B417509E7A1399535C8AD5A0220B23C1 /* Traverser.swift in Sources */,
-				CF6D859E069E1A38DE6221F583EB5CBF /* URITemplate.swift in Sources */,
-				DBA958A0774930A757708F204E6A2936 /* ZipMany.swift in Sources */,
+				A11C1A1839FBD2D33F470BCA840F1E39 /* AnyPublisher+JSONResult.swift in Sources */,
+				1D22E290FFCD28A0485C5F7A981780C2 /* ConcurrentOperation.swift in Sources */,
+				15844C3426F73BA01A1EB7637CAC2CBE /* Create.swift in Sources */,
+				7DF1FDE91B18C3295297883AD397536B /* DefaultTemplateHandler.swift in Sources */,
+				ED9E539581A3A784968BAD20125692EA /* DemandBuffer.swift in Sources */,
+				A21D708C84DFE15B1E074B865C595D7C /* Dictionary+Decoding.swift in Sources */,
+				932D50FF63A6D9415F81B3288D8AE61A /* Error+Halley.swift in Sources */,
+				2D432176999E2CF8182919F5B1C25EDE /* FieldQueryItem.swift in Sources */,
+				C5F73366A97C3C84C62E560433D9A039 /* HaleyRequest.swift in Sources */,
+				056888EDC3CBE34F8DC3C6A199160B99 /* Halley.swift in Sources */,
+				3281F765DC350BAAF6189FD1B01E7A60 /* Halley+Codable.swift in Sources */,
+				1D2641DE3491CD02AC636CFFDE504CA2 /* Halley-dummy.m in Sources */,
+				1D5E053E2E5DC37FDE91EADB677F491D /* HalleyError.swift in Sources */,
+				91184CCC96E20B1170D8DD89CD4770CF /* HalleyURLConvertible.swift in Sources */,
+				3E1ED6F43347F868B6ECA32771217077 /* IncludeField.swift in Sources */,
+				F943A76290D4CF06E1246EA225C4366D /* IncludeKey.swift in Sources */,
+				9E01D905574BB02114D72E567CA56EA8 /* Includes.swift in Sources */,
+				3B06EAD17119A9107E8934BCAC1B1031 /* IncludesResultBuilder.swift in Sources */,
+				9FB965248BDC148B3CF4CC864B6F39E0 /* InMemoryCache.swift in Sources */,
+				3EBB6B611E2F369E998246126499A81E /* Link.swift in Sources */,
+				ACAEEBD10B9D4CBDB81C812FDEA6EF6B /* Link+URITemplate.swift in Sources */,
+				938F266726286F95A1198B6BCF7F7F96 /* LinkResolver.swift in Sources */,
+				22B60BCDB372D78B55E255330A0E20BF /* Links.swift in Sources */,
+				B8E3A5C0E4EB56FE896ACB1BCCD271BD /* Links+Helpers.swift in Sources */,
+				AFB4F02924A2DD656C89321A7963673B /* OverridingTemplateHandler.swift in Sources */,
+				56EA748CCDFE1EECA087D8FC979BDEEF /* PageMetadata.swift in Sources */,
+				F2EF99E58EAE3A6F0DCC53E02B0FB0C6 /* PaginationPage.swift in Sources */,
+				89D033D7C2B4AC994FC32B9491654EF9 /* ParsedLink.swift in Sources */,
+				968B7E2B80A9A2F79FB55DB6AB9BF5B1 /* Relationship.swift in Sources */,
+				2FB37B22D00A3FB11B75441AD05A13B0 /* ReplaySubject.swift in Sources */,
+				8BB1F4B3D28C515B46A339A2016B6BA9 /* RequesterInterface.swift in Sources */,
+				A600EBEC5380569ABECB53FCE30BF735 /* RequesterQueue.swift in Sources */,
+				D14E7584E9ADD0A3E3129D7236AF6F49 /* RequestOperation.swift in Sources */,
+				7BE72EE4A41DC10F5D799C76D22FC29C /* ResourceContainer.swift in Sources */,
+				C5AD894635082BA340FB189B3B8864C7 /* ResourceManager.swift in Sources */,
+				7A06E7E75BB88442E1BD1B18D703E39E /* ResourceManager+Codable.swift in Sources */,
+				2473A2DA8D7435C73ED0780F5BC9DC40 /* Result+Transform.swift in Sources */,
+				86940B8E090FB10C66034F8CF5B7B081 /* Result+TryMap.swift in Sources */,
+				EA7A1A8557404F5FF63F3796ED872093 /* ShareReplay.swift in Sources */,
+				D9BD3816871A4E0D38E96E37D9D6D7D9 /* TemplateLinkResolver.swift in Sources */,
+				0B7A569B5C65AEB18E78322D7DAD1980 /* ToManyIncludeKey.swift in Sources */,
+				819F7D35A54A9613579A29C0603BC721 /* Traverser.swift in Sources */,
+				B15EEBAE1E8EE513967356DC78E11046 /* URITemplate.swift in Sources */,
+				DB771D6E39241DD9CDC247341FE12F30 /* ZipMany.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8F5A76239CC8B235405B8A02D72E48D /* Sources */ = {
+		B8E98BF25DE584CAEE28721A3ACCF2F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD26E99D6A3A9C7B8D849ECB0F1B1FB6 /* Pods-HalleyCocoaPodExample-dummy.m in Sources */,
+				346450C75EAE884B4844CD17F07D1B5A /* Pods-HalleyCocoaPodExample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CACF0C826EEE34B4950A1FF2C9218815 /* PBXTargetDependency */ = {
+		7168CF587630A26D170C9A463AAB3CFE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Halley;
 			target = 98490E5339DC07CB01DD6E1C6C5D62EA /* Halley */;
-			targetProxy = E08A442032953EB5D77CC20437DE5FAA /* PBXContainerItemProxy */;
+			targetProxy = 4ECC01D68BD8F106ADFD1F66D1FCEFF4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		06CDFDCAEC80BBB0526426F94A470648 /* Debug */ = {
+		26FB5EB52886D516EF95825CA35A520F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A66B016FE6D169AE62B059B026C87488 /* Pods-HalleyCocoaPodExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				INFOPLIST_FILE = "Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		45C197080CA44540783E92B45DC14CA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51854242625A5F225DC1A5645C072548 /* Halley.debug.xcconfig */;
 			buildSettings = {
@@ -604,11 +655,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREFIX_HEADER = "Target Support Files/Halley/Halley-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = "Target Support Files/Halley/Halley-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,14 +673,15 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		8A1AF3A2E4F43799B0047E60A75921D7 /* Release */ = {
+		656893242A79D2AB4367B9FD73BE6DC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4C54DFB83F333182C22D299D9CCB535A /* Pods-HalleyCocoaPodExample.release.xcconfig */;
 			buildSettings = {
@@ -641,10 +695,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = "Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -666,7 +721,47 @@
 			};
 			name = Release;
 		};
-		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+		7ECDFA25119E6CFF5A1EE3E7EB3BB544 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0669B9C2AE6507D86D5DF3C0176A1FDD /* Halley.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = "Target Support Files/Halley/Halley-prefix.pch";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "Target Support Files/Halley/Halley-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Halley/Halley.modulemap";
+				PRODUCT_MODULE_NAME = Halley;
+				PRODUCT_NAME = Halley;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -719,7 +814,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -732,7 +827,7 @@
 			};
 			name = Debug;
 		};
-		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+		9553C89E183877A5CB2F3C6801BEC129 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -782,7 +877,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -794,107 +889,32 @@
 			};
 			name = Release;
 		};
-		C12A8AE14DBBFBF681AF27730D8ED7AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A66B016FE6D169AE62B059B026C87488 /* Pods-HalleyCocoaPodExample.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-HalleyCocoaPodExample/Pods-HalleyCocoaPodExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D4AB57591E3AFA0D8A7432BC62596583 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0669B9C2AE6507D86D5DF3C0176A1FDD /* Halley.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				GCC_PREFIX_HEADER = "Target Support Files/Halley/Halley-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Halley/Halley-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Halley/Halley.modulemap";
-				PRODUCT_MODULE_NAME = Halley;
-				PRODUCT_NAME = Halley;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		454895A4B20EA78F263F11863E22DC17 /* Build configuration list for PBXNativeTarget "Pods-HalleyCocoaPodExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C12A8AE14DBBFBF681AF27730D8ED7AF /* Debug */,
-				8A1AF3A2E4F43799B0047E60A75921D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
-				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+				90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */,
+				9553C89E183877A5CB2F3C6801BEC129 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF0A0D98ABABEA813F55A92FDB4B21F6 /* Build configuration list for PBXNativeTarget "Halley" */ = {
+		7D0CD7F2C7ED27D204B1B7FB2C5F5208 /* Build configuration list for PBXNativeTarget "Pods-HalleyCocoaPodExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				06CDFDCAEC80BBB0526426F94A470648 /* Debug */,
-				D4AB57591E3AFA0D8A7432BC62596583 /* Release */,
+				26FB5EB52886D516EF95825CA35A520F /* Debug */,
+				656893242A79D2AB4367B9FD73BE6DC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8F135BA671892BD6E2027C6FB849EFE /* Build configuration list for PBXNativeTarget "Halley" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45C197080CA44540783E92B45DC14CA5 /* Debug */,
+				7ECDFA25119E6CFF5A1EE3E7EB3BB544 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

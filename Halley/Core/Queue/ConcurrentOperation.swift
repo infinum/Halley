@@ -2,14 +2,14 @@ import Foundation
 
 extension NSLocking {
 
-    func safe<T>(block: () throws -> T) rethrows -> T {
+    @discardableResult func safe<T>(block: () throws -> T) rethrows -> T {
         lock()
         defer { unlock() }
         return try block()
     }
 }
 
-class ConcurrentOperation: Operation {
+class ConcurrentOperation: Operation, @unchecked Sendable {
 
     // - State Keys -
     private let _isExecutingKey = "isExecuting"
