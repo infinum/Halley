@@ -6,5 +6,6 @@ inhibit_all_warnings!
 workspace '../../Halley.xcworkspace'
 
 target 'HalleyCocoaPodExample' do
-  pod 'Halley', :path => '../..'
+  pod 'Halley', :git => 'git@github.com:infinum/Halley.git', :branch => 'feature/swift-macros'
+  pod 'HalleyMacro', :git => 'git@github.com:infinum/Halley.git', :branch => 'feature/swift-macros'
 end
