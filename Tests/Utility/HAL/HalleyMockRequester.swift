@@ -11,7 +11,7 @@ class HalleyMockRequester: RequesterInterface {
 
     func requestResource(
         at url: URL,
-        completion: sending @escaping (Result<Data, Error>) -> Void
+        completion: @Sendable @escaping (Result<Data, Error>) -> Void
     ) -> RequestContainerInterface {
         let path = url.absoluteString
         let registeredMocks = registeredMocks

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ToManyIncludeKey<T: IncludeKey>: RawRepresentable, IncludeKey {
+public struct ToManyIncludeKey<T: IncludeKey>: RawRepresentable, IncludeKey, Sendable {
     public typealias RawValue = String
 
     public let includeKey: String

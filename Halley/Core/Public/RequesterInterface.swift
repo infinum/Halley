@@ -8,6 +8,6 @@ public protocol RequestContainerInterface {
 public protocol RequesterInterface: AnyObject {
     func requestResource(
         at url: URL,
-        completion: sending @escaping (Result<Data, Error>) -> Void
+        completion: @Sendable @escaping (Result<Data, Error>) -> Void
     ) -> RequestContainerInterface
 }

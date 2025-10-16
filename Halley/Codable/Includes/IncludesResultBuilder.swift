@@ -1,7 +1,7 @@
 import Foundation
 
 @resultBuilder
-public enum IncludesBuilder<IncludeCodingKey: IncludeKey> {
+public enum IncludesBuilder<IncludeCodingKey: IncludeKey>: Sendable {
 
     public static func buildBlock(_ components: [IncludeField]...) -> [IncludeField] {
         return components.flatMap { $0 }
@@ -84,7 +84,7 @@ public enum IncludesBuilder<IncludeCodingKey: IncludeKey> {
 
 // MARK: - Supported types
 
-public struct ToOne<IncludeCodingKey: IncludeKey> {
+public struct ToOne<IncludeCodingKey: IncludeKey>: Sendable {
 
     public let field: IncludeField
 
@@ -93,7 +93,7 @@ public struct ToOne<IncludeCodingKey: IncludeKey> {
     }
 }
 
-public struct ToMany<IncludeCodingKey: IncludeKey> {
+public struct ToMany<IncludeCodingKey: IncludeKey>: Sendable {
 
     public let field: IncludeField
 
@@ -102,7 +102,7 @@ public struct ToMany<IncludeCodingKey: IncludeKey> {
     }
 }
 
-public struct Nested<IncludeCodingKey: IncludeKey> {
+public struct Nested<IncludeCodingKey: IncludeKey>: Sendable {
 
     public let fields: [IncludeField]
 

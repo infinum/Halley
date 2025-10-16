@@ -32,6 +32,7 @@ final class RequesterQueue: Sendable {
 
     func response(at url: URL, requester: RequesterInterface) -> AnyPublisher<APIResponse, Never> {
         return AnyPublisher<APIResponse, Never>.create { [lock, queue] subscriber in
+            nonisolated(unsafe) let subscriber = subscriber
             let operation = HALRequestOperation(
                 url: url,
                 requester: requester

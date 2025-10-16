@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PageMetadata: Codable {
+public struct PageMetadata: Codable, Sendable {
     public let size: Int
     public let totalElements: Int
     public let totalPages: Int
