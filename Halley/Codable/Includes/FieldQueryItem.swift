@@ -1,6 +1,6 @@
 import Foundation
 
-public struct FieldQueryItem {
+public struct FieldQueryItem: Sendable {
     public let key: String
     public let value: String
 

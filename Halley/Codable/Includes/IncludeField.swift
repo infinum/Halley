@@ -1,6 +1,6 @@
 import Foundation
 
-public struct IncludeField {
+public struct IncludeField: Sendable {
     public let key: String
     public let queryItems: [FieldQueryItem]
 

@@ -1,6 +1,6 @@
 import Foundation
 
-public class PaginationPage<T: Codable>: Codable {
+public struct PaginationPage<T: Codable>: Codable {
 
     public var itemCount: Int { resources?.count ?? 0 }
 
@@ -40,3 +40,5 @@ public class PaginationPage<T: Codable>: Codable {
         )
     }
 }
+
+extension PaginationPage: Sendable where T: Sendable {}

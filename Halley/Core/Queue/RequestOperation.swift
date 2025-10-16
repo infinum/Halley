@@ -3,7 +3,7 @@ import Combine
 
 class HALRequestOperation: ConcurrentOperation, @unchecked Sendable {
 
-    typealias CompletionHanlder = (Result<Data, Error>) -> Void
+    typealias CompletionHanlder = @Sendable (Result<Data, Error>) -> Void
 
     private let url: URL
     private let requester: RequesterInterface

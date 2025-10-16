@@ -1,7 +1,7 @@
 import Foundation
 
 // Namespace definition
-public enum HalleyKit { }
+public enum HalleyKit: Sendable { }
 
 public extension HalleyKit {
 
@@ -38,7 +38,7 @@ public extension HalleyKit {
         public static let `self` = "self"
         public static let includeSeparator: Character = "."
 
-        public struct ToMany {
+        public struct ToMany: Sendable {
             /// Leading keyword denoting the start of a "to many" include type
             public static let leading = "["
             /// Trailing keyword denoting the end of a "to many" include type
