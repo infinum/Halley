@@ -1,0 +1,6 @@
+framework module HalleyMacro {
+  umbrella header "HalleyMacro-umbrella.h"
+
+  export *
+  module * { export * }
+}
