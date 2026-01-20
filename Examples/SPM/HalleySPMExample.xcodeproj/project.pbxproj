@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A7EE43E2A40F40F001042B4 /* HalleyMacro in Frameworks */ = {isa = PBXBuildFile; productRef = 0A7EE43D2A40F40F001042B4 /* HalleyMacro */; };
 		0AC8E60A2A136C79007F401A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E6092A136C79007F401A /* AppDelegate.swift */; };
 		0AC8E60C2A136C79007F401A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E60B2A136C79007F401A /* SceneDelegate.swift */; };
 		0AC8E60E2A136C79007F401A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC8E60D2A136C79007F401A /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A7EE43E2A40F40F001042B4 /* HalleyMacro in Frameworks */,
 				0AC8E61F2A136CB9007F401A /* Halley in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +97,7 @@
 			name = HalleySPMExample;
 			packageProductDependencies = (
 				0AC8E61E2A136CB9007F401A /* Halley */,
+				0A7EE43D2A40F40F001042B4 /* HalleyMacro */,
 			);
 			productName = HalleySPMExample;
 			productReference = 0AC8E6062A136C79007F401A /* HalleySPMExample.app */;
@@ -373,6 +376,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0A7EE43D2A40F40F001042B4 /* HalleyMacro */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HalleyMacro;
+		};
 		0AC8E61E2A136CB9007F401A /* Halley */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Halley;

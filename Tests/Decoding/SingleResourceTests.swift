@@ -16,7 +16,7 @@ final class SingleResourceTests {
         #expect(person.website != nil)
     }
 
-    @Test("Deco to many relationship")
+    @Test("Decoding to many relationship")
     func testDecodingToManyRelationship() async throws {
         let fetcher = HalleyResourceFetcher(fromJson: "simple_single_resource", for: Contact.self, includeType: .full)
         let person = try await fetcher.resource(ofType: Contact.self).values.single()
